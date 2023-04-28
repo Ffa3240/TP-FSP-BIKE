@@ -165,10 +165,357 @@ function cargarNovedades(data) {
 
 
 /*fetch('../datos/datos.json')*/
-fetch('http://127.0.0.1:5500/TP-FSP-BIKE/datos/datos.json')
+/*fetch('http://127.0.0.1:5500/TP-FSP-BIKE/datos/datos.json')
 .then(res => res.json()) 
-.then(data => cargarNovedades(data));
+.then(data => cargarNovedades(data));*/
 
+var data = {
+  "novedad1": {
+      "id": 1,
+      "imagen": "./img/novedades/00001.webp",
+      "texto01": {
+          "texto": "RALLY BUG 21.1",
+          "atributos": [
+              "color=black",
+              "font-size=1rem",
+              "width=100%",
+              "text-align=center"
+          ]
+      },
+      "texto02": {
+          "texto": "texto02",
+          "atributos": [
+              "color=black",
+              "font-size=1rem",
+              "width=100%",
+              "text-align=center"
+          ]
+      },
+      "texto03": {
+          "texto": "texto03",
+          "atributos": [
+              "color=black",
+              "font-size=1rem",
+              "width=100%",
+              "text-align=center"
+          ]
+      },
+      "texto04": {
+          "texto": "texto04",
+          "atributos": [
+              "color=black",
+              "font-size=1rem",
+              "width=100%",
+              "text-align=center"
+          ]
+      },
+      "texto05": {
+          "texto": "texto05",
+          "atributos": [
+              "color=black",
+              "font-size=1rem",
+              "width=100%",
+              "text-align=center"
+          ]
+      }
+  },
+  "novedad2": {
+      "id": 2,
+      "imagen": "./img/novedades/00002.webp",
+      "texto01": {
+          "texto": "MOUNTAIN BUG 24.1",
+          "atributos": [
+              "color=black",
+              "font-size=1rem",
+              "width=100%",
+              "text-align=center"
+          ]
+      },
+      "texto02": {
+          "texto": "texto02",
+          "atributos": [
+              "color=black",
+              "font-size=1rem",
+              "width=100%",
+              "text-align=center"
+          ]
+      },
+      "texto03": {
+          "texto": "texto03",
+          "atributos": [
+              "color=black",
+              "font-size=1rem",
+              "width=100%",
+              "text-align=center"
+          ]
+      },
+      "texto04": {
+          "texto": "texto04",
+          "atributos": [
+              "color=black",
+              "font-size=1rem",
+              "width=100%",
+              "text-align=center"
+          ]
+      },
+      "texto05": {
+          "texto": "texto05",
+          "atributos": [
+              "color=black",
+              "font-size=1rem",
+              "width=100%",
+              "text-align=center"
+          ]
+      }
+  },
+  "novedad3": {
+      "id": 3,
+      "imagen": "./img/novedades/00003.webp",
+      "texto01": {
+          "texto": "LADY BUG 21.2 NEGRA",
+          "atributos": [
+              "color=black",
+              "font-size=1rem",
+              "width=100%",
+              "text-align=center"
+          ]
+      },
+      "texto02": {
+          "texto": "texto02",
+          "atributos": [
+              "color=black",
+              "font-size=1rem",
+              "width=100%",
+              "text-align=center"
+          ]
+      },
+      "texto03": {
+          "texto": "texto03",
+          "atributos": [
+              "color=black",
+              "font-size=1rem",
+              "width=100%",
+              "text-align=center"
+          ]
+      },
+      "texto04": {
+          "texto": "texto04",
+          "atributos": [
+              "color=black",
+              "font-size=1rem",
+              "width=100%",
+              "text-align=center"
+          ]
+      },
+      "texto05": {
+          "texto": "texto05",
+          "atributos": [
+              "color=black",
+              "font-size=1rem",
+              "width=100%",
+              "text-align=center"
+          ]
+      }
+  },
+  "novedad4": {
+      "id": 4,
+      "imagen": "./img/novedades/00004.webp",
+      "texto01": {
+          "texto": "MOUNTAIN BUG 24.2",
+          "atributos": [
+              "color=black",
+              "font-size=1rem",
+              "width=100%",
+              "text-align=center"
+          ]
+      },
+      "texto02": {
+          "texto": "texto02",
+          "atributos": [
+              "color=black",
+              "font-size=1rem",
+              "width=100%",
+              "text-align=center"
+          ]
+      },
+      "texto03": {
+          "texto": "texto03",
+          "atributos": [
+              "color=black",
+              "font-size=1rem",
+              "width=100%",
+              "text-align=center"
+          ]
+      },
+      "texto04": {
+          "texto": "texto04",
+          "atributos": [
+              "color=black",
+              "font-size=1rem",
+              "width=100%",
+              "text-align=center"
+          ]
+      },
+      "texto05": {
+          "texto": "texto05",
+          "atributos": [
+              "color=black",
+              "font-size=1rem",
+              "width=100%",
+              "text-align=center"
+          ]
+      }
+  },
+  "novedad5": {
+      "id": 5,
+      "imagen": "./img/novedades/00005.webp",
+      "texto01": {
+          "texto": "LADY BUG 21.1",
+          "atributos": [
+              "color=black",
+              "font-size=1rem",
+              "width=100%",
+              "text-align=center"
+          ]
+      },
+      "texto02": {
+          "texto": "texto02",
+          "atributos": [
+              "color=black",
+              "font-size=1rem",
+              "width=100%",
+              "text-align=center"
+          ]
+      },
+      "texto03": {
+          "texto": "texto03",
+          "atributos": [
+              "color=black",
+              "font-size=1rem",
+              "width=100%",
+              "text-align=center"
+          ]
+      },
+      "texto04": {
+          "texto": "texto04",
+          "atributos": [
+              "color=black",
+              "font-size=1rem",
+              "width=100%",
+              "text-align=center"
+          ]
+      },
+      "texto05": {
+          "texto": "texto05",
+          "atributos": [
+              "color=black",
+              "font-size=1rem",
+              "width=100%",
+              "text-align=center"
+          ]
+      }
+  },
+  "novedad6": {
+      "id": 6,
+      "imagen": "./img/novedades/00006.webp",
+      "texto01": {
+          "texto": "MOUNTAIN BUG 27.2",
+          "atributos": [
+              "color=black",
+              "font-size=1rem",
+              "width=100%",
+              "text-align=center"
+          ]
+      },
+      "texto02": {
+          "texto": "texto02",
+          "atributos": [
+              "color=black",
+              "font-size=1rem",
+              "width=100%",
+              "text-align=center"
+          ]
+      },
+      "texto03": {
+          "texto": "texto03",
+          "atributos": [
+              "color=black",
+              "font-size=1rem",
+              "width=100%",
+              "text-align=center"
+          ]
+      },
+      "texto04": {
+          "texto": "texto04",
+          "atributos": [
+              "color=black",
+              "font-size=1rem",
+              "width=100%",
+              "text-align=center"
+          ]
+      },
+      "texto05": {
+          "texto": "texto05",
+          "atributos": [
+              "color=black",
+              "font-size=1rem",
+              "width=100%",
+              "text-align=center"
+          ]
+      }
+  },
+  "novedad7": {
+      "id": 7,
+      "imagen": "./img/novedades/00006.webp",
+      "texto01": {
+          "texto": "MOUNTAIN BUG 27.2",
+          "atributos": [
+              "color=black",
+              "font-size=1rem",
+              "width=100%",
+              "text-align=center"
+          ]
+      },
+      "texto02": {
+          "texto": "texto02",
+          "atributos": [
+              "color=black",
+              "font-size=1rem",
+              "width=100%",
+              "text-align=center"
+          ]
+      },
+      "texto03": {
+          "texto": "texto03",
+          "atributos": [
+              "color=black",
+              "font-size=1rem",
+              "width=100%",
+              "text-align=center"
+          ]
+      },
+      "texto04": {
+          "texto": "texto04",
+          "atributos": [
+              "color=black",
+              "font-size=1rem",
+              "width=100%",
+              "text-align=center"
+          ]
+      },
+      "texto05": {
+          "texto": "texto05",
+          "atributos": [
+              "color=black",
+              "font-size=1rem",
+              "width=100%",
+              "text-align=center"
+          ]
+      }
+  }
+  
+} ;
+cargarNovedades(data);
 
 $(window).on("load", function() {
   if (this.matchMedia("(max-width: 550px)").matches) {
