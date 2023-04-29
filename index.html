@@ -43,11 +43,11 @@
 
     <main class="miMain">
        
-        <section id="novedades-section">
+        <section id="idNovedades-section">
       
-            <div class="novedades-container">
+            <!--div class="novedades-container" no va-->
               
-              <div class="swiper novedades-slider">
+              <div id="idNovedades-slider" class="swiper novedades-slider">
                 
               <!-- IMAGENES -->
                 <div  id=idNovedades class="swiper-wrapper">  
@@ -68,14 +68,15 @@
                 </div>
       
               </div>
-            </div>
+
+            <!--/div-->
 
             <dialog class="ventanaModal" id="ventanaDetalleModal">
                 <img id="imagenDetalleModal">
                 <div onclick="cerrarVentanaModal()" class="novedades-slide-content-buttom">Cerrar</div>
             </dialog>
 
-          </section>
+        </section>
       
 
         <div id="idProductos">
@@ -142,16 +143,36 @@
             </div>
 
             <section class="misMarcas">
-                <div class="marca"></div>
-                <div class="marca"></div>
-                <div class="marca"></div>
-                <div class="marca"></div>
-                <div class="marca"></div>
-                <div class="marca"></div>
-                <div class="marca"></div>
-                <div class="marca"></div>
-                <div class="marca"></div>
-                <div class="marca"></div>
+                <div class="marca">
+                    <img src="./img/Marcas/Camel-Logo.webp" alt="img">
+                </div>
+                <div class="marca">
+                    <img src="./img/Marcas/Crank-Brothers-Logo.webp" alt="img">
+                </div>
+                <div class="marca">
+                    <img src="./img/Marcas/Hollywood-Logo.webp" alt="img">
+                </div>
+                <div class="marca">
+                    <img src="./img/Marcas/HT-Logo.webp" alt="img">
+                </div>
+                <div class="marca">
+                    <img src="./img/Marcas/Jamis-Logo.webp" alt="img">
+                </div>
+                <div class="marca">
+                    <img src="./img/Marcas/Mavic-Logo.webp" alt="img">
+                </div>
+                <div class="marca">
+                    <img src="./img/Marcas/Peugeot-Logo.webp" alt="img">
+                </div>
+                <div class="marca">
+                    <img src="./img/Marcas/Neco-Logo.webp" alt="img">
+                </div>
+                <div class="marca">
+                    <img src="./img/Marcas/Samorga-Logo.gif" alt="img">
+                </div>
+                <div class="marca">
+                    <img src="./img/Marcas/Roller-Logo-180.webp" alt="img">
+                </div>
             </section>
 
         </div>
@@ -162,6 +183,11 @@
 
     </aside-->
 
+    <div class="whatsapp">
+        <a href="https://api.whatsapp.com/send/?phone=5491176403394" target="_blank">
+            <i id="idImgWhatsapp" class="fa-brands fa-whatsapp" alt="whatsapp" style="color:rgb(215, 215, 215)"></i>
+        </a>  
+    </div>
    
 
     <footer id="idFooter" class="miFooter">

@@ -66,7 +66,7 @@ wHeader.innerHTML = `
             <a href="contactos.html" class="nav-link">Contacto</a>
         </li>
         <li class="nav_item">
-            <a href="#idNovedades" class="nav-link">Novedades</a>
+            <a href="index.html#idNovedades" class="nav-link">Novedades</a>
         </li>
         <li class="dropdown nav_item">
             <a class="dropdown-toggle nav-link" data-bs-toggle="dropdown" href="#" role="button"
@@ -78,7 +78,7 @@ wHeader.innerHTML = `
                 <li>
                     <hr class="dropdown-divider">
                 </li>
-                <li><a class="dropdown-item" href="#idMarcas">Marcas</a></li>
+                <li><a class="dropdown-item" href="index.html#idMarcas">Marcas</a></li>
             </ul>
         </li>
         <li class="nav_item">
@@ -101,6 +101,11 @@ wHeader.innerHTML = `
 
 var wFooter = document.getElementById("idFooter")
 wFooter.innerHTML = `
+<div class="whatsapp">
+        <a href="https://api.whatsapp.com/send/?phone=5491176403394" target="_blank">
+            <i id="idImgWhatsapp" class="fa-brands fa-whatsapp" alt="whatsapp" style="color:rgb(215, 215, 215)"></i>
+        </a>  
+</div>
 <div id="idAcercaDe" class="separador">
 <h6>Acerca de ...</h6>
 </div>

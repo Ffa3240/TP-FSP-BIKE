@@ -72,6 +72,22 @@ function inicializarSlide(efecto) {
 
 function cargarNovedades(data) {
 
+/*
+  var wNovedadesSection = document.getElementById("idNovedades-section");
+  let wDiv1 = document.createElement("div")
+  wDiv1.classList.add("swiper");
+  wDiv1.classList.add("novedades-slider");
+  wDiv1.setAttribute("id", "idNovedades-slider");
+  wNovedadesSection.appendChild(wDiv1);
+
+  var wNovedadesSlider = document.getElementById("idNovedades-slider");
+  let wDiv2 = document.createElement("div")
+  wDiv2.classList.add("swiper-wrapper");
+  wDiv2.setAttribute("id", "idNovedades");
+  wNovedadesSlider.appendChild(wDiv2);
+*/
+
+  /*Agrega las imagenes - Slides*/
   var wNovedades = document.getElementById("idNovedades");
 
   for (obj in data) {
@@ -158,10 +174,21 @@ function cargarNovedades(data) {
 
     wNovedades.appendChild(wNovedad);
 
-  }
+  };
 
- /* inicializarSlide("coverflow");*/
-}
+  /*Agrega los Controles */
+    /*
+    wNovedadesSlider.innerHTML = wNovedades.innerHTML + 
+        `<div class="novedades-slider-control">          
+             <div class="swiper-button-prev slider-arrow"></div> 
+             <div class="swiper-pagination"></div>
+             <div class="swiper-button-next slider-arrow"></div>
+         </div>`;
+    */
+    
+    inicializarSlide("coverflow");
+   
+};
 
 
 /*fetch('../datos/datos.json')*/
@@ -516,7 +543,7 @@ var data = {
   
 } ;
 cargarNovedades(data);
-
+/*
 $(window).on("load", function() {
   if (this.matchMedia("(max-width: 550px)").matches) {
     inicializarSlide("fade");   
@@ -525,3 +552,4 @@ $(window).on("load", function() {
     inicializarSlide("coverflow");
   }
 });
+*/

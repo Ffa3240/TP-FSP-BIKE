@@ -38,7 +38,7 @@ main {
                        'misMarcas';
 }
 
-#novedades-section {
+#idNovedades-section {
   width: 100%;
 }
 
@@ -109,16 +109,22 @@ main {
 
 
 .misMarcas {
-  background-color: rgb(87, 88, 86);
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 5px;
-  grid-area: misMarcas;
+  background-color:rgba(42,42,42,1);
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  overflow-x: auto; 
+  scroll-behavior: auto;
 }
     .marca {
-      height: 20px;
-      width: 40px;
-      background-color: lightgray;
+      width: auto;
+      height: auto;
+      background-color: rgba(42,42,42,1);
+      object-fit: contain;
+      align-items: center;
+      padding: 0 10px;
+      margin: 1rem 0.3rem;
+      cursor: pointer;
     }
 
 
@@ -142,8 +148,27 @@ main {
             .ventanaModalMostrar {
               display:block;
             }
+/*
+.whatsapp {
+  background-color: transparent;
+  width: 45px;
+  height: auto; 
+  font-size: 2em;
+  background-color:rgb(21, 158, 71);
+  border-radius: 30%;
+  padding: 0px;
+  position: fixed;
+  bottom: 1.5em;  
+  right: 1em;
+  cursor: pointer;
+}
 
-
+    #idImgWhatsapp {
+      margin: auto;
+      width: 100%;
+      padding: 0px;
+    }
+*/
 
 /* MEDIA QUERYS */
 
