@@ -66,7 +66,7 @@ wHeader.innerHTML = `
             <a href="contactos.html" class="nav-link">Contacto</a>
         </li>
         <li class="nav_item">
-            <a href="index.html#idNovedades" class="nav-link">Novedades</a>
+            <a href="index.html#idNovedades-section" class="nav-link">Novedades</a>
         </li>
         <li class="dropdown nav_item">
             <a class="dropdown-toggle nav-link" data-bs-toggle="dropdown" href="#" role="button"

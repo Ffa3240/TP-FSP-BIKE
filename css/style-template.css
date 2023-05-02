@@ -235,6 +235,7 @@ body {
   bottom: 1.5em;  
   right: 1em;
   cursor: pointer;
+  z-index: 10000
 }
 
     #idImgWhatsapp {

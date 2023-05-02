@@ -29,6 +29,18 @@ $('#idImgSeparadorAbrirCerrarProducto').click(function() {
 });
 
 
+$('#idImgSeparadorAbrirCerrarNovedad').click(function() {
+  $('.novedades-slider').toggleClass('separadorAbrirCerrar');
+    if (document.getElementById('idImgAbrirCerrarNovedad').classList.contains('fa-angle-up')) {
+      document.getElementById('idImgAbrirCerrarNovedad').classList.remove('fa-angle-up');
+      document.getElementById('idImgAbrirCerrarNovedad').classList.add('fa-angle-down');
+    }
+    else {
+      document.getElementById('idImgAbrirCerrarNovedad').classList.remove('fa-angle-down');
+      document.getElementById('idImgAbrirCerrarNovedad').classList.add('fa-angle-up');
+    }
+});
+
 function abrirVentanaDetalleModal(srcImagen) {
   let ventana = document.getElementById("ventanaDetalleModal");
   let imagen = document.getElementById("imagenDetalleModal")

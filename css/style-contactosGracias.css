@@ -1,0 +1,31 @@
+.contactoTitulo {
+    background-color: #e5dfdf !important;
+}
+
+.msgMailConfirmado {
+    width: 30%;
+    margin: auto;
+    background-color: rgb(230, 228, 228);
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px;
+    height: auto;
+    margin-top: 10vh;
+}
+
+.msgMailConfirmado b {
+    margin-bottom: 1rem;
+}
+
+.msgMailConfirmado a {
+    margin-top: 1rem;
+    text-decoration: none;
+    width: 50%;
+    background-color: rgb(207, 207, 211);
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 3px;
+    color: black;
+    cursor: pointer;
+}

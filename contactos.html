@@ -36,13 +36,60 @@
     </header>
 
     <main>
+        <h4 class="contactoTitulo">Contactanos</h4>
+        
+        <div class="formularioContacto" id="idFormularioMail">
+            <p class="col-md-12">¿Necesitás asesoramiento especializado?</p>
+            <p class="col-md-12">Completá tus datos y un experto te contactará a la brevedad..</p>
 
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad fuga mollitia earum hic enim! Veritatis, ea? Corporis veritatis modi aspernatur dignissimos sunt repellendus labore minima doloremque praesentium nostrum. Reiciendis, deserunt. Quidem quis, non assumenda voluptatibus nesciunt ratione debitis odit labore?</p>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad fuga mollitia earum hic enim! Veritatis, ea? Corporis veritatis modi aspernatur dignissimos sunt repellendus labore minima doloremque praesentium nostrum. Reiciendis, deserunt. Quidem quis, non assumenda voluptatibus nesciunt ratione debitis odit labore?</p>
+            <form action="https://formsubmit.co/621938a6f9ff80ecb98a0f8a0c4a57a3" method="POST">
 
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad fuga mollitia earum hic enim! Veritatis, ea? Corporis veritatis modi aspernatur dignissimos sunt repellendus labore minima doloremque praesentium nostrum. Reiciendis, deserunt. Quidem quis, non assumenda voluptatibus nesciunt ratione debitis odit labore?</p>
+                <div class="itemsMail-Container">
+
+                <!--label for="Nombre">Nombre</label-->
+                <p class="itemMail">
+                    <input type="text" name="name" placeholder="Nombre">
+                </p>
+
+                <!--label for="Apellido">Apellido</label-->
+                <p class="itemMail">
+                    <input type="text" name="apellido" placeholder="Apellido">
+                </p>
+
+                <!--label for="email">Correo Electronico</label-->
+                <p class="itemMail">
+                    <input type="email" name="email" placeholder="Email">
+                </p>
+
+                <!--label for="email">Correo Electronico</label-->
+                <p class="itemMail">
+                    <input type="text" name="telefono" placeholder="Telefono">
+                </p>
+
+                <!--label for="comments">Comentarios</label-->
+                <p class="itemMailTexto">
+                    <textarea name="name" placeholder="Mensaje/Consulta" cols="15" rows="5"></textarea>
+                </p>
+            
+                <p class="itemMailBoton">
+                    <input type="submit" value="Enviar">
+                </p>
+
+                </div>
+
+                <input type="hidden" name="subject" value="Consulta desde TP-FSP-BIKE">
+                <input type="hidden" name="_next" value="https://fsp-bikes.netlify.app/contactosGracias.html">
+                <input type="hidden" name="_captcha" value="false">
+
+            </form>
+    
+       </div>
 
 
+       <div class="msgMailConfirmado">
+        <p>Gracias por contactarnos</p>
+        <p>nos estaremos comunicando a la brevedad.</p>
+       </div>
 
     </main>
 

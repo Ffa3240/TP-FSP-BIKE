@@ -1,0 +1,34 @@
+
+.contactoTitulo {
+    background-color: #e5dfdf !important;
+}
+
+.formularioContacto {
+    width: 50%;
+    margin: auto;
+}
+
+
+.itemsMail-Container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.itemMailTexto {
+    width: 100%;
+}
+
+       .itemMailTexto textarea {
+            width: 100%;
+        }
+
+.itemMail {
+    width: 45%;
+}
+
+        .itemMail  input {
+            width: 100%;
+}
+
