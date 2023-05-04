@@ -36,6 +36,12 @@ function inicializarSlide(efecto) {
     /*effect: 'cards',  */
     /*effect:'fade', */
     /*effect: 'flip', */
+
+    /*breakpoints: {
+        320: {
+        },
+    }, */
+
     grabCursor: true,
     centeredSlides: true,
     loop: true,
@@ -47,12 +53,12 @@ function inicializarSlide(efecto) {
     },
     slidesPerView: 'auto',
     coverflowEffect: {
-      rotate: 0,
-      stretch: 0,
-      depth: 110,
-      modifier: 2.5,
-      /*  slideShadows: true, */
-    },
+        rotate: 0,
+        stretch: 0,
+        depth: 110,
+        modifier: 2.5,
+        /*  slideShadows: true, */
+      },       
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
@@ -557,10 +563,26 @@ $(window).on("load", function() {
 function inicializarSlideMarcas(efecto) {
 
     var marcasSlider = new Swiper('.marcas-slider', {
-        slidesPerView: 8,
-        spaceBetween: 20,
+     /*   slidesPerView: 1,
+        spaceBetween: 2,  
+        breakpoints: {
+            320: {
+                slidesPerView: 2,
+                spaceBetween: 3,            
+            },
+            480: {
+                slidesPerView: 3,
+                spaceBetween: 5,            
+            },
+            640: {
+                slidesPerView: 8,
+                spaceBetween: 15,
+             },
+        },  */
         loop: true,
-        direction: 'horizontal',
+        grabCursor: true,
+        slidesPerView: 'auto',
+        direction: 'horizontal',              
         autoplay: {
             delay: 500,
             disableOnInteraction: true,
@@ -570,9 +592,12 @@ function inicializarSlideMarcas(efecto) {
           el: ".swiper-pagination",
           clickable: true,
         },*/
+       
 
- });
 
+
+    });
+   
 }
 
 
