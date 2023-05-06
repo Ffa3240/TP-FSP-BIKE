@@ -25,6 +25,7 @@
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
     crossorigin="anonymous"></script>
 
+    <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/style-template.css">
     <link rel="stylesheet" href="./css/style-contactos.css">
 </head>
@@ -36,7 +37,7 @@
     </header>
 
     <main>
-        <h4 class="contactoTitulo">Contactanos</h4>
+        <h5 class="contactoTitulo">Contactanos</h5>
         
         <div class="formularioContacto" id="idFormularioMail">
             <p class="col-md-12">¿Necesitás asesoramiento especializado?</p>
@@ -48,7 +49,7 @@
 
                 <!--label for="Nombre">Nombre</label-->
                 <p class="itemMail">
-                    <input type="text" name="name" placeholder="Nombre">
+                    <input type="text" name="nombre" placeholder="Nombre">
                 </p>
 
                 <!--label for="Apellido">Apellido</label-->
@@ -68,7 +69,7 @@
 
                 <!--label for="comments">Comentarios</label-->
                 <p class="itemMailTexto">
-                    <textarea name="name" placeholder="Mensaje/Consulta" cols="15" rows="5"></textarea>
+                    <textarea name="mensaje" placeholder="Mensaje/Consulta" cols="15" rows="5"></textarea>
                 </p>
             
                 <p class="itemMailBoton">
@@ -77,10 +78,12 @@
 
                 </div>
 
-                <input type="hidden" name="subject" value="Consulta desde TP-FSP-BIKE">
+                <input type="hidden" name="_subject" value="Consulta desde TP-FSP-BIKE">
                 <input type="hidden" name="_next" value="https://fsp-bikes.netlify.app/contactosGracias.html">
-                <input type="hidden" name="_captcha" value="false">
-
+                <!--input type="hidden" name="_captcha" value="false"-->
+                <input type="hidden" name="_replyto" value="true">
+                <input type="hidden" name="_template" value="box">
+                <input type="hidden" name="_autoresponse" value="Gracias por comunicarse con nosotros, a la brevedad nos estaremos contactando.">
             </form>
     
        </div>

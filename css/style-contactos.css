@@ -1,11 +1,16 @@
 
+main {
+ /*   background-color: #63626254;*/
+}
+
 .contactoTitulo {
     background-color: #e5dfdf !important;
 }
 
 .formularioContacto {
-    width: 50%;
+    width: 60%;
     margin: auto;
+    color: black;
 }
 
 
@@ -22,6 +27,8 @@
 
        .itemMailTexto textarea {
             width: 100%;
+            padding-left: 5px;
+            border-radius: 3px  ;
         }
 
 .itemMail {
@@ -30,5 +37,23 @@
 
         .itemMail  input {
             width: 100%;
+            padding-left: 5px;
+            border-radius: 3px  ;
 }
 
+.itemMailBoton {
+    width: 100%;
+}
+
+        .itemMailBoton  input {
+            width: 100%;
+            background-color: #282828;
+            color: white;
+        }
+
+
+.itemMail:hover, .itemMailTexto:hover, .itemMailBoton:hover {
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+} 

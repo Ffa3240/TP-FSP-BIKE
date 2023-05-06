@@ -55,7 +55,7 @@ wHeader.innerHTML = `
     <div class="nav_img" onclick="nav_menu_mostrar_ocultar()">
         <img src="ico/menu-hamburguesa.svg" alt="Menu">
     </div>
-    <ul id="nav_id" class="nav">
+    <ul id="nav_id" class="nav nav_ocultar">
         <li class="nav_item"> 
             <a href="index.html" class="nav-link">Inicio</a>
         </li>
@@ -138,3 +138,7 @@ wFooter.innerHTML = `
 </div>
 `
 
+function nav_menu_mostrar_ocultar() {
+    let menu = document.getElementById("nav_id");
+    menu.classList.toggle("nav_ocultar");
+}

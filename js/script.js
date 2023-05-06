@@ -1,9 +1,9 @@
-
+/*
 function nav_menu_mostrar_ocultar() {
     let menu = document.getElementById("nav_id");
     menu.classList.toggle("nav_ocultar");
 }
-
+*/
 $('#idImgSeparadorAbrirCerrar').click(function() {
     $('.misMarcas').toggleClass('separadorAbrirCerrar');
       if (document.getElementById('idImgAbrirCerrar').classList.contains('fa-angle-up')) {
