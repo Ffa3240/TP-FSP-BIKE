@@ -3,8 +3,11 @@ main {
  /*   background-color: #63626254;*/
 }
 
+
 .contactoTitulo {
     background-color: #e5dfdf !important;
+    text-align: center;
+    font-weight: 600;
 }
 
 .formularioContacto {
@@ -57,3 +60,22 @@ main {
     -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
 } 
+
+
+@media all and (max-width: 790px) {
+    .formularioContacto {
+      width: 70%;
+    }
+}
+
+@media all and (max-width: 550px) {
+    .formularioContacto {
+      width: 80%;
+    }
+}
+
+@media all and (max-width: 400px) {
+    .formularioContacto {
+        width: 90%;
+      }
+}
