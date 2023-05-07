@@ -161,27 +161,6 @@ body {
 
 
 
-/*
-.whatsapp {
-  background-color: transparent;
-  width: 45px;
-  height: auto; 
-  font-size: 2em;
-  background-color:rgb(21, 158, 71);
-  border-radius: 30%;
-  padding: 0px;
-  position: fixed;
-  bottom: 1.5em;  
-  right: 1em;
-  cursor: pointer;
-}
-
-    #idImgWhatsapp {
-      margin: auto;
-      width: 100%;
-      padding: 0px;
-    }
-*/
 
 /* ----------------------------------------------------------------------------------------------*/
 /* MEDIA QUERYS */
