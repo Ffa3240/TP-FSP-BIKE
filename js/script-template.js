@@ -47,8 +47,8 @@ wHeader.innerHTML = `
 </div>
 
 <div class="nav_usuario">
-    <a href="#" class="nav_usuario_crear">Crear cuenta</a>
-    <a href="#" class="nav_usuario_login">Iniciar sesión</a>
+    <a href="./registracion.html" class="nav_usuario_crear">Registrate</a>
+    <a href="./login.html" class="nav_usuario_login">Iniciar sesión</a>
 </div>
 
 <div class="nav_menu">

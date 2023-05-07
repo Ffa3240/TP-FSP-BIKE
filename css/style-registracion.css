@@ -1,0 +1,94 @@
+* {
+    box-sizing: border-box;
+}
+
+
+.form-register {
+    width: 400px;
+    height: 80vh;  /*agregado*/
+    background: #1a344e;
+    padding: 30px;
+    margin: 2rem auto; /* agregado */
+   /* margin-top: 100px; */
+    border-radius: 4px;
+   /* font-family: Calibri, sans-serif; */
+    color: white;
+    box-shadow: 7px 13px 37px #292727;
+    font-size: 1rem;
+}
+
+.form-register h4 {
+    font-size: 1.3rem /*22px*/;
+    margin-bottom: 20px;
+}
+
+.controls {
+    width: 95%; /*350px;*/
+    background: #1a344e;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    border: 1px solid #668cb8;
+    font-family: calibri; 
+    font-size: 18px;
+    color: white;
+}
+
+.form-register p {
+    height: 40px;
+    text-align: center;
+   /* font-size: 18px; */
+    line-height: 40px;
+}
+.form-register p a{
+    color: rgb(10, 142, 142);
+    margin-left: .3rem;
+}
+.form-register a {
+    color: white;
+    text-decoration: none;
+}
+
+.form-register a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+
+.form-register .botons {
+    width: 100px;
+    background: #1d5388;
+    border: none;
+    padding: 10px;
+    color: white;
+    margin: 15px 120px 15px 120px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 4px;
+}
+.form-register .botons:hover{
+    background-color: #668cb8;
+}
+
+
+#idTerminos > div {
+    font-size: .7rem !important;
+    margin-left: 0.5rem !important;
+}
+
+@media all and (max-width: 400px) {
+    .form-register {
+        width: 90%;
+        height: auto;
+      }
+
+      .form-register p {
+        display: flex;
+        flex-direction: column;
+        font-size: 1rem;    
+      }
+
+      .form-register p a {
+       margin: 0px; 
+      }
+}
