@@ -53,3 +53,22 @@ main {
 .msgMailConfirmado a:hover {
     background-color: rgb(83, 83, 83);
 }
+
+
+@media all and (max-width: 790px) {
+    .msgMailConfirmado {
+      width: 50%;
+    }
+}
+
+@media all and (max-width: 550px) {
+    .msgMailConfirmado {
+      width: 65%;
+    }
+}
+
+@media all and (max-width: 400px) {
+    .msgMailConfirmado {
+        width: 80%;
+      }
+}
