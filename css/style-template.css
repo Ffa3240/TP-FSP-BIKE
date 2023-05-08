@@ -243,8 +243,8 @@ body {
       width: 100%;
       padding: 0px;
     }
-
-
+/* -------------------------------------------------------------------------------------------------*/
+/* ESTILOS DEL FOOTER */
 
 footer {
   margin-top: auto;
@@ -253,20 +253,43 @@ footer {
 .min-footer {
   height: 10rem;
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
   background-color: rgb(40,40,40,1);
+  flex-wrap: wrap
 }
 
-    .col-left,
-    .col-right {
-      width: 50%;
+    
+ 
+    .col-left {
+      width: 20%;
+      color: white;
+      margin-left: 3rem;
+      margin-top: 1rem;
+    }
+        .redes {
+          display: flex;
+          justify-content: start;
+          align-items: flex-end;
+        }
+
+    .col-center {
+      width: 40%;
+      color: white;
+      margin-top: 1rem;
     }
 
-    .redes {
-      display: flex;
-      justify-content: start;
-      align-items: flex-end;
+      .footerContactanos {
+        color: rgb(171,171,171);
+      }
+
+    .col-right {
+      margin-top: 1rem;
+      color: white;
+      width: 40%;
     }
+
+
 
 .grid-item {
   background-color: black;
@@ -275,7 +298,7 @@ footer {
   width: 1.3em;
   display: inline-flex;
   justify-content: center;
-  margin: 0.1em;
+  margin: 0.3rem;
 }
 
 .miFooterDerechos {
@@ -285,7 +308,7 @@ footer {
   color:rgb(218, 216, 216);
   font-size: .8rem;
   padding: .3 rem;
-  padding-right: 1rem;
+  padding-right: 1.5rem;
   text-align: right;
 }
 
@@ -323,6 +346,17 @@ footer {
 
         .nav_central {
           margin-top:0px
+        }
+
+        
+        .min-footer {
+          flex-direction: column;
+          height: auto;
+        }
+
+        .col-left, .col-center, .col-right {
+          width: 100%;
+          margin: 1rem 0 0 1rem;
         }
 }
 

@@ -113,7 +113,8 @@ wFooter.innerHTML = `
 <div class="min-footer">
 
     <div class="col-left">
-        <div class="redes">
+        Seguinos
+        <div class="redes">    
             <span class="grid-item">
                 <a href="https://www.facebook.com" target="_blank">
                     <i class="fab fa-facebook" alt="facebook" style="color:rgb(215, 215, 215)"></i>
@@ -125,12 +126,59 @@ wFooter.innerHTML = `
                 </a>
             </span>
         </div>
-
-
     </div>
+
+    <div class="col-center">
+        Contactanos
+        <div class="footerContactanos">
+            <div class="emailContato">
+                <i class="fa fa-envelope" alt="mail" style="color:rgb(215, 215, 215)"></i>
+                Email:
+                <a  href="mailto:consultas@fsp.bike.com" target="_blank" rel="noopener noreferrer">consultas@fsp.bike.com</a>
+            </div>
+            <div class="telefonoContacto">
+                <i class="fa fa-phone" alt="telefono" style="color:rgb(215, 215, 215)"></i>
+                Teléfono: 
+                <a href="tel:+54-011-4444-4444">(011)4444-4444</a>
+            </div>
+            <div class="wspContacto">
+                <i class="fa-brands fa-whatsapp" alt="whatsapp" style="color:rgb(215, 215, 215)"></i>
+                Whatsapp:
+                <a href="https://api.whatsapp.com/send/?phone=5491176403394" target="_blank">
+                +54 9 15 6666-6666</a>
+            </div>
+            <div class="direccionContacto">
+                <i class="fa-solid fa-location-pin" alt="ubicacion" style="color:rgb(215, 215, 215)"></i>
+                Direccion:
+                <a href="./sucursales.html" target="_blank">
+                sucursales</a>
+            </div>
+            
+        </div>      
+    </div>
+    
     <div class="col-right">
-
+        Navegación
+        <div class="footerNavegacion">
+            <div class="enviosNavegacion">
+                <i class="fa fa-truck-fast" alt="envios" style="color:rgb(215, 215, 215)"></i>
+                <a href="./envios.html" target="_blank">Envíos</a>
+            </div>
+            <div class="medioPagoNavegacion">
+                <i class="fa-solid fa-money-check-dollar" alt="medios de pago" style="color:rgb(215, 215, 215)"></i>
+                <a href="./mediosDePago.html" target="_blank">Medios de Pago</a>
+            </div>
+            <div class="productosNavegacion">
+                <i class="fa fa-bicycle" alt="productos" style="color:rgb(215, 215, 215)"></i>
+                <a href="index.html#idNovedades-section" target="_blank">Productos</a>
+            </div>
+            <div class="serviciosNavegacion">
+                <i class="fa fa-handshake" alt="servicios" style="color:rgb(215, 215, 215)"></i>
+                <a href="index.html#idServicios" target="_blank">Servicios</a>
+            </div>
+        </div>
     </div>
+
 </div>
 <div class="miFooterDerechos">
     Copyright ®Rodados FSP BiKE - Todos los derechos reservados by Grupo10
