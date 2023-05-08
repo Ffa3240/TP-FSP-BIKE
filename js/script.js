@@ -41,6 +41,22 @@ $('#idImgSeparadorAbrirCerrarNovedad').click(function() {
     }
 });
 
+
+$('#idImgSeparadorAbrirCerrarServicio').click(function() {
+  $('.misServicios').toggleClass('separadorAbrirCerrar');
+    if (document.getElementById('idImgAbrirCerrarServicio').classList.contains('fa-angle-up')) {
+      document.getElementById('idImgAbrirCerrarServicio').classList.remove('fa-angle-up');
+      document.getElementById('idImgAbrirCerrarServicio').classList.add('fa-angle-down');
+    }
+    else {
+      document.getElementById('idImgAbrirCerrarServicio').classList.remove('fa-angle-down');
+      document.getElementById('idImgAbrirCerrarServicio').classList.add('fa-angle-up');
+    }
+});
+
+
+
+
 function abrirVentanaDetalleModal(srcImagen) {
   let ventana = document.getElementById("ventanaDetalleModal");
   let imagen = document.getElementById("imagenDetalleModal")

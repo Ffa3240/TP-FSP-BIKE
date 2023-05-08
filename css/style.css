@@ -72,6 +72,67 @@ body {
       }*/
 
 /* ----------------------------------------------------------------------------------------------*/
+/* ESTILOS DE SECCION SEGUROS */
+  .misServicios { 
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+  }
+      .itemServicio {
+        display: flex;
+        flex-direction: row;
+      }
+
+  .itemServicioInformacion {
+    padding: 2rem;
+  }
+        .itemServicioInformacionTitulo1 {
+          font-size: 2rem;
+          margin-bottom: 1rem;
+          font-weight: bolder;
+        }
+
+        .itemServicioInformacionTitulo2 {
+          font-size: 1.5rem;
+          margin-bottom: 1rem;
+          font-weight: bold;
+        }
+
+  .itemServicioVideo {
+    margin: 2rem;
+    box-shadow: 6px 10px 70px 0px rgba(0, 0, 0, 0.75);
+    padding: 0px;
+  }
+
+  .botonServicio {
+    margin-top: 2rem;
+    margin-right: 1rem;
+  }
+  
+  .botonServicio a {
+    text-decoration: none;
+    width: 50%;
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: .5rem;
+    cursor: pointer;
+    font-size: .8rem;
+    background-color: #282828;
+    color: white;
+  }
+
+
+  .botonServicio a:hover {
+    background-color: rgb(83, 83, 83);
+  }
+  
+
+
+
+
+
+/* ----------------------------------------------------------------------------------------------*/
 /* ESTILOS DE SECCION PRODUCTOS */
 
 .misProductos {
