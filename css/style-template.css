@@ -251,12 +251,12 @@ footer {
 }
 
 .min-footer {
-  height: 10rem;
+  /*height: 10rem;*/
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   background-color: rgb(40,40,40,1);
-  flex-wrap: wrap
+  /*flex-wrap: wrap*/
 }
 
     
@@ -264,7 +264,7 @@ footer {
     .col-left {
       width: 20%;
       color: white;
-      margin-left: 3rem;
+      margin-left: 2rem;
       margin-top: 1rem;
     }
         .redes {
