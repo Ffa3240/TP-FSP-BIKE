@@ -9,11 +9,32 @@
   padding: 1rem 0;
 }
 
+  #idNovedadesCargar .fa-spinner {
+    height: 30vh;
+    margin-top: 2rem;
+    opacity: 30%;
+    display: block;
+    margin: 2rem auto;
+  }
+
+        .spinnerOcultar {
+          display: none;
+        }  
+
+
+  .swiper {
+    visibility: hidden;
+  }
+
   #novedades .novedades-slider {
     padding: 1rem 0;
     display: flex;
     flex-direction: column;
-  }  
+ /*   visibility: hidden;*/
+  }
+    .sliderMostrar {
+      visibility: visible;
+    }  
 
     .novedades-slide {
       width: 30%;

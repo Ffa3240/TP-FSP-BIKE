@@ -71,6 +71,8 @@ body {
       padding: 0;
     }
 
+ 
+
     .nav_usuario {
       grid-area: nav_usuario;
       text-align: end;
@@ -82,13 +84,31 @@ body {
       align-items: center;
     }
         
-        .nav_usuario_crear, .nav_usuario_login {
+        .nav_usuario_crear, .nav_usuario_login, .nav_usuario_logout {
           margin: 5px;
           text-decoration: none;
           font-size: .8em;
           color: white;
           cursor: pointer !important;
         }
+
+        #id_nav_usuario_logueado {
+          color: white;
+          font-size: 1em;
+          cursor: default;
+          display: inline-block;
+        }
+
+
+        #id_nav_usuario_in {
+          display: none;
+        }
+    
+        #id_nav_usuario_out {
+          display: none;
+        }
+
+
 
 .nav_menu {
   grid-area: nav_menu;

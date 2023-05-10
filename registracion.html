@@ -43,30 +43,119 @@
 <body>
 
     <main class="miMain">
-
+        <form novalidate>
         <section class="form-register">
-            <h4>Registrate</h4>
-            <input class="controls" type="text" name="nombres" id="nombres" placeholder="Ingrese su Nombre">
-            <input class="controls" type="text" name="apellidos" id="apellidos" placeholder="Ingrese su Apellido">
-            <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su correo">
-            <input class="controls" type="password" name="nombres" id="nombres" placeholder="Ingrese su contraseña">
-            <div>
-                <input type="checkbox" name="Terminos y Condiciones" id="idTerminos"><span>Acepto los Terminos y Condiciones</span> 
+            <h4>    <i class="fa-regular fa-user"></i> Registrate</h4>
+            <div class="frmItem">
+                <input class="controls" type="text" name="nombres" id="nombres" placeholder="Ingrese su Nombre"> 
+                <div id="idErrorNombre" class="error"></div>
             </div>
-            <input class="botons" type="submit" value="Registrar">
+            <div class="frmItem">
+                <input class="controls" type="text" name="apellidos" id="apellidos" placeholder="Ingrese su Apellido" required>
+                <div id="idErrorApellido" class="error"></div>
+            </div>
+            <div class="frmItem">
+                <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su correo" required>
+                <div id="idErrorMail" class="error"><i class="fal fa-exclamation-square"></i></div>
+            </div>
+            <div class="frmItem">
+                <input class="controls" type="password" name="password" id="password" placeholder="Ingrese su contraseña" required minlength="8" maxlength="20">
+                <div id="idErrorPassword" class="error"></div>
+            </div>
+            <div  id="idTerminos">
+                <input type="checkbox" 
+                       onclick="aceptarTerminos()" name="terminos"><span>  Acepto los Terminos y Condiciones</span>
+                <div id="idErrorTerminos" class="error"></div> 
+            </div>
+            <input class="botons"
+                   type="button" 
+                   onclick="registrar(nombres.value, apellidos.value, correo.value, password.value, terminos.checked)" 
+                   value="Registrar">
+            </input>
             <p>¿Ya tenes Cuenta? <a href="./login.html"> Inicia Sesión</a></p>
-
         </section>
-
+        </form>
 
     </main>
-
 
     <footer id="idFooter" class="miFooter">
     </footer>
 
     <script src="js/script-template.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script>
+       
+        /* blanquear error de aceptar terminos si lo selecciona */
+        function aceptarTerminos() {
+            let wErrorTerminos = document.getElementById("idErrorTerminos");
+            wErrorTerminos.innerHTML = "";
+        }
+
+       /* blanquear los mensajes de error cuando hace focus en el campo */
+       $( ".controls" ).on( "focus", function() {
+            $(this).siblings()[0].innerHTML="";
+        } );
+
+       function registrar(nombre, apellido, correo, password, terminos) {
+
+            var hayError = false;
+            var signoError = `<i class="fa fa-circle-exclamation"></i>`
+
+            /* Validar Nombre */
+            if (nombre.trim() == "") {
+                let wErrorNombre = document.getElementById("idErrorNombre");
+                wErrorNombre.innerHTML = signoError + `  Debe informar nombre`;
+                hayError=true;
+            }
+            if (apellido.trim() == "") {
+                let wErrorApellido = document.getElementById("idErrorApellido");
+                wErrorApellido.innerHTML = signoError + "  Debe informar Apellido";
+                hayError=true;
+            }
+            if (correo.trim() == "") {
+                let wErrorMail = document.getElementById("idErrorMail");
+                wErrorMail.innerHTML = signoError + "  Debe informar Mail";
+                hayError=true;
+            }
+            else {
+                if (localStorage.getItem("fsp-bike-usuario_"+correo+"_correo")) {
+                    let wErrorMail = document.getElementById("idErrorMail");
+                    wErrorMail.innerHTML = signoError + "  Mail ya registrado.";
+                    hayError=true;
+                }
+            }
+
+            if (password.trim() == "") {
+                let wErrorPassword = document.getElementById("idErrorPassword");
+                wErrorPassword.innerHTML = signoError + "  Debe informar Password";
+                hayError=true;
+            }
+
+            if (!terminos) {
+                let wErrorTerminos = document.getElementById("idErrorTerminos");
+                wErrorTerminos.innerHTML = signoError + "  Debe aceptar los terminos";
+                hayError=true;
+            }
+
+
+            if (!hayError) {
+                localStorage.setItem("fsp-bike-usuario_"+correo+"_correo",true)
+                localStorage.setItem("fsp-bike-usuario_"+correo+"_nombre", nombre);
+                localStorage.setItem("fsp-bike-usuario_"+correo+"_apellido", apellido);
+                localStorage.setItem("fsp-bike-usuario_"+correo+"_password", password);
+              
+                sessionStorage.setItem("fsp-bike-usuario", nombre)
+                
+                window.location.href = "./index.html";
+            }
+
+        }
+
+
+    </script>
+
+
 
 </body>
 

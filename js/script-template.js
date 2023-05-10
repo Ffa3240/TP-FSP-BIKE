@@ -47,8 +47,20 @@ wHeader.innerHTML = `
 </div>
 
 <div class="nav_usuario">
-    <a href="./registracion.html" class="nav_usuario_crear">Registrate</a>
-    <a href="./login.html" class="nav_usuario_login">Iniciar sesión</a>
+    <div id="id_nav_usuario_in">
+        <a href="./registracion.html" class="nav_usuario_crear">
+        <i class="fa-regular fa-user"></i>  Registrate</a>
+        <a href="./login.html" class="nav_usuario_login">
+        <i class="fa fa-right-to-bracket"></i>  Iniciar</a>
+    </div>
+    <div id="id_nav_usuario_out">
+        <div id="id_nav_usuario_logueado">
+        </div>
+        <a href="" class="nav_usuario_logout">
+        <i class="fa fa-sign-out"></i>  Cerrar</a>
+    </div>
+</div>
+
 </div>
 
 <div class="nav_menu">
@@ -190,3 +202,29 @@ function nav_menu_mostrar_ocultar() {
     let menu = document.getElementById("nav_id");
     menu.classList.toggle("nav_ocultar");
 }
+
+var usuario = "";
+function verUsuario() {
+    usuario=sessionStorage.getItem("fsp-bike-usuario")
+    if (usuario == null) {usuario=""};
+    document.getElementById("id_nav_usuario_logueado").innerHTML=usuario
+    if (usuario.trim() == "") {
+        document.getElementById("id_nav_usuario_out").style.display="none";
+        document.getElementById("id_nav_usuario_in").style.display= "block";
+    }
+    else {
+        document.getElementById("id_nav_usuario_out").style.display= "block";
+        document.getElementById("id_nav_usuario_in").style.display="none";
+    }
+}
+
+var wLogOut = document.getElementById("id_nav_usuario_out");
+wLogOut.addEventListener("click", function() {
+    localStorage.setItem("fsp-bike-usuario", "");
+    sessionStorage.setItem("fsp-bike-usuario", "")
+    verUsuario();
+})
+
+
+window.addEventListener("load", verUsuario());
+

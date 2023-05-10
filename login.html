@@ -43,18 +43,32 @@
 <body>
 
     <main class="miMain">
-
+        <form novalidate>
         <section class="form-register">
-            <h4>Inicia Sesión</h4>
-            <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su correo">
-            <input class="controls" type="password" name="nombres" id="nombres" placeholder="Ingrese su contraseña">
-            <input type="checkbox" name="" id=""> Recordar
-            <input class="botons" type="submit" value="Iniciar">
+            <h4><i class="fa fa-right-to-bracket"></i>  Inicia Sesión</h4>
+
+            <div class="frmItem">
+                <input class="controls" type="email" name="correo" id="idCorreo" placeholder="Ingrese su correo">
+                <div id="idErrorMail" class="error"></div>
+            </div>
+
+            <div class="frmItem">
+                <input class="controls" type="password" name="password" id="idPassword" placeholder="Ingrese su contraseña">
+                <div id="idErrorPassword" class="error"></div>
+            </div>
+
+            <input type="checkbox" name="recordar" id="idRecordar"> Recordar
+
+            <!--input class="botons" type="submit" value="Iniciar"-->
+            <input class="botons" type="button" value="Iniciar"
+                onclick="signOn(correo.value, password.value, recordar.value)">
+         
+
+
             <p>¿No tenes Cuenta? <a href="./registracion.html">  Registrate</a></p>
             <div> <a href="index.html">Volver al Inicio</a></div>
-
         </section>
-
+        </form>
 
     </main>
 
@@ -64,6 +78,59 @@
 
     <script src="js/script-template.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script>
+       
+        $( ".controls" ).on( "focus", function() {
+             $(this).siblings()[0].innerHTML="";
+         } );
+    
+         function signOn(correo, password, recordar) {
+
+                    var hayError = false;
+                    var signoError = `<i class="fa fa-circle-exclamation"></i>`
+
+                    if (correo.trim() == "") {
+                        let wErrorMail = document.getElementById("idErrorMail");
+                        wErrorMail.innerHTML = signoError + "  Debe informar Mail";
+                        hayError = true;
+                    }
+                    else {
+                        if (!localStorage.getItem("fsp-bike-usuario_" + correo + "_correo")) {
+                            let wErrorMail = document.getElementById("idErrorMail");
+                            wErrorMail.innerHTML = signoError + "  Mail no registrado.";
+                            hayError = true;
+                        }
+                    }
+
+                    if (password.trim() == "") {
+                        let wErrorPassword = document.getElementById("idErrorPassword");
+                        wErrorPassword.innerHTML = signoError + "  Debe informar Password";
+                        hayError = true;
+                    }
+                    else {
+                        let wPwd = localStorage.getItem("fsp-bike-usuario_" + correo + "_password");
+                        if (wPwd != password.trim()) {
+                            let wErrorPassword = document.getElementById("idErrorPassword");
+                            wErrorPassword.innerHTML = signoError + "  Password incorrecto";
+                            hayError = true;
+                        }
+                    }
+
+                    if (!hayError) {
+                        let wNombre = localStorage.getItem("fsp-bike-usuario_" + correo + "_nombre");
+                        sessionStorage.setItem("fsp-bike-usuario", wNombre)
+
+                        window.location.href = "./index.html";
+                    }
+
+                }
+
+            
+
+    
+    </script>
+
 
 </body>
 

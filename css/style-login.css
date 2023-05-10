@@ -21,16 +21,26 @@
     margin-bottom: 20px;
 }
 
+.frmItem {
+    margin-bottom: 20px;
+}
+
 .controls {
     width: 350px;
     background: #11487e;
     padding: 10px;
     border-radius: 4px;
-    margin-bottom: 20px;
+   /* margin-bottom: 20px;*/
     border: 1px solid #668cb8;
     font-family: calibri;
     font-size: 18px;
     color: white;
+}
+
+.error {
+    height: 10px;
+    font-size: smaller;
+    color: red /*#ff092b*/;
 }
 
 .form-register p {

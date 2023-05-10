@@ -24,8 +24,11 @@ postData("../img/novedades/datos.json", { answer: 42 })
   });
 */
 
+/* ========================================================================================================*/
+/* SLIDER DE NOVEDADES */
+/* ========================================================================================================*/
 
-function inicializarSlide(efecto) {
+function inicializarSliderNovedades(efecto) {
 
      var novedadesSlider = new Swiper('.novedades-slider', {
     
@@ -73,8 +76,17 @@ function inicializarSlide(efecto) {
     }
   });
 
-}
+  /* cuando muestra cada slide en priper plano */
+  /*novedadesSlider.on('slideChange', function () {
+    alert('slide cambiado');
+  });*/
 
+ /* despues de inicializar Slider */
+  /*novedadesSlider.on('afterInit', function () {
+    alert('slider cargado');
+  });*/
+
+}
 
 function cargarNovedades(data) {
 
@@ -168,7 +180,6 @@ function cargarNovedades(data) {
 
       /* crear contenedor de boton ver detalle */
       let wNovedadVerDetalle = document.createElement("div");
-     /* wNovedadVerDetalle.setAttribute("onclick",  "abrirVentanaDetalleModal("+objNovedad.imagen+")");*/
       wNovedadVerDetalle.setAttribute("onclick",  "abrirVentanaDetalleModal('"+objNovedad.imagen+"')"); 
      
       wNovedadVerDetalle.classList.add("novedades-slide-content-buttom");
@@ -196,11 +207,29 @@ function cargarNovedades(data) {
    
 };
 
+function inicializarNovedades() {
+    if (this.matchMedia("(max-width: 550px)").matches) {
+        inicializarSliderNovedades("fade");   
+      } 
+      else {
+        inicializarSliderNovedades("coverflow");
+      }
 
-/*fetch('../datos/datos.json')*/
-/*fetch('http://127.0.0.1:5500/TP-FSP-BIKE/datos/datos.json')
-.then(res => res.json()) 
-.then(data => cargarNovedades(data));*/
+      /* Ocultar spinner de cargando */
+      let wSpinner = document.getElementById("idNovedadesCargar");
+      wSpinner.classList.add("spinnerOcultar");
+
+      /* Mostrar slider novedades */
+      let wSlider = document.getElementById("idNovedades-slider");
+      wSlider.classList.add("sliderMostrar");
+
+}
+
+/* Cargar datos de imagenes de novedades */
+    /*fetch('../datos/datos.json')*/
+    /*fetch('http://127.0.0.1:5500/TP-FSP-BIKE/datos/datos.json')
+    .then(res => res.json()) 
+    .then(data => cargarNovedades(data));*/
 
 var data = {
   "novedad1": {
@@ -549,18 +578,14 @@ var data = {
   
 } ;
 cargarNovedades(data);
-
-$(window).on("load", function() {
-  if (this.matchMedia("(max-width: 550px)").matches) {
-    inicializarSlide("fade");   
-  } 
-  else {
-    inicializarSlide("coverflow");
-  }
-});
+inicializarNovedades();
 
 
-function inicializarSlideMarcas(efecto) {
+/* ========================================================================================================*/
+/* SLIDER DE MARCAS */
+/* ========================================================================================================*/
+
+function inicializarSliderMarcas(efecto) {
 
     var marcasSlider = new Swiper('.marcas-slider', {
      /*   slidesPerView: 1,
@@ -593,13 +618,11 @@ function inicializarSlideMarcas(efecto) {
           clickable: true,
         },*/
        
-
-
-
     });
+
+    let wSliderMarcas = document.getElementById("idSliderMarcas");
+    wSliderMarcas.classList.add("sliderMostrar");
    
 }
 
-
-
-inicializarSlideMarcas("fade");   
+inicializarSliderMarcas("fade");   
