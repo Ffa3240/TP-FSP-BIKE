@@ -6,6 +6,7 @@
   box-sizing: border-box;
 }
 
+
 :root {
   --padding-container: 0px;
   --background-generico: linear-gradient(121deg, rgba(42,42,42,1) 9%, rgba(28,28,28,1) 62%, rgba(17,17,17,0.9836309523809523) 100%);
@@ -332,7 +333,81 @@ footer {
   text-align: right;
 }
 
+/* -------------------------------------------------------------------------------------------------*/
+/* ESTILOS DE VENTANA MODAL GENERAL */
 
+.ventanaModalGeneral {
+  width: 100%;
+  height: 100vh;
+  background-color: transparent;
+  display: none;
+  position: fixed;
+  top: 0;
+  z-index: 99999;
+}
+    .ventanaModalDetalle {
+      width: 80%;
+      margin: auto;
+      height: 75vh;
+      position: fixed;
+      top: 10vh;
+      left: 10%;
+      background-color: rgb(97, 94, 94);
+      border: .5rem solid #0000005e;
+      border-radius: 10px;
+      color: white;
+      animation: myAnimModal 1s ease 0s 1 normal forwards;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+      @keyframes myAnimModal {
+        0% {transform: scale3d(0, 0, 1);
+        background-color: black;}
+        100% {transform: scale3d(1, 1, 1);}
+      }
+
+      .ventanaModalDetalleTexto {
+        width: 100%;
+        height: 95%;
+        margin: auto;
+        padding: 2rem;
+        font-family: "roboto";
+        font-weight: 300;
+        font-size: .9rem;
+        overflow:auto;
+      }
+      .ventanaModalDetalleTexto p {
+        margin: 0 1rem;
+      }
+      .ventanaModalDetalleTexto img {
+        width: 2.5rem;
+        margin-left: 1rem;
+      }
+      
+      .botonCerrarVentanaModalGeneral {
+        width: 5rem;
+        background-color: rgb(61, 60, 60);
+        border: 0.1rem solid #0000005e;
+        border-radius: 5px;
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+        padding: 0.3rem 0.5rem;
+        text-align: center;
+        cursor: pointer;
+      }
+      .botonCerrarVentanaModalGeneral:hover {
+        background-color: rgb(85, 84, 84);
+      }
+  .ventanaModalGeneralMostrar {
+    display: block;
+  }
+
+
+
+/* -------------------------------------------------------------------------------------------------*/
 /* MEDIA QUERYS */
 
 @media all and (max-width: 790px) {

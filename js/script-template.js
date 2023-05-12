@@ -94,7 +94,7 @@ wHeader.innerHTML = `
             </ul>
         </li>
         <li class="nav_item">
-            <a href="#" class="nav-link">Servicios</a>
+            <a href="index.html#idServicios" class="nav-link">Servicios</a>
         </li>
         <li class="nav_item">
             <a href="sucursales.html" class="nav-link">Sucursales</a>
@@ -118,6 +118,15 @@ wFooter.innerHTML = `
             <i id="idImgWhatsapp" class="fa-brands fa-whatsapp" alt="whatsapp" style="color:rgb(215, 215, 215)"></i>
         </a>  
 </div>
+
+<dialog class="ventanaModalGeneral" id="idVentanaModalGeneral">
+    <div class="ventanaModalDetalle" id="idVentanaModalDetalle">
+        <div class="ventanaModalDetalleTexto" id="idVentanaModalDetalleTexto"></div>
+        <div onclick="cerrarVentanaModalGeneral()" class="botonCerrarVentanaModalGeneral">Cerrar</div>
+    </div>
+
+</dialog>
+
 <div id="idAcercaDe" class="separador">
 <h6>Acerca de ...</h6>
 </div>
@@ -172,13 +181,13 @@ wFooter.innerHTML = `
     <div class="col-right">
         Navegación
         <div class="footerNavegacion">
-            <div class="enviosNavegacion">
+            <div id="idFormaDeEnvios" class="enviosNavegacion">
                 <i class="fa fa-truck-fast" alt="envios" style="color:rgb(215, 215, 215)"></i>
-                <a href="./envios.html" target="_blank">Envíos</a>
+                <a href="#idVentanaModalGeneral">Envíos</a>
             </div>
-            <div class="medioPagoNavegacion">
+            <div id="idMediosDePago" class="medioPagoNavegacion">
                 <i class="fa-solid fa-money-check-dollar" alt="medios de pago" style="color:rgb(215, 215, 215)"></i>
-                <a href="./mediosDePago.html" target="_blank">Medios de Pago</a>
+                <a href="#idVentanaModalGeneral">Medios de Pago</a>
             </div>
             <div class="productosNavegacion">
                 <i class="fa fa-bicycle" alt="productos" style="color:rgb(215, 215, 215)"></i>
@@ -202,6 +211,152 @@ function nav_menu_mostrar_ocultar() {
     let menu = document.getElementById("nav_id");
     menu.classList.toggle("nav_ocultar");
 }
+
+/* -------------------------------------------------------------------------------------------------*/
+/* MANEJO DE VENTANA MODAL - PARA ENVIOS Y MEDIOS DE PAGO */
+
+function cerrarVentanaModalGeneral() {
+    let wVentanaGeneral = document.getElementById("idVentanaModalGeneral");
+    wVentanaGeneral.classList.remove("ventanaModalGeneralMostrar");
+}
+
+/* Mostrar Ventana Modal General */
+function MostrarVentanaModalGeneral(textoHtml) {
+    let wVentanaDetalle = document.getElementById("idVentanaModalDetalleTexto");
+    wVentanaDetalle.innerHTML=textoHtml;
+    let wVentanaGeneral = document.getElementById("idVentanaModalGeneral");
+    wVentanaGeneral.classList.add("ventanaModalGeneralMostrar");
+};
+
+/* Para detectar ESC de ventanaModal */
+var wVentanaModalGeneral = document.getElementById("idVentanaModalGeneral");
+wVentanaModalGeneral.addEventListener('keydown', (event) => {
+    console.log(event.key)
+    console.log(event.code)
+    if (event.key == "Escape") {
+        cerrarVentanaModalGeneral();
+    }
+  }, false);
+
+
+/* Formas de Envios */
+var wFormasDeEnvios = document.getElementById("idFormaDeEnvios");
+wFormasDeEnvios.addEventListener("click", function() {
+
+    var texto = ` <p></p>
+    
+    <b>ENVÍOS CON ANDREANI<img src="ico/andreani.svg" style="scale: 3.5; margin-left: 3rem" alt="andreani"></b>
+
+    <p>Una vez acreditado el pago, se procederá a preparar la orden para su despacho dentro del plazo de 48 hs hábiles.</p>
+    <p>El paquete será enviado al domicilio ingresado al momento de comprar.</p>
+    <p>En el momento en que despachemos tu compra, recibirás un mail con un link para seguir el envio.</p>
+    <br>
+    <p>Los tiempos de entrega corren por cuenta del correo.</p>
+    <p><b>Actualmente los envios en CABA y GBA se encuentran <u>bonificados</u>.</b></p>
+    <p>Los envíos pueden presentar algunas demoras en fechas especiales de descuentos o promociones.</p>
+    <br>    
+    
+    <b>IMPORTANTE:</b>
+    <br>
+    <p>Es responsabilidad del comprador que los datos brindados de contacto y envío sean correctos.</p>
+    <p>Te recomendamos revisar la información ingresada antes de confirmar la compra.</p>
+    <p>De esta forma, tu envío no presentará demoras, vas a estar al corriente de su estado y podras obtener una excelente experiencia.</p>
+    <br>
+    <p>Ante cualquier duda o consulta, podes contactarnos vía mail a 
+    <strong><a href="mailto:consultas@fsp.bike.com" style="color:blue;cursor:pointer"</a>consultas@fsp.bike.com</strong>
+    </p>`
+
+    MostrarVentanaModalGeneral(texto)
+    }
+);
+
+/* Ver medios de pago */
+var wMediosDePago= document.getElementById("idMediosDePago");
+wMediosDePago.addEventListener("click", function() {
+
+    var texto = ` 
+    <H5>Medios de pago</H5>
+    <div></div>    
+    <h6> Transferencia y depósito bancario: </h6>
+
+    <p>Precio de lista. Te enviamos las instrucciones por email. </p>
+    <hr>
+    <H6> </h6>
+    
+    <table>
+    <tr>
+        <td>
+            <h6> MercadoPago <img src="ico/mercadoPago.svg" style="scale: 2.5; margin-left: 2rem" alt="mercadoPago"></h6>
+            <p>Te enviamos a la página de MercadoPago para que completes el pago.</p>
+            <p>Con recargo en hasta 18 cuotas con todas las tarjetas.</p>
+            <p>CFT: 60%.</p>
+            <p></p>
+            <p><b>MercadoPago - Link de pago</b><p>  
+            <p>Te enviamos un link de pago por whatsapp para que completes la compra.</p>
+            <p>Podés pagar con todas las tarjetas en hasta 3 cuotas sin interés</p>
+            <p>o con recargo en los planes Ahora 6-12-18.</p>
+        </td>
+        <td>                                               
+            <p>Débito: Precio de lista sin interés. CFT: 0%.</p>  
+            <p>- 1 Cuota: Precio de lista sin interés. CFT: 0%.</p> 
+            <p>- 3 cuotas: Precio de lista sin interés. CFT 0%.</p>
+            <p>- 6 cuotas: Plan Ahora 6 con recargo. CFT: 18%.</p> 
+            <p>-12 cuotas: Plan Ahora 12 con recargo. CFT: 38%.</p>
+            <p>-18 cuotas: Plan Ahora 18 con recargo. CFT: 60%.</p>
+        </td>
+    </tr>
+    <tr>
+        <td><hr></td><td><hr></td>
+    </tr>
+    
+    <H6> </h6>
+    
+    <tr>
+          <td>
+            <h6> Tarjetas de crédito o débito: </h6>
+            <p>Pagás de manera directa a través de nuestra página con tarjeta de crédito o débito en</p> <p>hasta 3 cuotas sin interés o con recargo en los planes Ahora 6-12-18.</p>
+            <p></p>
+            <p>-Débito: Precio de lista sin interés. CFT: 0%.</p>
+            <p>- 1 Cuota: Precio de lista sin interés. CFT: 0%.</p>
+            <p>- 3 cuotas: Precio de lista sin interés. CFT 0%.</p>
+            <p>- 6 cuotas: Plan Ahora 6 con recargo. CFT: 18%.</p>
+            <p>-12 cuotas: Plan Ahora 12 con recargo. CFT: 38%.</p>
+            <p>-18 cuotas: Plan Ahora 18 con recargo. CFT: 60%.</p>
+        </td>
+        <td>
+            <p>Ejemplo: una bicicleta publicada con un precio de lista de $100.000 se abonaría en</p>
+            <p>- 1 cuota sin interés de $100.000 (CFT: 0%)</p>
+            <p>- 3 cuotas sin interés de $33.333,33 (CFT: 0%)</p>
+            <p>- 6 cuotas de $19.666,66 (precio final $118.000, CFT: 18%)</p>
+            <p>-12 cuotas de $11.500 (precio final: $138.000, CFT: 38%).</p>
+            <p>-18 cuotas de $8888,88 (precio final: $160.000, CFT: 60%.</p>
+        </td>
+    </tr>
+    <tr><td><hr></td><td><hr></td></tr>
+    </table>
+    <H6></H6>
+    <p>Tarjetas soportadas para planes: Tarjetas bancarias: 
+    <P><table>
+        <tr>
+            <td><img src="ico/american-express-1.svg" alt="american-express"></td>
+            <td><img src="ico/mastercard-6.svg" alt="mastercard"></td>
+            <td><img src="ico/visa.svg" style="scale: 2.5" alt="visa"></td>
+        </tr>
+        <tr>
+            <td style="text-align: center; width: 5rem">AMEX</td>
+            <td style="text-align: center; width: 5rem">Mastercard</td> 
+            <td style="text-align: center; width: 5rem">Visa</td>
+        </tr>
+        </table>
+    </p>    
+    `
+
+    MostrarVentanaModalGeneral(texto)
+    }
+);
+
+/* -------------------------------------------------------------------------------------------------*/
+/* Funciones y manejo de usuario - login - logout */
 
 var usuario = "";
 function verUsuario() {
@@ -227,4 +382,8 @@ wLogOut.addEventListener("click", function() {
 
 
 window.addEventListener("load", verUsuario());
+
+function onKeyDownHandler() {
+    console.log("key pressed ",  String.fromCharCode(event.keyCode));
+}
 
