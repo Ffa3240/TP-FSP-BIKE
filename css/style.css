@@ -67,6 +67,10 @@ body {
       font-size: 1.1;
     }
      
+    .separador H6 {
+      margin: 0;
+    }
+
      /* #idImgSeparadorAbrirCerrar {
         scale: 1.1
       }*/
@@ -151,13 +155,81 @@ body {
 /* ----------------------------------------------------------------------------------------------*/
 /* ESTILOS DE SECCION PRODUCTOS */
 
+#idProductos .separador {
+  line-height: 2rem;
+}
+
+#idSeleccionYdatos {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+#idSeleccionProducto {
+  display: none;
+  width: 20%;
+  background-color:#181818;
+  transition: all 500ms ease;
+}
+    #idSeleccionProducto.active {
+      display: block;
+     }
+
+    #idFiltroProductos {
+      margin-left: 2rem;
+      cursor: pointer;
+      font-size: 1rem;
+     }
+
+        .filtroAbrirCerrar {
+          display: none;
+          color: rgb(215, 215, 215);
+          margin-right: .5rem;
+        }
+
+        .filtroAbrirCerrar.active {
+          display: inline;
+          color: white;
+        /*  font-weight: bold; */
+         }
+         #idFiltroProductos .fa-filter {
+           font-size: .8rem;
+         }
+
+         .selTipo {
+         /* background-color: gray;*/
+          width: 100%;
+          padding: .5rem 2rem;
+          color: white;
+          margin-top: 1rem; 
+        }
+
+        ul > li {
+          list-style: none;
+          padding: 5px;
+        }
+
+        .selItemCategorias {
+          margin-right: 5px;
+          cursor: pointer;
+        }
+
+
+
+
+
 .misProductos {
+  width: 80%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 3px;
   grid-area: misProductos;
   background-color: white;
 }
+
+  .misProductos.selNoActive {
+    width: 100%;
+  }
 
 .item {
   height: 250px;
@@ -166,7 +238,29 @@ body {
   border-radius: 5px;
   display: flex;
   justify-content: center;
-}
+  flex-direction: column;
+  align-items: center;
+  transition: .5s;
+  }
+      .itemVer {
+        cursor: pointer;
+        font-size: 1.2rem;
+        margin-left: 1rem;
+      }
+
+      .itemPrecio {
+        font-size: 1.2rem;
+        color: blue;
+      }
+
+      .itemRodado, .itemMarca {
+        font-size: .9rem;
+        margin-left: 1rem;
+      }
+      .itemCategoria {
+        font-size: .8rem;
+      }
+
 
     .item:hover {
       box-shadow: 6px 10px 70px 0px rgba(0, 0, 0, 0.75);
@@ -183,6 +277,10 @@ body {
         border-radius: 2rem ;
         object-fit: cover;
         align-items: center;
+    }
+
+    .item.itemCategoria {
+      text-align: center;
     }
 
 /* ----------------------------------------------------------------------------------------------*/
