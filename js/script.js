@@ -229,11 +229,11 @@ function cargarProductos(data) {
                   <img src="${objProducto.imagen}" alt="img">
                   <div class="itemNombre">${objProducto.nombre}</div>
                   <div class="itemPrecio">$ ${objProducto.precio}</div>
-                  <div>
+                  <div class="itemRodadoMarca">
                     <span class="itemRodado">Rodado: ${objProducto.rodado}</span>
                     <span class="itemMarca">Marca: ${objProducto.marca}</span>
                   </div>
-                  <div>
+                  <div class="itemCategoriaVer">
                     <span class="itemCategoria">Categoria: ${objProducto.categoria}</span>
                     <i class="fa fa-eye itemVer"></i>
                   </div>
