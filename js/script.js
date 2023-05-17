@@ -84,101 +84,6 @@ $('#idFiltroProductos').click(function() {
 });
 
 
-/* Carga dinamica de Productos */
-
-var dataProductos = {
-  "producto1": {
-      "id": 1,
-      "imagen": "./img/novedades/00001.webp",
-      "categoria": "bicicleta",
-      "precio": "1000",
-      "marca": "BUG",
-      "nombre": "RALLY BUG 21.1",
-      "rodado": "21"
-  },
-  "producto2": {
-      "id": 1,
-      "imagen": "./img/novedades/00002.webp",
-      "categoria": "bicicleta",
-      "precio": "1000",
-      "marca": "BUG",
-      "nombre": "MOUNTAIN BUG 24.1",
-      "rodado": "24"
-  },
-  "producto3": {
-    "id": 1,
-    "imagen": "./img/novedades/00003.webp",
-    "categoria": "bicicleta",
-    "precio": "1000",
-    "marca": "BUG",
-    "nombre": "LADY BUG 21.2 NEGRA",
-    "rodado": "21"
-},
-"producto4": {
-  "id": 1,
-  "imagen": "./img/novedades/00004.webp",
-  "categoria": "repuesto",
-  "precio": "1000",
-  "marca": "BUG",
-  "nombre": "MOUNTAIN BUG 24.2",
-  "rodado": "24"
-},
-"producto5": {
-  "id": 1,
-  "imagen": "./img/novedades/00005.webp",
-  "categoria": "repuesto",
-  "precio": "1000",
-  "marca": "BUG",
-  "nombre": "LADY BUG 21.1",
-  "rodado": "21"
-},
-"producto6": {
-  "id": 1,
-  "imagen": "./img/novedades/00006.webp",
-  "categoria": "repuesto",
-  "precio": "1000",
-  "marca": "BUG",
-  "nombre": "MOUNTAIN BUG 27.2",
-  "rodado": "27"
-},
-"producto7": {
-  "id": 1,
-  "imagen": "./img/novedades/00001.webp",
-  "categoria": "repuesto",
-  "precio": "1000",
-  "marca": "BUG",
-  "nombre": "RALLY BUG 21.1",
-  "rodado": "21"
-},
-"producto8": {
-  "id": 1,
-  "imagen": "./img/novedades/00002.webp",
-  "categoria": "accesorio",
-  "precio": "1000",
-  "marca": "BUG",
-  "nombre": "MOUNTAIN BUG 24.1",
-  "rodado": "24"
-},
-"producto9": {
-  "id": 1,
-  "imagen": "./img/novedades/00003.webp",
-  "categoria": "accesorio",
-  "precio": "1000",
-  "marca": "BUG",
-  "nombre": "LADY BUG 21.2 NEGRA",
-  "rodado": "21"
-},
-"producto10": {
-  "id": 1,
-  "imagen": "./img/novedades/00004.webp",
-  "categoria": "accesorio",
-  "precio": "1000",
-  "marca": "BUG",
-  "nombre": "MOUNTAIN BUG 24.2",
-  "rodado": "24"
-}
-
-}
 
 function selCategoria(e) {
   cargarProductos(dataProductos)
@@ -194,10 +99,61 @@ function selCategoriaMenu(parCat) {
   if (parCat=="B" || parCat=="T") {chkBicicleta.checked=true};
   if (parCat=="R" || parCat=="T") {chkRepuesto.checked=true};
   if (parCat=="A" || parCat=="T") {chkAccesorio.checked=true};
-  cargarProductos(dataProductos)
+  cargarProductos(dataProductos);
+  nav_menu_mostrar_ocultar();
 }
 
 
+/* Seleccion por precio */
+var wSelPrecioDesdeInput = document.getElementById("idSelPrecioDesde")
+wSelPrecioDesdeInput.addEventListener("input", function() {
+    if (Number(wSelPrecioDesdeInput.value) > Number(wSelPrecioHastaInput.value)) {
+      wSelPrecioDesdeInput.value = wSelPrecioHastaInput.value;
+    }
+    var wSelPrecioDesdeValor = document.getElementById("idSelPrecioDesdeValor")
+      wSelPrecioDesdeValor.innerHTML = "$" + wSelPrecioDesdeInput.value + "m";
+      cargarProductos(dataProductos);
+    }, false)
+var wSelPrecioHastaInput = document.getElementById("idSelPrecioHasta")
+wSelPrecioHastaInput.addEventListener("input", function() {
+    if (Number(wSelPrecioHastaInput.value) < Number(wSelPrecioDesdeInput.value)) {
+      wSelPrecioHastaInput.value = wSelPrecioDesdeInput.value;
+    }
+    var wSelPrecioHastaValor = document.getElementById("idSelPrecioHastaValor")
+      wSelPrecioHastaValor.innerHTML = "$" + wSelPrecioHastaInput.value + "m";
+      cargarProductos(dataProductos);
+    }, false)
+
+function cargarMarcas(dataProductos) {
+ /* var wMarcas1 = dataProductos.map(function (obj, index, array) {
+    return dataProductos[obj].marca; 
+  }); */
+
+    /*var wMarcas2 = [];
+    dataProductos.forEach(function (obj) {
+        wMarcas2.push(dataProductos[obj].name); 
+    }); */
+
+    /*const array1 = []
+    array1 = dataProductos.entries();
+    const array2 = []
+    array2 = dataProductos.key();*/
+    
+    /*var arr1 = dataProductos.map(function(o) {
+      return Object.keys(o).reduce(function(dataProductos,key) {
+        return dataProductos.concat([key, o[key]]);
+      },[]);
+    });
+    */
+
+    /*const arr = dataProductos.map(elemento => Object.entries(elemento));
+    var wMarcas3 = [];
+    for (obj in dataProductos) { 
+       wMarcas3.push(dataProductos[obj].marca);
+    }*/
+
+}
+cargarMarcas(dataProductos);
 
 function cargarProductos(data) {
 
@@ -222,24 +178,43 @@ function cargarProductos(data) {
           objProducto.categoria == 'repuesto' && chkRepuesto.checked || 
           objProducto.categoria == 'accesorio' && chkAccesorio.checked) {
 
+            wPrecio=0;
+            try {
+              wPrecio = Number(objProducto.precio)
+            }
+            catch {}
+
+            if (wPrecio >= Number(wSelPrecioDesdeInput.value)*1000 && 
+                wPrecio <= Number(wSelPrecioHastaInput.value)*1000 ) {
+
+               
               /* agregar contenedor de novedad */
               let wItem = document.createElement("div")
-              wItem.innerHTML=`  
+              let wHtml = /*html*/ `  
                 <div class="item" onclick="abrirVentanaDetalleModal('${objProducto.imagen}')">
                   <img src="${objProducto.imagen}" alt="img">
                   <div class="itemNombre">${objProducto.nombre}</div>
                   <div class="itemPrecio">$ ${objProducto.precio}</div>
-                  <div class="itemRodadoMarca">
-                    <span class="itemRodado">Rodado: ${objProducto.rodado}</span>
-                    <span class="itemMarca">Marca: ${objProducto.marca}</span>
-                  </div>
+                  `
+              if (objProducto.categoria == 'bicicleta') {
+                  wHtml = wHtml + /*html*/ `
+                    <div class="itemRodadoMarca">
+                      <span class="itemRodado">Rodado: ${objProducto.rodado}</span>
+                      <span class="itemMarca">Marca: ${objProducto.marca}</span>
+                    </div> `
+              } 
+              wHtml = wHtml + /*html*/ `
                   <div class="itemCategoriaVer">
-                    <span class="itemCategoria">Categoria: ${objProducto.categoria}</span>
-                    <i class="fa fa-eye itemVer"></i>
+                    <div class="itemCategoria">Categoria: ${objProducto.categoria}</div> 
+                  </div>
+                  <div class="itemVer">
+                      <i class="fa fa-eye "></i>
                   </div>
                 </div>
               `
+              wItem.innerHTML=wHtml;
               wProductos.appendChild(wItem);
+            }
       }
     };
   

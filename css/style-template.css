@@ -144,8 +144,6 @@ body {
     
   
 
-
-
 .nav_item {
   padding: 0 5px;
   font-size: 0.9em;
@@ -210,39 +208,6 @@ body {
 .nav_close {
   display: none
 }
-
-/*
-.separador {
-  background: var(--backgroud-separador);
-  width: 100%;
-  height: auto;
-  margin-top: .5rem;
-  padding: .4rem 1rem;
-  color:rgb(218, 216, 216);
-  display: inline-flex;
-  align-items: center;
-}
-
-  .separadorAbrirCerrar {
-    transform: scaleY(0);
-    transition: all 500ms ease;
-    -webkit-transition: all 500ms ease;
-    max-height: 0;
-  }
-
-    .separadorCerrar {
-      width: 2rem;
-      height: auto;
-      margin-right: 1rem;
-      cursor: pointer;
-      background-color: rgb(80, 79, 79);
-      border-radius: 30%;
-    }
-     
-      #idImgSeparadorAbrirCerrar {
-        scale: 1.1
-      }
-*/
 
 .whatsapp {
   background-color: transparent;

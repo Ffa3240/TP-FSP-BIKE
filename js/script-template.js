@@ -52,7 +52,7 @@ wHeader.innerHTML = `
         <li class="dropdown nav_item">
             <a class="dropdown-toggle nav-link" data-bs-toggle="dropdown" href="#" role="button"
                 aria-expanded="false">Productos</a>
-            <ul class="dropdown-menu">
+            <ul onclick="subMenuOcultar(this)" class="dropdown-menu">
                 <li><a class="dropdown-item" href="#idProductos" onclick="selCategoriaMenu('B')">Bicicletas</a></li>
                 <li><a class="dropdown-item" href="#idProductos" onclick="selCategoriaMenu('R')">Repuestos</a></li>
                 <li><a class="dropdown-item" href="#idProductos" onclick="selCategoriaMenu('A')">Accesorios</a></li>
@@ -182,6 +182,9 @@ function nav_menu_mostrar_ocultar() {
     menu.classList.toggle("nav_ocultar");
 }
 
+function subMenuOcultar(o) {
+  o.classList.toggle("nav_ocultar");
+}
 /* -------------------------------------------------------------------------------------------------*/
 /* MANEJO DE VENTANA MODAL - PARA ENVIOS Y MEDIOS DE PAGO */
 

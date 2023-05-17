@@ -184,59 +184,26 @@
                             <input type="checkbox" onclick="selCategoria(this)" name="chkAccesorios" id="idChkAccesorios" checked> Accesorios</li>
                         </ul>
                     </div>
-                    <div class="selMarcas selTipo">FILTRAR POR PRECIO
-                    </div>
-                    <div class="selPrecio selTipo">FILTRAR POR MARCA
+                    <div class="selPrecio selTipo">
+                        FILTRAR POR PRECIO
+                        <div>Desde :</div> 
+                            <input type="range" min="0" max="100" value="0" step="5" 
+                               name="selPrecioDesde" id="idSelPrecioDesde">
+                            <span id="idSelPrecioDesdeValor"> $0</span>
+                        <div>Hasta :</div>
+                            <input type="range" min="0" max="500" value="500" step="10" 
+                                name="selPrecioHasta" id="idSelPrecioHasta">
+                            <span id="idSelPrecioHastaValor"> $500m</span>
+                     </div>
+                    <div class="selMarcas selTipo">FILTRAR POR MARCA
                     </div>
                 </div>
                
                 <section class="misProductos">
-                    
-                    <!--div class="item" onclick="abrirVentanaDetalleModal('./img/novedades/00001.webp')">
-                        <img src="./img/novedades/00001.webp" alt="img">
-                    </div>
-                    <div class="item" onclick="abrirVentanaDetalleModal('./img/novedades/00002.webp')">
-                        <img src="./img/novedades/00002.webp" alt="img">
-                    </div>
-                    <div class="item" onclick="abrirVentanaDetalleModal('./img/novedades/00003.webp')">
-                        <img src="./img/novedades/00003.webp" alt="img">
-                    </div>
-                    <div class="item" onclick="abrirVentanaDetalleModal('./img/novedades/00004.webp')">
-                        <img src="./img/novedades/00004.webp" alt="img">
-                    </div>
-                    <div class="item" onclick="abrirVentanaDetalleModal('./img/novedades/00005.webp')">
-                        <img src="./img/novedades/00005.webp" alt="img">
-                    </div>
-                    <div class="item" onclick="abrirVentanaDetalleModal('./img/novedades/00006.webp')">
-                        <img src="./img/novedades/00006.webp" alt="img">
-                    </div>
-                    <div class="item" onclick="abrirVentanaDetalleModal('./img/novedades/00001.webp')">
-                        <img src="./img/novedades/00001.webp" alt="img">
-                    </div>
-                    <div class="item" onclick="abrirVentanaDetalleModal('./img/novedades/00002.webp')">
-                        <img src="./img/novedades/00002.webp" alt="img">
-                    </div>
-                    <div class="item" onclick="abrirVentanaDetalleModal('./img/novedades/00003.webp')">
-                        <img src="./img/novedades/00003.webp" alt="img">
-                    </div>
-                    <div class="item" onclick="abrirVentanaDetalleModal('./img/novedades/00004.webp')">
-                        <img src="./img/novedades/00004.webp" alt="img">
-                    </div>
-                    <div class="item" onclick="abrirVentanaDetalleModal('./img/novedades/00005.webp')">
-                        <img src="./img/novedades/00005.webp" alt="img">
-                    </div>
-                    <div class="item" onclick="abrirVentanaDetalleModal('./img/novedades/00006.webp')">
-                        <img src="./img/novedades/00006.webp" alt="img">
-                    </div>
-                    <div class="item" onclick="abrirVentanaDetalleModal('./img/novedades/00001.webp')">
-                        <img src="./img/novedades/00001.webp" alt="img">
-                    </div>
-                    <div class="item" onclick="abrirVentanaDetalleModal('./img/novedades/00002.webp')">
-                        <img src="./img/novedades/00002.webp" alt="img">
-                    </div-->
-                </section>
+                 </section>
+
             </div>
-        </div>
+    </div>
 
        <div id="idMarcas">
             <div class="separador">
@@ -286,11 +253,7 @@
 
     </main>
 
-    <!--aside class="otraInformacion">
-
-    </aside-->
-
- 
+    
 
     <footer id="idFooter" class="miFooter">
             <!-- Copiado desde script-template-->
@@ -305,6 +268,9 @@
      <!--Slides--> 
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="./js/script-novedades.js"></script>
+
+    <!--javascript de pagina principal datos antes de usar fetch--> 
+    <script src="./js/script-datos.js"></script>
 
      <!--javascript de pagina principal--> 
     <script src="./js/script.js"></script>
