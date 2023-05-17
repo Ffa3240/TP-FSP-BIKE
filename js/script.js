@@ -54,18 +54,42 @@ $('#idImgSeparadorAbrirCerrarServicio').click(function() {
     }
 });
 
+function abrirVentanaDetalleModalConObjeto(obj) {
+  let objProducto = dataProductos[obj];
 
+  let ventana = document.getElementById("idVentanaModalContainer");
+
+  let imagen = document.getElementById("imagenDetalleModal")
+  imagen.src = objProducto.imagen;
+
+  let texto = document.getElementById("informacionDetalleModal");
+  texto.innerHTML=  
+  `<div class="detModalTexto detModalTexto1">${objProducto.nombre}</div>
+   <div class="detModalTexto detModalTexto2">$ ${objProducto.precio}</div>
+   <img id="detModalImgOferta1" src="./img/Ofertas/ahora12.png">
+   <img id="detModalImgOferta1" src="./img/Ofertas/3-6-12.png">`
+   if (objProducto.categoria == "bicicleta") {
+    texto.innerHTML += 
+      `<div class="detModalTexto detModalTexto3">Rodado: ${objProducto.rodado}</div>`
+   }
+   texto.innerHTML += 
+   `<div class="detModalTexto detModalTexto4">Marca: ${objProducto.marca}</div>
+    <div class="detModalTexto detModalTexto5">Categoria: ${objProducto.categoria}</div>`
+
+  ventana.classList.toggle("ventanaModalMostrar")
+}
 
 
 function abrirVentanaDetalleModal(srcImagen) {
-  let ventana = document.getElementById("ventanaDetalleModal");
+  let objProducto = dataProductos["producto1"];
+  let ventana = document.getElementById("idVentanaModalContainer");
   let imagen = document.getElementById("imagenDetalleModal")
   imagen.src = srcImagen;
   ventana.classList.toggle("ventanaModalMostrar")
 }
 
 function cerrarVentanaModal() {
-  let ventana = document.getElementById("ventanaDetalleModal");
+  let ventana = document.getElementById("idVentanaModalContainer");
   let imagen = document.getElementById("imagenDetalleModal")
   imagen.src = "";
   ventana.classList.toggle("ventanaModalMostrar")
@@ -159,9 +183,7 @@ function cargarProductos(data) {
 
     var wProductos = document.getElementsByClassName("misProductos")[0];
 
-   /* $('.item').addClass("hide"); */
-
-    /* eliminar del DOM todos los items */
+     /* eliminar del DOM todos los items */
     while (wProductos.firstChild){
       wProductos.removeChild(wProductos.firstChild);
     };
@@ -187,12 +209,12 @@ function cargarProductos(data) {
             if (wPrecio >= Number(wSelPrecioDesdeInput.value)*1000 && 
                 wPrecio <= Number(wSelPrecioHastaInput.value)*1000 ) {
 
+              let wClaveProducto = String(obj);
                
-              /* agregar contenedor de novedad */
               let wItem = document.createElement("div")
               let wHtml = /*html*/ `  
-                <div class="item" onclick="abrirVentanaDetalleModal('${objProducto.imagen}')">
-                  <img src="${objProducto.imagen}" alt="img">
+                <div class="item" onclick="abrirVentanaDetalleModalConObjeto('${wClaveProducto}')">
+                 <img src="${objProducto.imagen}" alt="img">
                   <div class="itemNombre">${objProducto.nombre}</div>
                   <div class="itemPrecio">$ ${objProducto.precio}</div>
                   `
@@ -218,7 +240,6 @@ function cargarProductos(data) {
       }
     };
   
- /* $('.item').addClass("show"); */
 
   };
 

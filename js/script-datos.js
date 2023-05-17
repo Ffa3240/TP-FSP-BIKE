@@ -1,23 +1,23 @@
 var dataProductos = {
-    "producto1": {
-        "id": 1,
-        "imagen": "./img/productos/bicicletas/bic001.webp",
-        "categoria": "bicicleta",
-        "precio": "118900",
-        "marca": "BUG",
-        "nombre": "RALLY BUG 21.1",
-        "rodado": "21"
-    },
-    "producto2": {
-        "id": 1,
-        "imagen": "./img/productos/bicicletas/bic002.webp",
-        "categoria": "bicicleta",
-        "precio": "163990",
-        "marca": "BUG",
-        "nombre": "MOUNTAIN BUG 24.1",
-        "rodado": "24"
-    },
-    "producto3": {
+  "producto1": {
+      "id": 1,
+      "imagen": "./img/productos/bicicletas/bic001.webp",
+      "categoria": "bicicleta",
+      "precio": "118900",
+      "marca": "BUG",
+      "nombre": "RALLY BUG 21.1",
+      "rodado": "21"
+  },
+  "producto2": {
+      "id": 1,
+      "imagen": "./img/productos/bicicletas/bic002.webp",
+      "categoria": "bicicleta",
+      "precio": "163990",
+      "marca": "BUG",
+      "nombre": "MOUNTAIN BUG 24.1",
+      "rodado": "24"
+  },
+  "producto3": {
       "id": 1,
       "imagen": "./img/productos/bicicletas/bic003.webp",
       "categoria": "bicicleta",

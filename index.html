@@ -83,11 +83,19 @@
               </div>
 
             <!--/div-->
-
-            <dialog class="ventanaModal" id="ventanaDetalleModal">
-                <img id="imagenDetalleModal">
-                <div onclick="cerrarVentanaModal()" class="novedades-slide-content-buttom">Cerrar</div>
-            </dialog>
+            <div id="idVentanaModalContainer">
+                <dialog class="ventanaModal" id="ventanaDetalleModal">
+                    <img id="imagenDetalleModal">
+                    <div id="informacionDetalleModal">
+                        <!-- Texto interpolado desde script.js -->
+                    </div>
+                    <div id="idBotonCerrarDetalleModal"
+                        onclick="cerrarVentanaModal()" 
+                        class="novedades-slide-content-buttom">
+                                <i class="fa fa-circle-xmark"></i>
+                    </div>
+                </dialog>
+            </div>
 
         </section>
 
@@ -142,7 +150,7 @@
                             </div>
                         </div>
                         <div class="itemServicioVideo"> <!--www.bicimovil.com-->
-                            <iframe src="https://www.youtube.com/embed/AjzlUkw8GQw?list=TLGG4I-HfvrLup0xNDA1MjAyMw" title="FSP-Bike-Movil | Bicicletería a domicilio" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            <iframe src="https://www.youtube.com/embed/AjzlUkw8GQw?list=TLGG4I-HfvrLup0xNzA1MjAyMw" title="Bicimóvil | Bicicletería a domicilio" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div>
                     
                     </div>
