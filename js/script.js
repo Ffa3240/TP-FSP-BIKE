@@ -192,6 +192,7 @@ cargarMarcas(dataProductos);
 function cargarProductos(data) {
 
   var wProductos = document.getElementsByClassName("misProductos")[0];
+  wProductos.classList.remove("noHayItems");
 
   /* eliminar del DOM todos los items */
   while (wProductos.firstChild) {
@@ -204,6 +205,8 @@ function cargarProductos(data) {
   let chkAccesorio = document.getElementById("idChkAccesorios");
 
   let marcaSeleccionada = wListaMarcas.value;
+
+  var hayProductosSeleccionados = false;
 
   for (obj in data) {
 
@@ -226,8 +229,9 @@ function cargarProductos(data) {
 
         /* Seleccion de marca */
         /*------------------- */
-        if (wListaMarcas.value == "*all" || objProducto.marca == wListaMarcas.value) {
-
+        if (wListaMarcas.value == "*all" || objProducto.marca == wListaMarcas.value) {    
+          hayProductosSeleccionados=true;
+ 
           let wClaveProducto = String(obj);
 
           let wItem = document.createElement("div")
@@ -260,8 +264,20 @@ function cargarProductos(data) {
     }
   };
 
+  /* Si no hay productos seleccionados muestra dicha informacion */
+  if (!(hayProductosSeleccionados)) {
+    let wItem = document.createElement("div");
+    wItem.classList.add("noHayItems");
+    wItem.innerHTML = /*html*/ `
+    <div class="itemNoHaySeleccionado">
+        No hay productos para los filtros seleccionados
+    </div>`;
+    wProductos.appendChild(wItem);
+    wProductos.classList.add("noHayItems");
+  }
 
-};
+
+};  
 
 
 /* CARGAR INFORMACION DESDE ARCHIVO JSON EN RUTA DE LA APLICACION */

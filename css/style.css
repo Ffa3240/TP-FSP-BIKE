@@ -108,6 +108,13 @@ body {
                     font-weight: bold;
                   }
 
+                  .itemServicioInformacionTexto p {
+                   color: blueviolet;
+                   font-weight: bold;
+                   margin-top: 1rem;
+                   font-size: 1.2rem;
+                  }
+                  
                   .botonServicio {
                     margin-top: 2rem;
                     margin-right: 1rem;
@@ -268,6 +275,19 @@ background-color: transparent;
   grid-area: misProductos;
   background-color: white;
 }
+
+      .misProductos.noHayItems {
+        display: block;
+      }
+
+      .misProductos.noHayItems div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 30px;
+        width: 90%;
+        height: 100%;
+      }
 
   .misProductos.selNoActive {
     width: 100%;
