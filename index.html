@@ -193,16 +193,22 @@
  
                 <!-- FILTROS DE PRODUCTOS -->
                  <div id="idSeleccionProducto" class="active">
+                    <button class="btnLimpiarFiltros" onclick="limpiarFiltros()"
+                    style="background-color: black; color: white; font-size:.9rem; cursor: pointer">
+                        Limpiar Filtros
+                        <i class="fa fa-broom"></i>
+                    </button>
                     <div class="selCategoria selTipo">CATEGORIAS
                         <ul>
                         <li class="selItemCategorias">
                             <input type="checkbox" onclick="selCategoria(this)" name="chkBicicletas" id="idChkBicicletas" checked>
-                             Bicicletas</li>
+                             <span id="spanBicicleta">Bicicletas</span></li>
                         <li class="selItemCategorias">
                             <input type="checkbox" onclick="selCategoria(this)" name="chkRepuestos" id="idChkRepuestos" checked>
-                             Repuestos</li>
+                            <span id="spanRepuesto">Repuestos</span></li>
                         <li class="selItemCategorias">
-                            <input type="checkbox" onclick="selCategoria(this)" name="chkAccesorios" id="idChkAccesorios" checked> Accesorios</li>
+                            <input type="checkbox" onclick="selCategoria(this)" name="chkAccesorios" id="idChkAccesorios" checked>
+                            <span id="spanAccesorio">Accesorios</span></li>
                         </ul>
                     </div>
                     <div class="selPrecio selTipo">

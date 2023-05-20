@@ -180,16 +180,12 @@ background-color: transparent;
       color: white;
       background-color: #2e2e2e
     };
-
-    .selItemMarca{
-      background-color: rgb(30, 19, 184)
-    }; 
-
-    .selItemMarcaCant{
-      background-color: green;
-      color: green !important;
-    };
-                
+   
+    .btnLimpiarFiltros {
+      background-color: #2e2e2e !important;
+      color: white;
+      font-size: .9rem;
+    }
 
 /* ----------------------------------------------------------------------------------------------*/
 /* ESTILOS DE SECCION PRODUCTOS */

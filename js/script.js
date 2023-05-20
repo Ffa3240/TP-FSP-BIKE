@@ -94,7 +94,29 @@ function cerrarVentanaModal() {
   ventana.classList.toggle("ventanaModalMostrar")
 }
 
+/* Limpiar Filtros de seleccion */
+function limpiarFiltros() {
+  let chkBicicleta = document.getElementById("idChkBicicletas");
+  let chkRepuesto = document.getElementById("idChkRepuestos");
+  let chkAccesorio = document.getElementById("idChkAccesorios");
+  let wSelPrecioDesdeInput = document.getElementById("idSelPrecioDesde");
+  let wSelPrecioDesdeValor = document.getElementById("idSelPrecioDesdeValor")
+  let wSelPrecioHastaInput = document.getElementById("idSelPrecioHasta");
+  let wSelPrecioHastaValor = document.getElementById("idSelPrecioHastaValor")
+  let wListaMarcas = document.getElementById("idListaMarcas");
 
+  chkBicicleta.checked=true;
+  chkAccesorio.checked=true;
+  chkRepuesto.checked=true;
+  wSelPrecioDesdeInput.value=0;
+  wSelPrecioDesdeValor.innerHTML = "$" + wSelPrecioDesdeInput.value + "m";
+  wSelPrecioHastaInput.value=500;
+  wSelPrecioHastaValor.innerHTML = "$" + wSelPrecioHastaInput.value + "m";
+  wListaMarcas.value="*all";
+
+  cargarProductos(dataProductos);
+
+}
 
 /* Seleccion de Productos */
 $('#idFiltroProductos').click(function () {
@@ -154,17 +176,15 @@ function selMarca(e) {
       cargarProductos(dataProductos) 
 }
 
+/* Pasa a un array de objetos */
+var objProductos = Object.entries(dataProductos);
 
 /* --------------------------------------------------------------------------------------------------*/
 /* --- CARGA DE COMBOBOX de Marcas ----*/
-var wListaMarcas = document.getElementById("idListaMarcas");
-
-function cargarMarcas(dataProductos) {
-
-  let x = Object.entries(dataProductos);
+  var wListaMarcas = document.getElementById("idListaMarcas");
 
   /* agrupar objetos por marca */
-  let wMarcas = x.reduce(function (groups, item) {
+  let wMarcas = objProductos.reduce(function (groups, item) {
     var val = item[1]['marca'];
     groups[val] = groups[val] || { marca: val, cant: 0 };
     groups[val].cant += 1;
@@ -182,9 +202,21 @@ function cargarMarcas(dataProductos) {
           </option>`
   });
   wListaMarcas.innerHTML += wInner;
-}
-cargarMarcas(dataProductos);
 
+/* --------------------------------------------------------------------------------------------------*/
+/* --- Total por Categoria ----*/
+
+/* agrupar objetos por marca */
+let wTotCategoria = objProductos.reduce(function (groups, item) {
+  var val = item[1]['categoria'];
+  groups[val] = groups[val] || { categoria: val, cant: 0 };
+  groups[val].cant += 1;
+  return groups;
+}, {})
+  /* agregar los totales a los chkBox de categoria  */
+$('#spanBicicleta').html('Bicicletas (' + wTotCategoria['bicicleta'].cant + ')');
+$('#spanAccesorio').html('Accesorios (' + wTotCategoria['accesorio'].cant + ')');
+$("#spanRepuesto").html('Repuestos (' + wTotCategoria['repuesto'].cant +')');
 
 /* --------------------------------------------------------------------------------------------------*/
 /* CARGA DE PRODUCTOS */
