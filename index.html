@@ -12,16 +12,14 @@
     
     <link rel="stylesheet" href="./css/normalize.css">
     
-    
-    <!--link rel="stylesheet" href="./lib/fontawesome-free-5.15.4-web/css/fontawesome.min.css"-->
+     <!-- css para fontawesome and bootstrap -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     
-    
+     <!-- scripts para fontawesome and bootstrap -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
     integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -30,9 +28,15 @@
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
     crossorigin="anonymous"></script>
    
+
+    <!-- css para Sliders -->
          <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
-         <link rel="stylesheet" href="./css/style-novedades.css">
+         <link rel="stylesheet" href="./css/style-slider.css">
+
+    <!-- css para Header and Footer -->     
          <link rel="stylesheet" href="./css/style-template.css">
+
+    <!-- css para index -->     
          <link rel="stylesheet" href="./css/style.css">
 </head>
 
@@ -45,6 +49,9 @@
 
     <main class="miMain">
        
+        <!----------------------------------------------------------------------------------------->
+        <!-- SECCION  DE NOVEDADES -->
+        <!----------------------------------------------------------------------------------------->
         <section id="idNovedades-section">
             
             <div class="separador">
@@ -58,29 +65,27 @@
                 <i class="fa-solid fa-spinner fa-spin-pulse"></i>
             </div>    
 
-            <!--div class="novedades-container" no va-->
-              
-              <div id="idNovedades-slider" class="swiper novedades-slider">
-                
-              <!-- IMAGENES -->
-                <div  id=idNovedades class="swiper-wrapper">  
-                    <!-- Se cargan las imagenes dinamicamente -->
-                </div>
-              
-              <!-- CONTROLES -->
-                <div class="novedades-slider-control">
+            <div id="idNovedades-slider" class="swiper novedades-slider">
+           
+                <!-- IMAGENES CARROUSEL -->
+                    <div  id=idNovedades class="swiper-wrapper">  
+                        <!-- Se cargan las imagenes dinamicamente -->
+                    </div>
                   
-                  <div class="swiper-button-prev slider-arrow">
-                  </div>
-                  
-                  <div class="swiper-pagination"></div>
-      
-                  <div class="swiper-button-next slider-arrow">
-                  </div>
-                 
-                </div>
-      
-              </div>
+                <!-- CONTROLES -->
+                    <div class="novedades-slider-control">
+                      
+                      <div class="swiper-button-prev slider-arrow">
+                      </div>
+                      
+                      <div class="swiper-pagination"></div>
+          
+                      <div class="swiper-button-next slider-arrow">
+                      </div>
+                     
+                    </div>
+            
+            </div>
 
             <!--/div-->
             <div id="idVentanaModalContainer">
@@ -99,6 +104,9 @@
 
         </section>
 
+        <!----------------------------------------------------------------------------------------->
+        <!-- SECCION  DE SERVICIOS -->
+        <!----------------------------------------------------------------------------------------->
         <div class="" id="idServicios">
             <div class="separador">
                 <div id="idImgSeparadorAbrirCerrarServicio" class="separadorCerrar">
@@ -150,17 +158,16 @@
                             </div>
                         </div>
                         <div class="itemServicioVideo"> <!--www.bicimovil.com-->
-                            <iframe src="https://www.youtube.com/embed/AjzlUkw8GQw?list=TLGG4I-HfvrLup0xNzA1MjAyMw" title="Bicimóvil | Bicicletería a domicilio" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                        </div>
-                    
+                            <iframe src="https://www.youtube.com/embed/AjzlUkw8GQw?list=TLGG4I-HfvrLup0xOTA1MjAyMw" title="Bicimóvil | Bicicletería a domicilio" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>                   
                     </div>
 
             </section>
-     
-         
-
         </div>
 
+        <!----------------------------------------------------------------------------------------->
+        <!-- SECCION  DE PRODUCTOS -->
+        <!----------------------------------------------------------------------------------------->
         <div id="idProductos">
         
             <div class="separador">
@@ -168,7 +175,9 @@
                     <i id="idImgAbrirCerrarProducto" class="fa-solid fa-angle-up" alt="abrirCerrar" style="color:rgb(215, 215, 215)"></i>
                 </div>
                 <h6>Productos</h6>
-                <div id="idFiltroProductos">
+
+              <!-- APERTURA Y CIERRE DE FILTROS DE PRODUCTOS -->
+              <div id="idFiltroProductos">
                     <i id="idImgCerrarFiltro" class="fa-solid fa-angles-left filtroAbrirCerrar active" alt="Cerrar"></i>
                     <i id="idImgAbrirFiltro" class="fa-solid fa-angles-right filtroAbrirCerrar" alt="Abrir"></i>
                     <span class="filtroAbrirCerrar active">Ocultar filtros</span>
@@ -178,8 +187,9 @@
             </div>
 
             <div id="idSeleccionYdatos">
-
-                <div id="idSeleccionProducto" class="active">
+ 
+                <!-- FILTROS DE PRODUCTOS -->
+                 <div id="idSeleccionProducto" class="active">
                     <div class="selCategoria selTipo">CATEGORIAS
                         <ul>
                         <li class="selItemCategorias">
@@ -204,15 +214,29 @@
                             <span id="idSelPrecioHastaValor"> $500m</span>
                      </div>
                     <div class="selMarcas selTipo">FILTRAR POR MARCA
-                    </div>
+                        <!--ul id="idListaMarcas">
+                         </ul-->
+                         <select name="marcas" id="idListaMarcas" onChange="selMarca(this)">
+                            <option value="*all">
+                                <div class="selItemMarca">Todas las marcas</div>
+                                <div class="selItemMarcaCant"></div>
+                            </option>
+                  
+                         </select>
+                     </div>
                 </div>
                
+                <!-- IMAGENES DE PRODUCTOS -->
                 <section class="misProductos">
-                 </section>
+
+                </section>
 
             </div>
-    </div>
+        </div>
 
+        <!----------------------------------------------------------------------------------------->
+        <!-- SECCION  DE MARCAS -->
+        <!----------------------------------------------------------------------------------------->  
        <div id="idMarcas">
             <div class="separador">
                 <div id="idImgSeparadorAbrirCerrar" class="separadorCerrar">
@@ -275,7 +299,7 @@
   
      <!--Slides--> 
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-    <script src="./js/script-novedades.js"></script>
+    <script src="./js/script-slider.js"></script>
 
     <!--javascript de pagina principal datos antes de usar fetch--> 
     <script src="./js/script-datos.js"></script>

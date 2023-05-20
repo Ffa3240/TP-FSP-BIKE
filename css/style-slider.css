@@ -30,8 +30,7 @@
     padding: 1rem 0;
     display: flex;
     flex-direction: column;
- /*   visibility: hidden;*/
-  }
+   }
     .sliderMostrar {
       visibility: visible;
     }  
@@ -39,7 +38,6 @@
     .novedades-slide {
       width: 30%;
       height: auto;
-     /* background-color: rgb(168, 166, 166);*/
       background-color: rgb(235, 232, 232);
       border-radius: 2rem;
       border: solid darkgray;
@@ -91,8 +89,8 @@
 
                  .novedades-slide-content-buttom {
                   position: absolute;
-                  bottom: calc(.1rem + 1vw);
-                  right: calc(.1rem + 1vw);
+                  bottom: calc(.1rem + 8px);
+                  right: calc(.1rem + 8px);
                   color: var(--black);
                   width: auto;
                   background-color:rgb(190, 187, 187);
@@ -102,7 +100,7 @@
                   text-align: center;
                   padding: 3px 5px;
                   font-weight: 600;
-                  font-size: calc(.1rem + 1vw);
+                  font-size: calc(.1rem + 12px); 
                 }
 
                 .novedades-slide-content .novedades-slide-content-buttom:hover {

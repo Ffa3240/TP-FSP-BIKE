@@ -341,6 +341,55 @@
                 "text-align=center"
             ]
         }
-    }
+    },
+    "novedad8": {
+      "id": 8,
+      "imagen": "./img/novedades/pro001off.png",
+      "texto01": {
+          "texto": "RALLY BUG 21.1",
+          "atributos": [
+              "color=black",
+              "font-size=1rem",
+              "width=100%",
+              "text-align=center"
+          ]
+      },
+      "texto02": {
+          "texto": "texto02",
+          "atributos": [
+              "color=black",
+              "font-size=1rem",
+              "width=100%",
+              "text-align=center"
+          ]
+      },
+      "texto03": {
+          "texto": "texto03",
+          "atributos": [
+              "color=black",
+              "font-size=1rem",
+              "width=100%",
+              "text-align=center"
+          ]
+      },
+      "texto04": {
+          "texto": "texto04",
+          "atributos": [
+              "color=black",
+              "font-size=1rem",
+              "width=100%",
+              "text-align=center"
+          ]
+      },
+      "texto05": {
+          "texto": "texto05",
+          "atributos": [
+              "color=black",
+              "font-size=1rem",
+              "width=100%",
+              "text-align=center"
+          ]
+      }
+  }
     
-}   
+  }

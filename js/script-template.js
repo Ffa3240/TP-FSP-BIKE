@@ -1,6 +1,19 @@
 
 
 // Agrega el Header a la pagina
+let wProductoNavInner ="";
+if (window.location.href.includes("index.html")) {
+    wProductoNavInner = `
+                    <li><a class="dropdown-item" href="index.html#idProductos" onclick="selCategoriaMenu('B')">Bicicletas</a></li>
+                    <li><a class="dropdown-item" href="index.html#idProductos" onclick="selCategoriaMenu('R')">Repuestos</a></li>
+                    <li><a class="dropdown-item" href="index.html#idProductos" onclick="selCategoriaMenu('A')">Accesorios</a></li>
+                    <li><a class="dropdown-item" href="index.html#idProductos" onclick="selCategoriaMenu('T')">Todos</a></li>
+                    `
+} else {
+     wProductoNavInner = `
+                    <li><a class="dropdown-item" href="index.html#idProductos">Productos</a></li>
+                    `
+        };
 
 var wHeader = document.getElementById("idHeader")
 wHeader.innerHTML = `
@@ -53,10 +66,7 @@ wHeader.innerHTML = `
             <a class="dropdown-toggle nav-link" data-bs-toggle="dropdown" href="#" role="button"
                 aria-expanded="false">Productos</a>
             <ul onclick="subMenuOcultar(this)" class="dropdown-menu">
-                <li><a class="dropdown-item" href="#idProductos" onclick="selCategoriaMenu('B')">Bicicletas</a></li>
-                <li><a class="dropdown-item" href="#idProductos" onclick="selCategoriaMenu('R')">Repuestos</a></li>
-                <li><a class="dropdown-item" href="#idProductos" onclick="selCategoriaMenu('A')">Accesorios</a></li>
-                <li><a class="dropdown-item" href="#idProductos" onclick="selCategoriaMenu('T')">Todos</a></li>
+                ${wProductoNavInner}
                 <li>
                     <hr class="dropdown-divider">
                 </li>
