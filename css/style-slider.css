@@ -1,6 +1,6 @@
 
 .novedades-container {
-  max-width: 100%;
+  max-width: 99%;
   padding: 0;
   margin: 0 auto;
 }
@@ -46,37 +46,51 @@
       -moz-box-shadow: 0px 0px 100px 0px rgba(0,0,0,0.74);;
       display: flex;
       flex-direction: column;
+      justify-content: start; 
     }
 
         .novedades-slide .novedades-slide-img img {
         width: 100%;
         height: auto;
-        border-radius: 2rem 2rem 0 0;
+        border-radius: 2rem 2rem 2rem 2rem;
         object-fit: cover;
         }
         
         .novedades-slide-content {
           padding: 5px;
+          background-color: #292929;
+          border-radius: 0rem 0rem 2rem 2rem;
         }
+              .novedades-slide-content.soloImg {
+                 padding: 0;
+              }
                 .novedades-slide-content-texto1,
                 .novedades-slide-content-texto2,
                 .novedades-slide-content-texto3,
                 .novedades-slide-content-texto4,
                 .novedades-slide-content-texto5 {
-                    color:black;
-                    font-weight:bold;
+                    color:rgb(250, 247, 247);
+                    font-weight: normal;
                     padding-top: 5px;
                     padding-left: 10px;  
                     font-size: calc(.3rem + 1vw);
                 }
 
-          /*      .novedades-slide-content-texto1 {
-                  top: 18.5em;
-                }
+                .novedades-slide-content-texto1 {
+                font-size: calc(.1rem + 1.5vw);
+                color: rgb(187, 22, 22);
+                font-weight: bold;
+                
+               
+                } 
                 .novedades-slide-content-texto2 {
-                  top: 20em;
+                 
+                  color: rgb(119, 119, 247);
+                /*  text-shadow: 1px 1px 1px rgba(236,224,224,0.6); */
+                  text-align: center;
+                  font-size: calc(.5rem + 1vw);
                 }
-                .novedades-slide-content-texto3 {
+          /*      .novedades-slide-content-texto3 {
                   top: 21.5em;
                 }
                 .novedades-slide-content-texto4 {
@@ -113,9 +127,10 @@
           display: flex;
           align-items: center;
           justify-content: center;
-          padding-top: 2rem;
+          padding-top: 1rem;
           width: 40%;
           margin: auto;
+          scale: .8;
         }
 
                 .novedades-slider-control .swiper-button-prev,

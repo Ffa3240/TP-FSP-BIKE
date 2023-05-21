@@ -66,10 +66,11 @@ body {
       grid-area: nav_central;
       text-align: center;
       background: transparent;
-      color: rgb(150, 149, 149);
+      color: whitesmoke; /* rgb(150, 149, 149); */
       margin: auto;
       width: 100%;
       padding: 0;
+      font-size: bold;
     }
 
  
@@ -400,12 +401,13 @@ footer {
           grid-template-columns: 30% 20% 20% 30%;
           grid-template-rows:    1fr, 1fr;
           grid-template-areas: 'nav_logo  nav_logo    nav_usuario  nav_usuario' 
-                              'nav_menu  nav_central nav_central  xxxxxxxxxxx';
+                              'nav_menu  nav_central nav_central  nav_central';
           height: 100px;                 
         }
 
         .nav_central {
-          margin-top:0px
+          margin-top:0px;
+          text-align:left;
         }
 
         
@@ -423,6 +425,16 @@ footer {
     .nav_ocultar {
       display: none
     }
+
+
+@media all and (max-width: 600px) {
+  .nav_central {
+    margin-left: -2rem;
+    font-size: .8rem;
+    text-align: center;
+  }
+}
+
 
 
 @media all and (min-width: 791px) {

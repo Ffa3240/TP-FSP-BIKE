@@ -1,7 +1,7 @@
 {
     "novedad1": {
         "id": 1,
-        "imagen": "./img/novedades/00001.webp",
+        "imagen": "./img/novedades/webp/nov001.webp",
         "texto01": {
             "texto": "RALLY BUG 21.1",
             "atributos": [
@@ -12,16 +12,7 @@
             ]
         },
         "texto02": {
-            "texto": "texto02",
-            "atributos": [
-                "color=black",
-                "font-size=1rem",
-                "width=100%",
-                "text-align=center"
-            ]
-        },
-        "texto03": {
-            "texto": "texto03",
+            "texto": "$118900",
             "atributos": [
                 "color=black",
                 "font-size=1rem",
@@ -30,7 +21,7 @@
             ]
         },
         "texto04": {
-            "texto": "texto04",
+            "texto": "Rodado 21",
             "atributos": [
                 "color=black",
                 "font-size=1rem",
@@ -39,7 +30,16 @@
             ]
         },
         "texto05": {
-            "texto": "texto05",
+            "texto": "Marca: BUG",
+            "atributos": [
+                "color=black",
+                "font-size=1rem",
+                "width=100%",
+                "text-align=center"
+            ]
+        },
+        "texto03": {
+            "texto": "20% dto Contado o 3 cuotas s/int.",
             "atributos": [
                 "color=black",
                 "font-size=1rem",
@@ -50,7 +50,56 @@
     },
     "novedad2": {
         "id": 2,
-        "imagen": "./img/novedades/00002.webp",
+        "imagen": "./img/novedades/webp/nov002.webp",
+        "texto01": {
+            "texto": "",
+            "atributos": [
+                "color=black",
+                "font-size=1rem",
+                "width=100%",
+                "text-align=center"
+            ]
+        },
+        "texto02": {
+            "texto": "",
+            "atributos": [
+                "color=black",
+                "font-size=1rem",
+                "width=100%",
+                "text-align=center"
+            ]
+        },
+        "texto03": {
+            "texto": "",
+            "atributos": [
+                "color=black",
+                "font-size=1rem",
+                "width=100%",
+                "text-align=center"
+            ]
+        },
+        "texto04": {
+            "texto": "",
+            "atributos": [
+                "color=black",
+                "font-size=1rem",
+                "width=100%",
+                "text-align=center"
+            ]
+        },
+        "texto05": {
+            "texto": "",
+            "atributos": [
+                "color=black",
+                "font-size=1rem",
+                "width=100%",
+                "text-align=center"
+            ]
+        }
+        },
+    "novedad3": {
+        "id": 3,
+        "imagen": "./img/novedades/webp/nov003.webp",
         "texto01": {
             "texto": "MOUNTAIN BUG 24.1",
             "atributos": [
@@ -61,16 +110,7 @@
             ]
         },
         "texto02": {
-            "texto": "texto02",
-            "atributos": [
-                "color=black",
-                "font-size=1rem",
-                "width=100%",
-                "text-align=center"
-            ]
-        },
-        "texto03": {
-            "texto": "texto03",
+            "texto": "$163990",
             "atributos": [
                 "color=black",
                 "font-size=1rem",
@@ -79,7 +119,7 @@
             ]
         },
         "texto04": {
-            "texto": "texto04",
+            "texto": "Rodada: 24",
             "atributos": [
                 "color=black",
                 "font-size=1rem",
@@ -88,29 +128,7 @@
             ]
         },
         "texto05": {
-            "texto": "texto05",
-            "atributos": [
-                "color=black",
-                "font-size=1rem",
-                "width=100%",
-                "text-align=center"
-            ]
-        }
-    },
-    "novedad3": {
-        "id": 3,
-        "imagen": "./img/novedades/00003.webp",
-        "texto01": {
-            "texto": "LADY BUG 21.2 NEGRA",
-            "atributos": [
-                "color=black",
-                "font-size=1rem",
-                "width=100%",
-                "text-align=center"
-            ]
-        },
-        "texto02": {
-            "texto": "texto02",
+            "texto": "Marca: BUG",
             "atributos": [
                 "color=black",
                 "font-size=1rem",
@@ -119,25 +137,7 @@
             ]
         },
         "texto03": {
-            "texto": "texto03",
-            "atributos": [
-                "color=black",
-                "font-size=1rem",
-                "width=100%",
-                "text-align=center"
-            ]
-        },
-        "texto04": {
-            "texto": "texto04",
-            "atributos": [
-                "color=black",
-                "font-size=1rem",
-                "width=100%",
-                "text-align=center"
-            ]
-        },
-        "texto05": {
-            "texto": "texto05",
+            "texto": "Contado 20% dto o 3 cuotas s/int.",
             "atributos": [
                 "color=black",
                 "font-size=1rem",
@@ -148,9 +148,9 @@
     },
     "novedad4": {
         "id": 4,
-        "imagen": "./img/novedades/00004.webp",
+        "imagen": "./img/novedades/webp/nov004.webp",
         "texto01": {
-            "texto": "MOUNTAIN BUG 24.2",
+            "texto": "LADY BUG 21.2 NEGRA",
             "atributos": [
                 "color=black",
                 "font-size=1rem",
@@ -159,16 +159,7 @@
             ]
         },
         "texto02": {
-            "texto": "texto02",
-            "atributos": [
-                "color=black",
-                "font-size=1rem",
-                "width=100%",
-                "text-align=center"
-            ]
-        },
-        "texto03": {
-            "texto": "texto03",
+            "texto": "$139990",
             "atributos": [
                 "color=black",
                 "font-size=1rem",
@@ -177,7 +168,7 @@
             ]
         },
         "texto04": {
-            "texto": "texto04",
+            "texto": "Rodado: 21",
             "atributos": [
                 "color=black",
                 "font-size=1rem",
@@ -186,7 +177,16 @@
             ]
         },
         "texto05": {
-            "texto": "texto05",
+            "texto": "Marca BUG",
+            "atributos": [
+                "color=black",
+                "font-size=1rem",
+                "width=100%",
+                "text-align=center"
+            ]
+        },
+        "texto03": {
+            "texto": "Contado 20% dto. o 3 cuotas s/int.",
             "atributos": [
                 "color=black",
                 "font-size=1rem",
@@ -197,9 +197,9 @@
     },
     "novedad5": {
         "id": 5,
-        "imagen": "./img/novedades/00005.webp",
+        "imagen": "./img/novedades/webp/nov005.webp",
         "texto01": {
-            "texto": "LADY BUG 21.1",
+            "texto": "",
             "atributos": [
                 "color=black",
                 "font-size=1rem",
@@ -208,7 +208,7 @@
             ]
         },
         "texto02": {
-            "texto": "texto02",
+            "texto": "",
             "atributos": [
                 "color=black",
                 "font-size=1rem",
@@ -217,7 +217,7 @@
             ]
         },
         "texto03": {
-            "texto": "texto03",
+            "texto": "",
             "atributos": [
                 "color=black",
                 "font-size=1rem",
@@ -226,7 +226,7 @@
             ]
         },
         "texto04": {
-            "texto": "texto04",
+            "texto": "",
             "atributos": [
                 "color=black",
                 "font-size=1rem",
@@ -235,7 +235,7 @@
             ]
         },
         "texto05": {
-            "texto": "texto05",
+            "texto": "",
             "atributos": [
                 "color=black",
                 "font-size=1rem",
@@ -243,12 +243,12 @@
                 "text-align=center"
             ]
         }
-    },
+        },
     "novedad6": {
         "id": 6,
-        "imagen": "./img/novedades/00006.webp",
+        "imagen": "./img/novedades/webp/nov006.webp",
         "texto01": {
-            "texto": "MOUNTAIN BUG 27.2",
+            "texto": "MOUNTAIN BUG 24.2",
             "atributos": [
                 "color=black",
                 "font-size=1rem",
@@ -257,16 +257,7 @@
             ]
         },
         "texto02": {
-            "texto": "texto02",
-            "atributos": [
-                "color=black",
-                "font-size=1rem",
-                "width=100%",
-                "text-align=center"
-            ]
-        },
-        "texto03": {
-            "texto": "texto03",
+            "texto": "$163990",
             "atributos": [
                 "color=black",
                 "font-size=1rem",
@@ -275,7 +266,7 @@
             ]
         },
         "texto04": {
-            "texto": "texto04",
+            "texto": "Rodado: 24",
             "atributos": [
                 "color=black",
                 "font-size=1rem",
@@ -284,7 +275,16 @@
             ]
         },
         "texto05": {
-            "texto": "texto05",
+            "texto": "Marca: BUG",
+            "atributos": [
+                "color=black",
+                "font-size=1rem",
+                "width=100%",
+                "text-align=center"
+            ]
+        },
+        "texto03": {
+            "texto": "Contado 20% dto o 3 cuotas s/int.",
             "atributos": [
                 "color=black",
                 "font-size=1rem",
@@ -295,9 +295,9 @@
     },
     "novedad7": {
         "id": 7,
-        "imagen": "./img/novedades/00006.webp",
+        "imagen": "./img/novedades/webp/nov007.webp",
         "texto01": {
-            "texto": "MOUNTAIN BUG 27.2",
+            "texto": "LADY BUG 21.1",
             "atributos": [
                 "color=black",
                 "font-size=1rem",
@@ -306,16 +306,7 @@
             ]
         },
         "texto02": {
-            "texto": "texto02",
-            "atributos": [
-                "color=black",
-                "font-size=1rem",
-                "width=100%",
-                "text-align=center"
-            ]
-        },
-        "texto03": {
-            "texto": "texto03",
+            "texto": "$139990",
             "atributos": [
                 "color=black",
                 "font-size=1rem",
@@ -324,7 +315,7 @@
             ]
         },
         "texto04": {
-            "texto": "texto04",
+            "texto": "Rodado: 21",
             "atributos": [
                 "color=black",
                 "font-size=1rem",
@@ -333,7 +324,16 @@
             ]
         },
         "texto05": {
-            "texto": "texto05",
+            "texto": "Marca: BUG",
+            "atributos": [
+                "color=black",
+                "font-size=1rem",
+                "width=100%",
+                "text-align=center"
+            ]
+        },
+        "texto03": {
+            "texto": "Contado 20% dto. o 3 cuotas s/int.",
             "atributos": [
                 "color=black",
                 "font-size=1rem",
@@ -343,53 +343,248 @@
         }
     },
     "novedad8": {
-      "id": 8,
-      "imagen": "./img/novedades/pro001off.png",
-      "texto01": {
-          "texto": "RALLY BUG 21.1",
-          "atributos": [
-              "color=black",
-              "font-size=1rem",
-              "width=100%",
-              "text-align=center"
-          ]
-      },
-      "texto02": {
-          "texto": "texto02",
-          "atributos": [
-              "color=black",
-              "font-size=1rem",
-              "width=100%",
-              "text-align=center"
-          ]
-      },
-      "texto03": {
-          "texto": "texto03",
-          "atributos": [
-              "color=black",
-              "font-size=1rem",
-              "width=100%",
-              "text-align=center"
-          ]
-      },
-      "texto04": {
-          "texto": "texto04",
-          "atributos": [
-              "color=black",
-              "font-size=1rem",
-              "width=100%",
-              "text-align=center"
-          ]
-      },
-      "texto05": {
-          "texto": "texto05",
-          "atributos": [
-              "color=black",
-              "font-size=1rem",
-              "width=100%",
-              "text-align=center"
-          ]
-      }
-  }
-    
+        "id": 8,
+        "imagen": "./img/novedades/webp/nov008.webp",
+        "texto01": {
+            "texto": "",
+            "atributos": [
+                "color=black",
+                "font-size=1rem",
+                "width=100%",
+                "text-align=center"
+            ]
+        },
+        "texto02": {
+            "texto": "",
+            "atributos": [
+                "color=black",
+                "font-size=1rem",
+                "width=100%",
+                "text-align=center"
+            ]
+        },
+        "texto03": {
+            "texto": "",
+            "atributos": [
+                "color=black",
+                "font-size=1rem",
+                "width=100%",
+                "text-align=center"
+            ]
+        },
+        "texto04": {
+            "texto": "",
+            "atributos": [
+                "color=black",
+                "font-size=1rem",
+                "width=100%",
+                "text-align=center"
+            ]
+        },
+        "texto05": {
+            "texto": "",
+            "atributos": [
+                "color=black",
+                "font-size=1rem",
+                "width=100%",
+                "text-align=center"
+            ]
+        }
+    },
+    "novedad9": {
+        "id": 9,
+        "imagen": "./img/novedades/webp/nov009.webp",
+        "texto01": {
+            "texto": "RALLY BUG 21.1",
+            "atributos": [
+                "color=black",
+                "font-size=1rem",
+                "width=100%",
+                "text-align=center"
+            ]
+        },
+        "texto02": {
+            "texto": "$118900 (Precio Lista)",
+            "atributos": [
+                "color=black",
+                "font-size=1rem",
+                "width=100%",
+                "text-align=center"
+            ]
+        },
+        "texto04": {
+            "texto": "Rodado: 21",
+            "atributos": [
+                "color=black",
+                "font-size=1rem",
+                "width=100%",
+                "text-align=center"
+            ]
+        },
+        "texto05": {
+            "texto": "Marca: BUG",
+            "atributos": [
+                "color=black",
+                "font-size=1rem",
+                "width=100%",
+                "text-align=center"
+            ]
+        },
+        "texto03": {
+            "texto": "OFERTA IMPERDIBLE!!!.",
+            "atributos": [
+                "color=black",
+                "font-size=1rem",
+                "width=100%",
+                "text-align=center"
+            ]
+        }
+      },     
+    "novedad10": {
+        "id": 10,
+        "imagen": "./img/novedades/webp/nov010.webp",
+        "texto01": {
+            "texto": "BACOTA-2023-NZ-scaled",
+            "atributos": [
+                "color=black",
+                "font-size=1rem",
+                "width=100%",
+                "text-align=center"
+            ]
+        },
+        "texto02": {
+            "texto": "$181160",
+            "atributos": [
+                "color=black",
+                "font-size=1rem",
+                "width=100%",
+                "text-align=center"
+            ]
+        },
+        "texto03": {
+            "texto": "Contado 20% dto. o 3 cuotas s/int.",
+            "atributos": [
+                "color=black",
+                "font-size=1rem",
+                "width=100%",
+                "text-align=center"
+            ]
+        },
+        "texto04": {
+            "texto": "Rodado: 26",
+            "atributos": [
+                "color=black",
+                "font-size=1rem",
+                "width=100%",
+                "text-align=center"
+            ]
+        },
+        "texto05": {
+            "texto": "Marca: Aurorita",
+            "atributos": [
+                "color=black",
+                "font-size=1rem",
+                "width=100%",
+                "text-align=center"
+            ]
+        }
+    },
+    "novedad11": {
+        "id": 11,
+        "imagen": "./img/novedades/webp/nov011.webp",
+        "texto01": {
+            "texto": "FOLDING SMART BK",
+            "atributos": [
+                "color=black",
+                "font-size=1rem",
+                "width=100%",
+                "text-align=center"
+            ]
+        },
+        "texto02": {
+            "texto": "$132701",
+            "atributos": [
+                "color=black",
+                "font-size=1rem",
+                "width=100%",
+                "text-align=center"
+            ]
+        },
+        "texto03": {
+            "texto": "Contado 20% dto. o 3 cuotas s/int.",
+            "atributos": [
+                "color=black",
+                "font-size=1rem",
+                "width=100%",
+                "text-align=center"
+            ]
+        },
+        "texto04": {
+            "texto": "Rodado: 20",
+            "atributos": [
+                "color=black",
+                "font-size=1rem",
+                "width=100%",
+                "text-align=center"
+            ]
+        },
+        "texto05": {
+            "texto": "Marca: AURORITA",
+            "atributos": [
+                "color=black",
+                "font-size=1rem",
+                "width=100%",
+                "text-align=center"
+            ]
+        }
+    },
+    "novedad12": {
+        "id": 12,
+        "imagen": "./img/novedades/webp/nov012.webp",
+        "texto01": {
+            "texto": "",
+            "atributos": [
+                "color=black",
+                "font-size=1rem",
+                "width=100%",
+                "text-align=center"
+            ]
+        },
+        "texto02": {
+            "texto": "",
+            "atributos": [
+                "color=black",
+                "font-size=1rem",
+                "width=100%",
+                "text-align=center"
+            ]
+        },
+        "texto03": {
+            "texto": "",
+            "atributos": [
+                "color=black",
+                "font-size=1rem",
+                "width=100%",
+                "text-align=center"
+            ]
+        },
+        "texto04": {
+            "texto": "",
+            "atributos": [
+                "color=black",
+                "font-size=1rem",
+                "width=100%",
+                "text-align=center"
+            ]
+        },
+        "texto05": {
+            "texto": "",
+            "atributos": [
+                "color=black",
+                "font-size=1rem",
+                "width=100%",
+                "text-align=center"
+            ]
+        }
+        }  
   }

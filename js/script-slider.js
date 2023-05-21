@@ -70,24 +70,44 @@ function cargarNovedades(dataNovedades) {
   var wNovedades = document.getElementById("idNovedades");
           
   for (obj in dataNovedades) {
-
+    let wClsSoloImg = "soloImg";
+ 
     let objNovedad = dataNovedades[obj];
-  
-    let wTexto1 = `<div class="novedades-slide-content-texto1">
+    let wTexto1 ="";
+    if ( objNovedad["texto01"]["texto"] != "") {
+      wTexto1 = `<div class="novedades-slide-content-texto1">
                     ${objNovedad["texto01"]["texto"]}
                     </div>`;
-    let wTexto2 = `<div class="novedades-slide-content-texto2">
+      wClsSoloImg = "";
+    }
+    let wTexto2 ="";
+    if ( objNovedad["texto02"]["texto"] != "") {
+      wTexto2 = `<div class="novedades-slide-content-texto2">
                     ${objNovedad["texto02"]["texto"]}
                     </div>`;
-    let wTexto3 = `<div class="novedades-slide-content-texto3">
+      wClsSoloImg = "";
+    }
+    let wTexto3 ="";
+    if ( objNovedad["texto03"]["texto"] != "") {
+      wTexto3 = `<div class="novedades-slide-content-texto3">
                     ${objNovedad["texto03"]["texto"]}
                     </div>`;
-    let wTexto4 = `<div class="novedades-slide-content-texto4">
+      wClsSoloImg = "";
+    }
+    let wTexto4 ="";
+    if ( objNovedad["texto04"]["texto"] != "") {
+      wTexto4 = `<div class="novedades-slide-content-texto4">
                     ${objNovedad["texto04"]["texto"]}
                     </div>`;
-    let wTexto5 = `<div class="novedades-slide-content-texto5">
+      wClsSoloImg = "";
+    }
+    let wTexto5 ="";
+    if ( objNovedad["texto05"]["texto"] != "") {
+      wTexto5 = `<div class="novedades-slide-content-texto5">
                     ${objNovedad["texto05"]["texto"]}
                     </div>`;
+      wClsSoloImg = "";
+    }
             
     let wBoton =  `<div class="novedades-slide-content-buttom"
                         onclick="abrirVentanaDetalleModal('${objNovedad.imagen}')">
@@ -97,7 +117,7 @@ function cargarNovedades(dataNovedades) {
     let wInner = `<div class="swiper-slide novedades-slide">
                         <div class="novedades-slide-img">
                             <img src="${objNovedad.imagen}" alt="novedades">
-                            <div class="novedades-slide-content">
+                            <div class="novedades-slide-content   ${wClsSoloImg}">
                                 ${wTexto1}
                                 ${wTexto2}
                                 ${wTexto3}
@@ -130,16 +150,27 @@ function inicializarNovedades() {
 
 }
 
-/* CARGAR INFORMACION DESDE ARCHIVO JSON EN RUTA DE LA APLICACION */
-/*../datos/datosNovedades.json*/
 
 /* CARGAR INFORMACION DESDE API FALSA */
 /* https://mocki.io/fake-json-api */
-   
+
 (async () => {
-    let response = await fetch('https://mocki.io/v1/ba183bf7-2da1-4222-9d0e-c351f5be78d5');
+    let response = await fetch('https://mocki.io/v1/7257bdd2-1f7d-43b8-90e6-bbb64cf73f87');
     cargarNovedades(await response.json());
 })();
+
+
+/* PARA PRUEBA : Carga desde archivo json en carpeta Datos */
+
+/* CON FETCH funsiona con LIVE server de VSC - sino da problema de CORS */
+/*(async () => {
+    let response = await fetch('../datos/datosNovedades.json');
+    cargarNovedades(await response.json());
+})();*/
+
+/* OTRA Forma para probar - cargar fijo desde una variable en JS */
+/* CARGAR INFORMACION DESDE ARCHIVO JSON EN RUTA DE LA APLICACION */
+/*../datos/datosNovedades.json*/
 
 
 /* ========================================================================================================*/

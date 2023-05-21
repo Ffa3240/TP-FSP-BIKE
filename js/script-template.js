@@ -25,7 +25,7 @@ wHeader.innerHTML = `
 </div>
 
 <div class="nav_central">
-    <p>Titulo o texto alusivo</p>
+    <p>AHORA PODÉS PAGAR EN HASTA 3 CUOTAS SIN INTERÉS</p>
 </div>
 
 <div class="nav_usuario">
