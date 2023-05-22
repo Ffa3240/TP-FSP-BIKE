@@ -56,8 +56,8 @@ $('#idImgSeparadorAbrirCerrarServicio').click(function () {
 function abrirVentanaDetalleModalConObjeto(obj) {
   let objProducto = dataProductos[obj];
 
-  let ventana = document.getElementById("idVentanaModalContainer");
-
+  let ventanaContainer = document.getElementById("idVentanaModalContainer");
+  let ventanaModal = document.getElementById("ventanaDetalleModal");
   let imagen = document.getElementById("imagenDetalleModal")
   imagen.src = objProducto.imagen;
 
@@ -74,17 +74,22 @@ function abrirVentanaDetalleModalConObjeto(obj) {
   texto.innerHTML +=
     `<div class="detModalTexto detModalTexto4">Marca: ${objProducto.marca}</div>
     <div class="detModalTexto detModalTexto5">Categoria: ${objProducto.categoria}</div>`
-
-  ventana.classList.toggle("ventanaModalMostrar")
+  ventanaModal.classList.remove("noTexto");
+  ventanaContainer.classList.toggle("ventanaModalMostrar")
+ /* ventanaModal.focus(); */
 }
 
 
 function abrirVentanaDetalleModal(srcImagen) {
-  let objProducto = dataProductos["producto1"];
-  let ventana = document.getElementById("idVentanaModalContainer");
+  let ventanaContainer = document.getElementById("idVentanaModalContainer");
+  let ventanaModal = document.getElementById("ventanaDetalleModal");
   let imagen = document.getElementById("imagenDetalleModal")
   imagen.src = srcImagen;
-  ventana.classList.toggle("ventanaModalMostrar")
+  let texto = document.getElementById("informacionDetalleModal");
+  texto.innerHTML ="";
+  ventanaContainer.classList.toggle("ventanaModalMostrar")
+  ventanaModal.classList.add("noTexto");
+/*  ventanaModal.focus(); */
 }
 
 function cerrarVentanaModal() {
@@ -93,6 +98,18 @@ function cerrarVentanaModal() {
   imagen.src = "";
   ventana.classList.toggle("ventanaModalMostrar")
 }
+
+/* Para detectar ESC de ventanaModal */
+var wVentanaDetalleModal = document.getElementById("ventanaDetalleModal");
+wVentanaDetalleModal.addEventListener('keydown', (event) => {
+    console.log(event.key)
+    console.log(event.code)
+    if (event.key == "Escape") {
+        cerrarVentanaModal();
+    }
+  }, false);
+
+
 
 /* Limpiar Filtros de seleccion */
 function limpiarFiltros() {
@@ -176,47 +193,54 @@ function selMarca(e) {
       cargarProductos(dataProductos) 
 }
 
-/* Pasa a un array de objetos */
-var objProductos = Object.entries(dataProductos);
+var wListaMarcas;
+function inicializarFiltros() {
 
-/* --------------------------------------------------------------------------------------------------*/
-/* --- CARGA DE COMBOBOX de Marcas ----*/
-  var wListaMarcas = document.getElementById("idListaMarcas");
+    /* Pasa a un array de objetos */
+    var objProductos = Object.entries(dataProductos);
 
-  /* agrupar objetos por marca */
-  let wMarcas = objProductos.reduce(function (groups, item) {
-    var val = item[1]['marca'];
-    groups[val] = groups[val] || { marca: val, cant: 0 };
-    groups[val].cant += 1;
-    return groups;
-  }, {})
+    /* --------------------------------------------------------------------------------------------------*/
+    /* --- CARGA DE COMBOBOX de Marcas ----*/
+    wListaMarcas = document.getElementById("idListaMarcas");
 
-  /* agregar las marcas al html de seleccion */
-  let wMarcasArray = Object.entries(wMarcas);
-  let wInner = "";
-  wMarcasArray.forEach(element => {
-    wInner = wInner +
-      `<option value="${element[1].marca}">
-              <div class="selItemMarca">${element[1].marca}</div>
-              <div class="selItemMarcaCant">(${element[1].cant})</div>
-          </option>`
-  });
-  wListaMarcas.innerHTML += wInner;
+    /* agrupar objetos por marca */
+    let wMarcas = objProductos.reduce(function (groups, item) {
+      var val = item[1]['marca'];
+      groups[val] = groups[val] || { marca: val, cant: 0 };
+      groups[val].cant += 1;
+      return groups;
+    }, {})
 
-/* --------------------------------------------------------------------------------------------------*/
-/* --- Total por Categoria ----*/
+      /* agregar las marcas al html de seleccion */
+      let wMarcasArray = Object.entries(wMarcas);
+      let wInner = "";
+      wMarcasArray.forEach(element => {
+        wInner = wInner +
+          `<option value="${element[1].marca}">
+                  <div class="selItemMarca">${element[1].marca}</div>
+                  <div class="selItemMarcaCant">(${element[1].cant})</div>
+              </option>`
+      });
+      wListaMarcas.innerHTML += wInner;
 
-/* agrupar objetos por marca */
-let wTotCategoria = objProductos.reduce(function (groups, item) {
-  var val = item[1]['categoria'];
-  groups[val] = groups[val] || { categoria: val, cant: 0 };
-  groups[val].cant += 1;
-  return groups;
-}, {})
-  /* agregar los totales a los chkBox de categoria  */
-$('#spanBicicleta').html('Bicicletas (' + wTotCategoria['bicicleta'].cant + ')');
-$('#spanAccesorio').html('Accesorios (' + wTotCategoria['accesorio'].cant + ')');
-$("#spanRepuesto").html('Repuestos (' + wTotCategoria['repuesto'].cant +')');
+      /* --------------------------------------------------------------------------------------------------*/
+      /* --- Total por Categoria ----*/
+
+      /* agrupar objetos por marca */
+      let wTotCategoria = objProductos.reduce(function (groups, item) {
+        var val = item[1]['categoria'];
+        groups[val] = groups[val] || { categoria: val, cant: 0 };
+        groups[val].cant += 1;
+        return groups;
+      }, {})
+      /* agregar los totales a los chkBox de categoria  */
+      $('#spanBicicleta').html('Bicicletas (' + wTotCategoria['bicicleta'].cant + ')');
+      $('#spanAccesorio').html('Accesorios (' + wTotCategoria['accesorio'].cant + ')');
+      $("#spanRepuesto").html('Repuestos (' + wTotCategoria['repuesto'].cant + ')');
+
+}
+
+
 
 /* --------------------------------------------------------------------------------------------------*/
 /* CARGA DE PRODUCTOS */
@@ -311,16 +335,31 @@ function cargarProductos(data) {
 
 };  
 
+var dataProductos;
 
-/* CARGAR INFORMACION DESDE ARCHIVO JSON EN RUTA DE LA APLICACION */
-/*../datos/datosProductos.json*/
+function cargaInicialProductos(data) {
+    dataProductos=data;
+    inicializarFiltros();
+    cargarProductos(data)
+}
+
+/* PARA PRUEBA: CARGAR INFORMACION DESDE ARCHIVO JSON EN RUTA DE LA APLICACION */
+/*try {
+  fetch('../datos/datosProductos.json')
+    .then(res => res.json())
+    .then(data => cargaInicialProductos(data));
+}
+catch {
+  alert("Error al cargar json de Productos ")
+}*/
 
 /* CARGAR INFORMACION DESDE API FALSA */
 /* https://mocki.io/fake-json-api */
+
 try {
-  fetch('https://mocki.io/v1/dcd2a0d1-f28b-43c3-8ad6-27fd75cfed12')
+  fetch('https://mocki.io/v1/4eb9e49e-c9c6-489a-9198-1b445eeba798')
     .then(res => res.json())
-    .then(data => cargarProductos(data));
+    .then(data => cargaInicialProductos(data));
 }
 catch {
   alert("Error al cargar json de Productos ")

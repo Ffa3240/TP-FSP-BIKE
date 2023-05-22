@@ -42,7 +42,8 @@ body {
   grid-template-rows: 1fr, 1fr;
   grid-template-areas: 'nav_logo   nav_central  nav_central nav_usuario'
                        'nav_menu   nav_menu  nav_menu    nav_menu';
-}
+  line-height: 1rem;
+ }
 
     .nav_logo {
       grid-area: nav_logo;
@@ -71,6 +72,7 @@ body {
       width: 100%;
       padding: 0;
       font-size: bold;
+      line-height: 1rem;
     }
 
  

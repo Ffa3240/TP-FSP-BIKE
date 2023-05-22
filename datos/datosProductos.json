@@ -89,7 +89,24 @@
       "nombre": "MXR-R20-Azul-y-Rojo",
       "rodado": "20"
     },
-  
+    "producto11": {
+      "id": 1,
+      "imagen": "./img/productos/bicicletas/bic011.webp",
+      "categoria": "bicicleta",
+      "precio": "181160",
+      "marca": "AURORITA",
+      "nombre": "BACOTA-2023-NZ-scaled",
+      "rodado": "26"
+    },
+    "producto12": {
+      "id": 1,
+      "imagen": "./img/productos/bicicletas/bic012.webp",
+      "categoria": "bicicleta",
+      "precio": "132701",
+      "marca": "AURORITA",
+      "nombre": "FOLDING SMART BK",
+      "rodado": "20"
+    },
     "accesorio01": {
       "id": 1,
       "imagen": "./img/productos/accesorios/acc001.webp",

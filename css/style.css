@@ -166,6 +166,7 @@ background-color: transparent;
   color: white;
   border-radius: 5px;
   padding: 1px 5px;
+  cursor: pointer;
 };
         #idListaMarcas:hover {
           box-shadow: 1px 1px 8px #d3cbcb !important;
@@ -178,13 +179,25 @@ background-color: transparent;
 
     #idListaMarcas option{
       color: white;
-      background-color: #2e2e2e
+      background-color: #2e2e2e;
     };
    
     .btnLimpiarFiltros {
       background-color: #2e2e2e !important;
       color: white;
       font-size: .9rem;
+    }
+    
+    #idChkBicicletas,  #idChkAccesorios,  #idChkRepuestos {
+      cursor: pointer;
+    }
+
+    #idSelPrecioDesde, #idSelPrecioHasta {
+      cursor:grab;
+    }
+
+    #idSelPrecioDesde:active, #idSelPrecioHasta:active {
+      cursor: grabbing;
     }
 
 /* ----------------------------------------------------------------------------------------------*/
@@ -448,6 +461,22 @@ background-color: transparent;
           text-align: center;
         }
 
+        .noTexto {
+            width: 30%;
+        }
+
+        .noTexto #informacionDetalleModal {
+          display: none;  
+        }
+        .noTexto #imagenDetalleModal {
+          width: 100%;
+          height: auto;
+          margin: 0px;
+          padding: 0px;
+          border-radius: 10px;
+        }
+
+
             .detModalTexto1 {
               color:black;
             }
@@ -482,8 +511,9 @@ background-color: transparent;
         background-color: transparent;
         border: none;
         position: absolute;
-        top: 0;
-        right: 0;
+        top: -9px;
+        right: -9px;
+        color: rgb(177, 8, 8);
        }
             #idBotonCerrarDetalleModal>svg:hover {
                 color: rgb(196, 190, 190);

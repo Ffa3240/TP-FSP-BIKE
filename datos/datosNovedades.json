@@ -1,6 +1,7 @@
 {
     "novedad1": {
         "id": 1,
+        "producto":"producto1",
         "imagen": "./img/novedades/webp/nov001.webp",
         "texto01": {
             "texto": "RALLY BUG 21.1",
@@ -50,6 +51,7 @@
     },
     "novedad2": {
         "id": 2,
+        "producto":"",
         "imagen": "./img/novedades/webp/nov002.webp",
         "texto01": {
             "texto": "",
@@ -99,6 +101,7 @@
         },
     "novedad3": {
         "id": 3,
+        "producto":"producto2",   
         "imagen": "./img/novedades/webp/nov003.webp",
         "texto01": {
             "texto": "MOUNTAIN BUG 24.1",
@@ -148,6 +151,7 @@
     },
     "novedad4": {
         "id": 4,
+        "producto":"producto3",
         "imagen": "./img/novedades/webp/nov004.webp",
         "texto01": {
             "texto": "LADY BUG 21.2 NEGRA",
@@ -197,6 +201,7 @@
     },
     "novedad5": {
         "id": 5,
+        "producto":"",      
         "imagen": "./img/novedades/webp/nov005.webp",
         "texto01": {
             "texto": "",
@@ -246,6 +251,7 @@
         },
     "novedad6": {
         "id": 6,
+        "producto":"producto4",   
         "imagen": "./img/novedades/webp/nov006.webp",
         "texto01": {
             "texto": "MOUNTAIN BUG 24.2",
@@ -295,6 +301,7 @@
     },
     "novedad7": {
         "id": 7,
+        "producto":"producto5",
         "imagen": "./img/novedades/webp/nov007.webp",
         "texto01": {
             "texto": "LADY BUG 21.1",
@@ -344,6 +351,7 @@
     },
     "novedad8": {
         "id": 8,
+        "producto":"",
         "imagen": "./img/novedades/webp/nov008.webp",
         "texto01": {
             "texto": "",
@@ -393,6 +401,7 @@
     },
     "novedad9": {
         "id": 9,
+        "producto":"producto1",
         "imagen": "./img/novedades/webp/nov009.webp",
         "texto01": {
             "texto": "RALLY BUG 21.1",
@@ -442,6 +451,7 @@
       },     
     "novedad10": {
         "id": 10,
+        "producto":"producto11",
         "imagen": "./img/novedades/webp/nov010.webp",
         "texto01": {
             "texto": "BACOTA-2023-NZ-scaled",
@@ -491,6 +501,7 @@
     },
     "novedad11": {
         "id": 11,
+        "producto":"producto12",
         "imagen": "./img/novedades/webp/nov011.webp",
         "texto01": {
             "texto": "FOLDING SMART BK",
@@ -540,6 +551,7 @@
     },
     "novedad12": {
         "id": 12,
+        "producto":"",
         "imagen": "./img/novedades/webp/nov012.webp",
         "texto01": {
             "texto": "",

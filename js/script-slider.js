@@ -21,10 +21,12 @@ async function postData(url = '', data = {}) {
 /* ========================================================================================================*/
 /* SLIDER DE NOVEDADES */
 /* ========================================================================================================*/
+var novedadesSlider;
+var efectoSlider;
 
 function inicializarSliderNovedades(efecto) {
-
-     var novedadesSlider = new Swiper('.novedades-slider', {
+     efectoSlider=efecto;
+     novedadesSlider = new Swiper('.novedades-slider', {
     
       effect: efecto,
     /*effect: 'coverflow', */
@@ -108,9 +110,13 @@ function cargarNovedades(dataNovedades) {
                     </div>`;
       wClsSoloImg = "";
     }
-            
+
+    let wFuncionVentanaModal = (objNovedad.producto=="") 
+                             ? `abrirVentanaDetalleModal('${objNovedad.imagen}')` 
+                             : `abrirVentanaDetalleModalConObjeto('${objNovedad.producto}')`;
+    
     let wBoton =  `<div class="novedades-slide-content-buttom"
-                        onclick="abrirVentanaDetalleModal('${objNovedad.imagen}')">
+                        onclick="${wFuncionVentanaModal}">
                         Detalle <i class="fa fa-eye "></i>
                     </div>`;
  
@@ -155,7 +161,7 @@ function inicializarNovedades() {
 /* https://mocki.io/fake-json-api */
 
 (async () => {
-    let response = await fetch('https://mocki.io/v1/7257bdd2-1f7d-43b8-90e6-bbb64cf73f87');
+    let response = await fetch('https://mocki.io/v1/9b3323a6-b4a7-4246-9b0a-f6404dcff803');   
     cargarNovedades(await response.json());
 })();
 
@@ -195,3 +201,22 @@ function inicializarSliderMarcas(efecto) {
 }
 
 inicializarSliderMarcas("fade");   
+
+
+window.addEventListener('resize', cambiarSlider);
+
+function cambiarSlider(){
+  if ( this.matchMedia("(max-width: 550px)").matches) {
+    if (efectoSlider != 'fade') {
+      novedadesSlider.destroy(true,true)
+      inicializarNovedades();
+    };
+  }
+  else {
+    if (efectoSlider != 'coverflow') {
+      novedadesSlider.destroy(true,true)
+      inicializarNovedades();
+    };
+  }
+  
+}
