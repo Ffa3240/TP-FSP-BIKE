@@ -194,10 +194,19 @@ background-color: transparent;
 
     #idSelPrecioDesde, #idSelPrecioHasta {
       cursor:grab;
+      width: 80%;
     }
 
     #idSelPrecioDesde:active, #idSelPrecioHasta:active {
       cursor: grabbing;
+    }
+
+    #idSelPrecioDesdeValor, #idSelPrecioHastaValor {
+      color: rgb(141, 141, 177);
+    }
+
+    .selTipo>ul {
+      padding-left: 0px;
     }
 
 /* ----------------------------------------------------------------------------------------------*/
@@ -263,7 +272,7 @@ background-color: transparent;
           margin-top: 1rem; 
           font-size: .9rem;
           text-align: start;
-          margin-left: 1rem;
+          margin-left: .5rem;
         }
 
             ul > li {
@@ -530,7 +539,7 @@ background-color: transparent;
 /* CORTE 1  
    - Productos de 4 columnas a 3 columnas 
    - Servicio de horizontal a vertical */
-@media all and (max-width: 790px) {
+@media all and (max-width: 780px) {
 
         .misProductos {
           grid-template-columns: 1fr 1fr 1fr;
@@ -566,7 +575,11 @@ background-color: transparent;
         #informacionDetalleModal {
           width: 100%;
         }
-     
+        .selTipo {
+          margin-left: 0.5rem;
+          font-size: .7rrem;
+
+        }
      
 }
 
@@ -599,6 +612,15 @@ background-color: transparent;
       .ventanaModal {
         width: 90%;
       } 
+ 
+      .selCategoria {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .selCategoria>ul {
+        display: flex;
+      }
 }
 
 /* CORTE 4  
