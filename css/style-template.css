@@ -476,8 +476,11 @@ footer {
     text-align: center;
   }
   #id_nav_usuario_in {
-    display: flex !important;
+    display: flex;
     flex-direction: column;
+  }
+  #id_nav_usuario_out {
+    display: grid;
   }
 }
 
