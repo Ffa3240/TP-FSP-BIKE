@@ -64,6 +64,10 @@
               .novedades-slide-content.soloImg {
                  padding: 0;
               }
+
+              .novedades-slide-content-texto {
+                font-size: calc(22px - (15px - 1vw)*1.83); 
+              }
                 .novedades-slide-content-texto1,
                 .novedades-slide-content-texto2,
                 .novedades-slide-content-texto3,
@@ -72,23 +76,19 @@
                     color:rgb(250, 247, 247);
                     font-weight: normal;
                     padding-top: 5px;
-                    padding-left: 10px;  
-                    font-size: calc(.3rem + 1vw);
+                    padding-left: 10px;             
                 }
-
                 .novedades-slide-content-texto1 {
-                font-size: calc(.1rem + 1.5vw);
+              /*  font-size: calc(.1rem + 1.5vw); */
                 color: rgb(187, 22, 22);
-                font-weight: bold;
-                
-               
+                font-weight: bold;           
                 } 
-                .novedades-slide-content-texto2 {
-                 
+
+                .novedades-slide-content-texto2 { 
                   color: rgb(119, 119, 247);
                 /*  text-shadow: 1px 1px 1px rgba(236,224,224,0.6); */
                   text-align: center;
-                  font-size: calc(.5rem + 1vw);
+          /*        font-size: calc(.5rem + 1vw); */
                 }
           /*      .novedades-slide-content-texto3 {
                   top: 21.5em;
@@ -96,10 +96,11 @@
                 .novedades-slide-content-texto4 {
                   top: 23em;
                 }
-                .novedades-slide-content-texto5 {
-                  top: 24.5em;
-                }
-          */  
+                */
+            /*    .novedades-slide-content-texto5 {
+                  margin-bottom: 70px;
+                }*/
+           
 
                  .novedades-slide-content-buttom {
                   position: absolute;
@@ -155,11 +156,25 @@
                         background-color: black !important;
                       }
 
-
+/* Slider Tipo Fade */
 @media all and (max-width: 550px) {
-      .novedades-slider-control {
+
+  .novedades-slide {
+    box-shadow:none;
+   }
+
+       .novedades-slider-control {
         width: auto;
+      }
+      .novedades-slide-content-texto {
+        font-size: calc(29px - (5.5px - 1vw)*6.7); 
       }
 }
 
+@media all and (max-width: 300px) {
+  .novedades-slide-content-texto {
+    font-size: 13px; 
+  }
+}
 
+  

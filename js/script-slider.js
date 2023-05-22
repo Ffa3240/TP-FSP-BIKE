@@ -75,35 +75,35 @@ function cargarNovedades(dataNovedades) {
     let objNovedad = dataNovedades[obj];
     let wTexto1 ="";
     if ( objNovedad["texto01"]["texto"] != "") {
-      wTexto1 = `<div class="novedades-slide-content-texto1">
+      wTexto1 = `<div class="novedades-slide-content-texto1 novedades-slide-content-texto">
                     ${objNovedad["texto01"]["texto"]}
                     </div>`;
       wClsSoloImg = "";
     }
     let wTexto2 ="";
     if ( objNovedad["texto02"]["texto"] != "") {
-      wTexto2 = `<div class="novedades-slide-content-texto2">
+      wTexto2 = `<div class="novedades-slide-content-texto2 novedades-slide-content-texto">
                     ${objNovedad["texto02"]["texto"]}
                     </div>`;
       wClsSoloImg = "";
     }
     let wTexto3 ="";
     if ( objNovedad["texto03"]["texto"] != "") {
-      wTexto3 = `<div class="novedades-slide-content-texto3">
+      wTexto3 = `<div class="novedades-slide-content-texto3 novedades-slide-content-texto">
                     ${objNovedad["texto03"]["texto"]}
                     </div>`;
       wClsSoloImg = "";
     }
     let wTexto4 ="";
     if ( objNovedad["texto04"]["texto"] != "") {
-      wTexto4 = `<div class="novedades-slide-content-texto4">
+      wTexto4 = `<div class="novedades-slide-content-texto4 novedades-slide-content-texto">
                     ${objNovedad["texto04"]["texto"]}
                     </div>`;
       wClsSoloImg = "";
     }
     let wTexto5 ="";
     if ( objNovedad["texto05"]["texto"] != "") {
-      wTexto5 = `<div class="novedades-slide-content-texto5">
+      wTexto5 = `<div class="novedades-slide-content-texto5 novedades-slide-content-texto">
                     ${objNovedad["texto05"]["texto"]}
                     </div>`;
       wClsSoloImg = "";
