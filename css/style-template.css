@@ -379,23 +379,11 @@ footer {
 /* MEDIA QUERYS */
 
 
-/* Mayor a 801px */
-@media all and (min-width: 801px) {
-  .nav {
-    display: flex;
-  }
-  .nav_img {
-    display: none;
-  }
-}
 
 
 /* menor-igual a 800px */
 @media all and (max-width: 800px) {
 
-  .nav_ocultar {
-    display: none
-  }
 
   .nav-menu {
     justify-content: start !important;
@@ -441,10 +429,13 @@ footer {
   }
 }
 
+.nav.nav_ocultar {
+  display: none;
+}
 
 
-/* menor-igual a 720px - celular apaisado */
-@media all and (max-width: 720px) {
+/* menor-igual a 730px - celular apaisado */
+@media all and (max-width: 730px) {
 
   .miHeader_nav {
     grid-template-columns: 5% 30% 38% 27%;
@@ -487,5 +478,16 @@ footer {
   #id_nav_usuario_in {
     display: flex !important;
     flex-direction: column;
+  }
+}
+
+
+/* Mayor a 801px */
+@media all and (min-width: 801px) {
+  .nav {
+    display: flex !important;
+  }
+  .nav_img {
+    display: none;
   }
 }

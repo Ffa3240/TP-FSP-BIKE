@@ -49,7 +49,7 @@ wHeader.innerHTML = `
     <div class="nav_img" onclick="nav_menu_mostrar_ocultar()">
         <img src="ico/menu-hamburguesa.svg" alt="Menu">
     </div>
-    <ul id="nav_id" class="nav nav_ocultar">
+    <ul id="nav_id" class="nav nav_ocultar" onclick="nav_cerrar()">
         <li class="nav_item"> 
             <a href="index.html" class="nav-link">Inicio</a>
         </li>
@@ -366,7 +366,11 @@ wLogOut.addEventListener("click", function() {
 
 window.addEventListener("load", verUsuario());
 
-function onKeyDownHandler() {
+/*function onKeyDownHandler() {
     console.log("key pressed ",  String.fromCharCode(event.keyCode));
-}
+}*/
 
+
+function nav_cerrar() {
+  $("#nav_id").addClass("nav_ocultar");
+}
