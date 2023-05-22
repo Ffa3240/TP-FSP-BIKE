@@ -49,7 +49,7 @@ wHeader.innerHTML = `
     <div class="nav_img" onclick="nav_menu_mostrar_ocultar()">
         <img src="ico/menu-hamburguesa.svg" alt="Menu">
     </div>
-    <ul id="nav_id" class="nav nav_ocultar" onclick="nav_cerrar()">
+    <ul id="nav_id" class="nav nav_ocultar">
         <li class="nav_item"> 
             <a href="index.html" class="nav-link">Inicio</a>
         </li>
@@ -370,7 +370,13 @@ window.addEventListener("load", verUsuario());
     console.log("key pressed ",  String.fromCharCode(event.keyCode));
 }*/
 
-
-function nav_cerrar() {
+/*
+function nav_cerrar(e) {
   $("#nav_id").addClass("nav_ocultar");
-}
+}*/
+
+$(".nav_item").on("click", function() {
+    if (!$(this).hasClass("dropdown")) {
+    $("#nav_id").addClass("nav_ocultar");
+    }
+})

@@ -218,5 +218,8 @@ function cambiarSlider(){
       inicializarNovedades();
     };
   }
-  
+  if ( this.matchMedia("(max-width: 800px)").matches) {
+    $("#nav_id").addClass("nav_ocultar");
+  }
+ 
 }

@@ -434,8 +434,8 @@ footer {
 }
 
 
-/* menor-igual a 730px - celular apaisado */
-@media all and (max-width: 730px) {
+/* menor-igual a 780px - celular apaisado */
+@media all and (max-width: 780px) {
 
   .miHeader_nav {
     grid-template-columns: 5% 30% 38% 27%;
