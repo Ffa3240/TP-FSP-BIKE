@@ -51,6 +51,17 @@ $('#idImgSeparadorAbrirCerrarServicio').click(function () {
   }
 });
 
+function btnCotizarAbrir() {
+  $("#idTituloCotizaAqui").addClass("active");
+  $("#idPieCotizaAqui").addClass("active");
+  $("#idFrameSeguro").attr("src","https://form.jotform.com/201877665436062");
+}
+
+function btnCotizarCerrar() {
+  $("#idTituloCotizaAqui").removeClass("active");
+  $("#idPieCotizaAqui").removeClass("active");
+  $("#idFrameSeguro").attr("src","https://www.youtube.com/embed/Kvx-j7p0spo");
+}
 
 
 function abrirVentanaDetalleModalConObjeto(obj) {
@@ -355,7 +366,7 @@ catch {
 
 /* CARGAR INFORMACION DESDE API FALSA */
 /* https://mocki.io/fake-json-api */
-
+/*
 try {
   fetch('https://mocki.io/v1/4eb9e49e-c9c6-489a-9198-1b445eeba798')
     .then(res => res.json())
@@ -364,8 +375,12 @@ try {
 catch {
   alert("Error al cargar json de Productos ")
 }
-
-
+*/
+/* CARGAR INFORMACION ASINCRONICA DESDE API FALSA */
+(async () => {
+  let response = await fetch('https://mocki.io/v1/4eb9e49e-c9c6-489a-9198-1b445eeba798');   
+  cargaInicialProductos(await response.json());
+})();
 
 
 

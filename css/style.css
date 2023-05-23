@@ -135,6 +135,7 @@ body {
                               }
                               
           .itemServicioVideo {
+            position:relative;
             width: 50%;
             height: auto;
             box-shadow: 6px 10px 70px 0px rgba(0, 0, 0, 0.75) ;
@@ -150,6 +151,37 @@ body {
                   height: 23rem;
                   margin: auto;
                 }
+
+                #idTituloCotizaAqui {
+                    display: none;
+                    position: absolute;
+                    background-color: #1b1b1b;
+                    color: white;
+                    height: 4rem;
+                    padding: 1rem;
+                    width: 100%;
+                    text-align: center; 
+                    border-radius: 5px 5px 0px 0px;
+                }
+
+                      #idTituloCotizaAqui.active {
+                        display:block;
+                      }
+
+                #idPieCotizaAqui {
+                  display: none;
+                  background-color: #1b1b1b;
+                  color: white;
+                  width: 100%;
+                  text-align: center; 
+                  border-radius: 0px 0px 5px 5px;
+                  padding-top: 0px;
+                  cursor: pointer;
+              }
+
+                      #idPieCotizaAqui.active {
+                        display:block;
+                      }
 
 /* ----------------------------------------------------------------------------------------------*/
 /* ESTILOS DE SELECCION DE PRODUCTOS */
@@ -550,8 +582,27 @@ background-color: transparent;
         }
 
         .ventanaModal {
-          width: 80%;
+          width: 85%;
+          margin-top: 1rem;
+          margin-left: 1.4rem;
+          height: 90vh;
+          display: grid;
+          grid-template-columns: 1.5fr 1fr;
         } 
+
+              .ventanaModal.noTexto {
+                width: 40%;
+                height: auto;
+                margin-top: 1rem;
+                display: block;
+                margin-left: auto;
+              } 
+
+              #informacionDetalleModal {
+                padding-top: 0px;
+                line-height: .8rem;
+              }
+
 
         .itemServicio {
           flex-direction: column;
@@ -632,7 +683,18 @@ background-color: transparent;
   
   .ventanaModal {
     width: 90%;
+    display: grid;
+    grid-template-columns: 1fr;
+    height: auto;
   } 
+  .ventanaModal.noTexto {
+    width: 80%;
+   } 
+
+  #informacionDetalleModal {
+    padding-top: 0px;
+    line-height: .8rem;
+  }
 
   .item:hover {
     transform: scale(1.1);
