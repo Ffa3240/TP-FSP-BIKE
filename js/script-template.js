@@ -1,19 +1,31 @@
-
+// referencias de los links de menu
+var refIrInicio = "#";
+var refIrNovedades= "#idNovedades-section";
+var refIrMarcas = "#idMarcas";
+var refIrServicios="#idServicios";
+var refIrProductos="#idProductos"
 
 // Agrega el Header a la pagina
 let wProductoNavInner ="";
 if (window.location.href.includes("index.html")) {
     wProductoNavInner = `
-                    <li><a class="dropdown-item" href="index.html#idProductos" onclick="selCategoriaMenu('B')">Bicicletas</a></li>
-                    <li><a class="dropdown-item" href="index.html#idProductos" onclick="selCategoriaMenu('R')">Repuestos</a></li>
-                    <li><a class="dropdown-item" href="index.html#idProductos" onclick="selCategoriaMenu('A')">Accesorios</a></li>
-                    <li><a class="dropdown-item" href="index.html#idProductos" onclick="selCategoriaMenu('T')">Todos</a></li>
+                    <li><a class="dropdown-item" href="${refIrProductos}" onclick="selCategoriaMenu('B')">Bicicletas</a></li>
+                    <li><a class="dropdown-item" href="${refIrProductos}" onclick="selCategoriaMenu('R')">Repuestos</a></li>
+                    <li><a class="dropdown-item" href="${refIrProductos}" onclick="selCategoriaMenu('A')">Accesorios</a></li>
+                    <li><a class="dropdown-item" href="${refIrProductos}" onclick="selCategoriaMenu('T')">Todos</a></li>
                     `
 } else {
-     wProductoNavInner = `
-                    <li><a class="dropdown-item" href="index.html#idProductos">Productos</a></li>
-                    `
-        };
+    refIrInicio = 'index.html' + refIrInicio;
+    refIrNovedades = 'index.html' + refIrNovedades;
+    refIrMarcas = 'index.html' + refIrMarcas;
+    refIrServicios = 'index.html' + refIrServicios;
+    refIrProductos = 'index.html' + refIrProductos;
+   
+    wProductoNavInner = `
+                    <li><a class="dropdown-item" href="${refIrProductos}">Productos</a></li>
+                    `;
+   
+};
 
 var wHeader = document.getElementById("idHeader")
 wHeader.innerHTML = `
@@ -51,7 +63,7 @@ wHeader.innerHTML = `
     </div>
     <ul id="nav_id" class="nav nav_ocultar">
         <li class="nav_item"> 
-            <a href="index.html" class="nav-link">Inicio</a>
+            <a href="${refIrInicio}" class="nav-link">Inicio</a>
         </li>
         <li class="nav_item">
             <a href="#idAcercaDe" class="nav-link">Acerca de</a>
@@ -60,7 +72,7 @@ wHeader.innerHTML = `
             <a href="contactos.html" class="nav-link">Contacto</a>
         </li>
         <li class="nav_item">
-            <a href="index.html#idNovedades-section" class="nav-link">Novedades</a>
+            <a href="${refIrNovedades}" class="nav-link">Novedades</a>
         </li>
         <li class="dropdown nav_item">
             <a class="dropdown-toggle nav-link" data-bs-toggle="dropdown" href="#" role="button"
@@ -70,11 +82,11 @@ wHeader.innerHTML = `
                 <li>
                     <hr class="dropdown-divider">
                 </li>
-                <li><a class="dropdown-item" href="index.html#idMarcas">Marcas</a></li>
+                <li><a class="dropdown-item" href="${refIrMarcas}">Marcas</a></li>
             </ul>
         </li>
         <li class="nav_item">
-            <a href="index.html#idServicios" class="nav-link">Servicios</a>
+            <a href="${refIrServicios}" class="nav-link">Servicios</a>
         </li>
         <li class="nav_item">
             <a href="sucursales.html" class="nav-link">Sucursales</a>
@@ -171,11 +183,11 @@ wFooter.innerHTML = `
             </div>
             <div class="productosNavegacion">
                 <i class="fa fa-bicycle" alt="productos" style="color:rgb(215, 215, 215)"></i>
-                <a href="index.html#idNovedades-section" target="_blank">Productos</a>
+                <a href="${refIrProductos}" target="_blank">Productos</a>
             </div>
             <div class="serviciosNavegacion">
                 <i class="fa fa-handshake" alt="servicios" style="color:rgb(215, 215, 215)"></i>
-                <a href="index.html#idServicios" target="_blank">Servicios</a>
+                <a href="${refIrServicios}" target="_blank">Servicios</a>
             </div>
         </div>
     </div>

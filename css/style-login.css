@@ -3,8 +3,9 @@
 }
 
 .form-register {
-    width: 400px;
-    height: 80vh;
+    width: 100%;
+    max-width: 400px;
+   /* height: 80vh;*/
     background: #1a344e;
     padding: 30px;
     margin: auto;
@@ -26,7 +27,8 @@
 }
 
 .controls {
-    width: 350px;
+    width: 100%;
+    max-width: 350px;
     background: #11487e;
     padding: 10px;
     border-radius: 4px;
