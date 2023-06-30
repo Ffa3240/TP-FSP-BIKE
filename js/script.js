@@ -63,9 +63,9 @@ function btnCotizarCerrar() {
   $("#idFrameSeguro").attr("src","https://www.youtube.com/embed/Kvx-j7p0spo");
 }
 
+function mostrarVentanaProducto(data) {
 
-function abrirVentanaDetalleModalConObjeto(obj) {
-  let objProducto = dataProductos[obj];
+  let objProducto = data;
 
   let ventanaContainer = document.getElementById("idVentanaModalContainer");
   let ventanaModal = document.getElementById("ventanaDetalleModal");
@@ -86,8 +86,50 @@ function abrirVentanaDetalleModalConObjeto(obj) {
     `<div class="detModalTexto detModalTexto4">Marca: ${objProducto.marca}</div>
     <div class="detModalTexto detModalTexto5">Categoria: ${objProducto.categoria}</div>`
   ventanaModal.classList.remove("noTexto");
+  ventanaContainer.classList.toggle("ventanaModalMostrar")  
+}
+
+function abrirVentanaDetalleModalConObjeto(idProducto) {
+  
+  let urlProductoId = "https://ffa3240.pythonanywhere.com/productos/" + idProducto;
+  
+  try {
+    fetch(urlProductoId)
+      .then(res => res.json())
+      .then(data => mostrarVentanaProducto(data));
+  }
+  catch {
+    alert("Error al cargar Producto: " + idProducto);
+  }
+
+/* let objProducto = dataProductos[idProducto]; */
+ 
+/*
+  let ventanaContainer = document.getElementById("idVentanaModalContainer");
+  let ventanaModal = document.getElementById("ventanaDetalleModal");
+  let imagen = document.getElementById("imagenDetalleModal")
+  imagen.src = objProducto.imagen;
+
+  let texto = document.getElementById("informacionDetalleModal");
+  texto.innerHTML =
+    `<div class="detModalTexto detModalTexto1">${objProducto.nombre}</div>
+   <div class="detModalTexto detModalTexto2">$ ${objProducto.precio}</div>
+   <img id="detModalImgOferta1" src="./img/Ofertas/ahora12.png">
+   <img id="detModalImgOferta1" src="./img/Ofertas/3-6-12.png">`
+  if (objProducto.categoria == "bicicleta") {
+    texto.innerHTML +=
+      `<div class="detModalTexto detModalTexto3">Rodado: ${objProducto.rodado}</div>`
+  }
+  texto.innerHTML +=
+    `<div class="detModalTexto detModalTexto4">Marca: ${objProducto.marca}</div>
+    <div class="detModalTexto detModalTexto5">Categoria: ${objProducto.categoria}</div>`
+  ventanaModal.classList.remove("noTexto");
   ventanaContainer.classList.toggle("ventanaModalMostrar")
- /* ventanaModal.focus(); */
+*/
+
+  /* ventanaModal.focus(); */
+
+
 }
 
 
@@ -245,13 +287,23 @@ function inicializarFiltros() {
         return groups;
       }, {})
       /* agregar los totales a los chkBox de categoria  */
-      $('#spanBicicleta').html('Bicicletas (' + wTotCategoria['bicicleta'].cant + ')');
-      $('#spanAccesorio').html('Accesorios (' + wTotCategoria['accesorio'].cant + ')');
-      $("#spanRepuesto").html('Repuestos (' + wTotCategoria['repuesto'].cant + ')');
+      let wTotalBicicleta = 0;
+      try {
+         wTotalBicicleta = wTotCategoria['bicicleta'].cant
+      } catch  {}
+      let wTotalAccesorio = 0;
+      try {
+         wTotalAccesorio = wTotCategoria['accesorio'].cant 
+      } catch  {}
+      let wTotalRepuesto = 0;
+      try {
+         wTotalRepuesto = wTotCategoria['repuesto'].cant
+      } catch  {}
+      $('#spanBicicleta').html('Bicicletas (' + wTotalBicicleta + ')');
+      $('#spanAccesorio').html('Accesorios (' + wTotalAccesorio + ')');
+      $("#spanRepuesto").html('Repuestos (' + wTotalRepuesto + ')');
 
 }
-
-
 
 /* --------------------------------------------------------------------------------------------------*/
 /* CARGA DE PRODUCTOS */
@@ -299,7 +351,7 @@ function cargarProductos(data) {
         if (wListaMarcas.value == "*all" || objProducto.marca == wListaMarcas.value) {    
           hayProductosSeleccionados=true;
  
-          let wClaveProducto = String(obj);
+          let wClaveProducto = String(objProducto.id);
 
           let wItem = document.createElement("div")
           let wHtml = /*html*/ `  
@@ -355,14 +407,16 @@ function cargaInicialProductos(data) {
 }
 
 /* PARA PRUEBA: CARGAR INFORMACION DESDE ARCHIVO JSON EN RUTA DE LA APLICACION */
-/*try {
+/*
+try {
   fetch('../datos/datosProductos.json')
     .then(res => res.json())
     .then(data => cargaInicialProductos(data));
 }
 catch {
   alert("Error al cargar json de Productos ")
-}*/
+}
+*/
 
 /* CARGAR INFORMACION DESDE API FALSA */
 /* https://mocki.io/fake-json-api */
@@ -376,11 +430,18 @@ catch {
   alert("Error al cargar json de Productos ")
 }
 */
+
 /* CARGAR INFORMACION ASINCRONICA DESDE API FALSA */
-(async () => {
+/*(async () => {
   let response = await fetch('https://mocki.io/v1/4eb9e49e-c9c6-489a-9198-1b445eeba798');   
   cargaInicialProductos(await response.json());
 })();
+*/
 
+/* CARGAR INFORMACION ASINCRONICA DESDE API PYTHOANYWHERE */
+(async () => {
+  let response = await fetch('https://ffa3240.pythonanywhere.com/productos');   
+  cargaInicialProductos(await response.json());
+})();
 
 

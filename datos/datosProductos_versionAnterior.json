@@ -1,332 +1,290 @@
-[
- {
+{
+    "producto1": {
         "id": 1,
-          "nombre": "RALLY BUG 21.1",
-        "precio": "118900",
-	"stock": 100,
         "imagen": "./img/productos/bicicletas/bic001.webp",
         "categoria": "bicicleta",
+        "precio": "118900",
         "marca": "BUG",
+        "nombre": "RALLY BUG 21.1",
         "rodado": "21"
     },
- {
-        "id": 2,
-          "nombre": "MOUNTAIN BUG 24.1",
-        "precio": "163990",
-	"stock": 100,
-       "imagen": "./img/productos/bicicletas/bic002.webp",
+    "producto2": {
+        "id": 1,
+        "imagen": "./img/productos/bicicletas/bic002.webp",
         "categoria": "bicicleta",
+        "precio": "163990",
         "marca": "BUG",
+        "nombre": "MOUNTAIN BUG 24.1",
         "rodado": "24"
     },
- {
-        "id": 3,
-          "nombre": "LADY BUG 21.2 NEGRA",
-        "precio": "139990",
-	"stock": 100,
+    "producto3": {
+        "id": 1,
         "imagen": "./img/productos/bicicletas/bic003.webp",
         "categoria": "bicicleta",
+        "precio": "139990",
         "marca": "BUG",
+        "nombre": "LADY BUG 21.2 NEGRA",
         "rodado": "21"
     },
- {
-        "id": 4,
-        "nombre": "MOUNTAIN BUG 24.2",
-      "precio": "163990",
-	"stock": 100,
+    "producto4": {
+      "id": 1,
       "imagen": "./img/productos/bicicletas/bic004.webp",
       "categoria": "bicicleta",
+      "precio": "163990",
       "marca": "BUG",
+      "nombre": "MOUNTAIN BUG 24.2",
       "rodado": "24"
     },
- {
-        "id": 5,
-        "nombre": "LADY BUG 21.1",
-      "precio": "139990",
-	"stock": 100,
+    "producto5": {
+      "id": 1,
       "imagen": "./img/productos/bicicletas/bic005.webp",
       "categoria": "bicicleta",
+      "precio": "139990",
       "marca": "BUG",
+      "nombre": "LADY BUG 21.1",
       "rodado": "21"
     },
- {
-        "id": 6,
-        "nombre": "MOUNTAIN BUG 27.2",
-      "precio": "235990",
-	"stock": 100,
+    "producto6": {
+      "id": 1,
       "imagen": "./img/productos/bicicletas/bic006.webp",
       "categoria": "bicicleta",
+      "precio": "235990",
       "marca": "BUG",
+      "nombre": "MOUNTAIN BUG 27.2",
       "rodado": "27"
     },
- {
-        "id": 7,
-        "nombre": "SBK-X9-R20",
-      "precio": "298000",
-	"stock": 100,
+    "producto7": {
+      "id": 1,
       "imagen": "./img/productos/bicicletas/bic007.webp",
       "categoria": "bicicleta",
+      "precio": "298000",
       "marca": "SBK",
+      "nombre": "SBK-X9-R20",
       "rodado": "20"
     },
- {
-        "id": 8,
-        "nombre": "Tern-HSD-P9-Rojo",
-      "precio": "458900",
-	"stock": 100,
+    "producto8": {
+      "id": 1,
       "imagen": "./img/productos/bicicletas/bic008.webp",
       "categoria": "bicicleta",
+      "precio": "458900",
       "marca": "TERN",
+      "nombre": "Tern-HSD-P9-Rojo",
       "rodado": "20"
     },
- {
-        "id": 9,
-        "nombre": "LAMXR-R12-Verde-y-Negro",
-      "precio": "189990",
-	"stock": 100,
+    "producto9": {
+      "id": 1,
       "imagen": "./img/productos/bicicletas/bic009.webp",
       "categoria": "bicicleta",
+      "precio": "189990",
       "marca": "RALEIGH",
+      "nombre": "LAMXR-R12-Verde-y-Negro",
       "rodado": "12"
     },
- {
-        "id": 10,
-        "nombre": "MXR-R20-Azul-y-Rojo",
-      "precio": "89000",
-	"stock": 100,
+    "producto10": {
+      "id": 1,
       "imagen": "./img/productos/bicicletas/bic010.webp",
       "categoria": "bicicleta",
+      "precio": "89000",
       "marca": "RALEIGH",
+      "nombre": "MXR-R20-Azul-y-Rojo",
       "rodado": "20"
     },
- {
-        "id": 11,
-        "nombre": "BACOTA-2023-NZ-scaled",
-      "precio": "181160",
-	"stock": 100,
+    "producto11": {
+      "id": 1,
       "imagen": "./img/productos/bicicletas/bic011.webp",
       "categoria": "bicicleta",
+      "precio": "181160",
       "marca": "AURORITA",
+      "nombre": "BACOTA-2023-NZ-scaled",
       "rodado": "26"
     },
- {
-        "id": 12,
-        "nombre": "FOLDING SMART BK",
-      "precio": "132701",
-	"stock": 100,
+    "producto12": {
+      "id": 1,
       "imagen": "./img/productos/bicicletas/bic012.webp",
       "categoria": "bicicleta",
+      "precio": "132701",
       "marca": "AURORITA",
+      "nombre": "FOLDING SMART BK",
       "rodado": "20"
     },
- {
-        "id": 13,
-        "nombre": "Luz-Trasera-Entity-RL35-USB-2",
-      "precio": "9352",
-	"stock": 100,
+    "accesorio01": {
+      "id": 1,
       "imagen": "./img/productos/accesorios/acc001.webp",
       "categoria": "accesorio",
+      "precio": "9352",
       "marca": "Entity",
+      "nombre": "Luz-Trasera-Entity-RL35-USB-2",
       "rodado": ""
     },
- {
-        "id": 14,
-        "nombre": "Luz-Trasera Ravemen TR50",
-      "precio": "23650",
-	"stock": 100,
+   "accesorio02": {
+      "id": 2,
       "imagen": "./img/productos/accesorios/acc002.webp",
       "categoria": "accesorio",
+      "precio": "23650",
       "marca": "Ravemen",
+      "nombre": "Luz-Trasera Ravemen TR50",
       "rodado": ""
     },
- {
-        "id": 15,
-        "nombre": "Inflador-de-Mano-Beto-CMPB-03B-NegroRojo",
-      "precio": "4515",
-	"stock": 100,
+   "accesorio03": {
+      "id": 3,
       "imagen": "./img/productos/accesorios/acc003.webp",
       "categoria": "accesorio",
+      "precio": "4515",
       "marca": "Beto",
+      "nombre": "Inflador-de-Mano-Beto-CMPB-03B-NegroRojo",
       "rodado": ""
     },
- {
-        "id": 16,
-        "nombre": "Timbre-Ostand-CD-614-GrisNegro",
-      "precio": "2472,5",
-	"stock": 100,
+   "accesorio04": {
+      "id": 4,
       "imagen": "./img/productos/accesorios/acc004.webp",
       "categoria": "accesorio",
+      "precio": "2472,5",
       "marca": "Ostand",
+      "nombre": "Timbre-Ostand-CD-614-GrisNegro",
       "rodado": ""
     },
- {
-        "id": 17,
-        "nombre": "Adaptador-Tern-Luggage-Truss-G2-2",
-      "precio": "860",
-	"stock": 100,
+   "accesorio05": {
+      "id": 5,
       "imagen": "./img/productos/accesorios/acc005.webp",
       "categoria": "accesorio",
+      "precio": "860",
       "marca": "New Evolution",
+      "nombre": "Kit-de-Parche-y-Solucion2",
       "rodado": ""
     },
- {
-        "id": 18,
-        "nombre": "Bolso-Ortlieb-Downtown-Verde",
-      "precio": "59555",
-	"stock": 100,
+   "accesorio06": {
+      "id": 6,
       "imagen": "./img/productos/accesorios/acc006.webp",
       "categoria": "accesorio",
+      "precio": "59555",
       "marca": "Ortlieb",
+      "nombre": "Bolso-Ortlieb-Downtown-Verde",
       "rodado": ""
     },
- {
-        "id": 19,
-        "nombre": "Adaptador-Tern-Luggage-Truss-G2-2",
-      "precio": "20317",
-      "stock": 100,
+   "accesorio07": {
+      "id": 7,
       "imagen": "./img/productos/accesorios/acc007.webp",
       "categoria": "accesorio",
+      "precio": "20317",
       "marca": "Tern",
+      "nombre": "Adaptador-Tern-Luggage-Truss-G2-2",
       "rodado": ""
     },
- {
-        "id": 20,
-        "nombre": "Plataforma-Shimano-SM-PD22",
-      "precio": "9030",
-      "stock": 100,
+   "accesorio08": {
+      "id": 8,
       "imagen": "./img/productos/accesorios/acc008.webp",
       "categoria": "accesorio",
+      "precio": "9030",
       "marca": "Shimano",
+      "nombre": "Plataforma-Shimano-SM-PD22",
       "rodado": ""
     },
- {
-        "id": 21,
-        "nombre": "Bolso-Ortlieb-Mobile",
-      "precio": "11717",
-      "stock": 100,
+   "accesorio09": {
+      "id": 9,
       "imagen": "./img/productos/accesorios/acc009.webp",
       "categoria": "accesorio",
+      "precio": "11717",
       "marca": "Ortlieb",
+      "nombre": "Bolso-Ortlieb-Mobile",
       "rodado": ""
     },
- {
-        "id": 22,
-        "nombre": "Bolso-Bajo-Asiento-Maxxum-Smart-Chico",
-      "precio": "1827",
-      "stock": 100,
+   "accesorio10": {
+      "id": 10,
       "imagen": "./img/productos/accesorios/acc010.webp",
       "categoria": "accesorio",
+      "precio": "1827",
       "marca": "Maxxum",
+      "nombre": "Bolso-Bajo-Asiento-Maxxum-Smart-Chico",
       "rodado": ""
     },
- {
-        "id": 23,
-        "nombre": "Calza-Corta-Ziroox-Praga-NegroFucsia",
-      "precio": "14099",
-      "stock": 100,
+    "accesorio11": {
+      "id": 11,
       "imagen": "./img/productos/accesorios/acc011.webp",
       "categoria": "accesorio",
+      "precio": "14099",
       "marca": "Ziroox",
+      "nombre": "Calza-Corta-Ziroox-Praga-NegroFucsia",
       "rodado": ""
     },
- {
-        "id": 24,
-        "nombre": "Eje-de-Maza-Shimano-FH-M788",
-      "precio": "37729",      
-      "stock": 100,
+    "repuesto01": {
+      "id": 1,
       "imagen": "./img/productos/repuestos/rep001.webp",
-      "categoria": "repuesto", 
+      "categoria": "repuesto", "precio": "37729",
       "marca": "Shimano",
+      "nombre": "Eje-de-Maza-Shimano-FH-M788",
       "rodado": ""
     },
- {
-        "id": 25,
-        "nombre": "Eje-de-Maza-Shimano-HB-M8010",
-      "precio": "33930",
-      "stock": 100,
+   "repuesto02": {
+      "id": 1,
       "imagen": "./img/productos/repuestos/rep002.webp",
-      "categoria": "repuesto", 
+      "categoria": "repuesto", "precio": "33930",
       "marca": "Shimano",
+      "nombre": "Eje-de-Maza-Shimano-HB-M8010",
       "rodado": ""
     },
- {
-        "id": 26,
-        "nombre": "Horquilla-Rockshox-Recon-Silver-RL-R29-Negro",
-      "precio": "277350",
-      "stock": 100,
+   "repuesto03": {
+      "id": 1,
       "imagen": "./img/productos/repuestos/rep003.webp",
-      "categoria": "repuesto", 
+      "categoria": "repuesto", "precio": "277350",
       "marca": "Rockshox",
+      "nombre": "Horquilla-Rockshox-Recon-Silver-RL-R29-Negro",
       "rodado": ""
     },
- {
-        "id": 27,
-        "nombre": "Asiento-New-Evolution-FN-22",
-      "precio": "6772",
-      "stock": 100,
+   "repuesto04": {
+      "id": 1,
       "imagen": "./img/productos/repuestos/rep004.webp",
-      "categoria": "repuesto", 
+      "categoria": "repuesto", "precio": "6772",
       "marca": "New Evolution",
+      "nombre": "Asiento-New-Evolution-FN-22",
       "rodado": ""
     },
- {
-        "id": 28,
-        "nombre": "Asiento-New-Evolution-NE-27",
-      "precio": "15050",
-      "stock": 100,
+   "repuesto05": {
+      "id": 1,
       "imagen": "./img/productos/repuestos/rep005.webp",
-      "categoria": "repuesto", 
+      "categoria": "repuesto", "precio": "15050",
       "marca": "New Evolution",
+      "nombre": "Asiento-New-Evolution-NE-27",
       "rodado": ""
     },
- {
-        "id": 29,
-        "nombre": "Cadena Shimano CN-HG40",
-      "precio": "6036",
-      "stock": 100,
+   "repuesto06": {
+      "id": 1,
       "imagen": "./img/productos/repuestos/rep006.webp",
-      "categoria": "repuesto", 
+      "categoria": "repuesto", "precio": "6036",
       "marca": "Shimano",
+      "nombre": "Cadena Shimano CN-HG40",
       "rodado": ""
     },
- {
-        "id": 30,
-        "nombre": "Camara-Camel-Presta",
-      "precio": "4085",
-      "stock": 100,
+   "repuesto07": {
+      "id": 1,
       "imagen": "./img/productos/repuestos/rep007.webp",
-      "categoria": "repuesto", 
+      "categoria": "repuesto", "precio": "4085",
       "marca": "Camel",
+      "nombre": "Camara-Camel-Presta",
       "rodado": ""
     },
- {
-        "id": 31,
-        "nombre": "Camara-Camel-Presta",
-      "precio": "3977",
-      "stock": 100,
+   "repuesto08": {
+      "id": 1,
       "imagen": "./img/productos/repuestos/rep008.webp",
-      "categoria": "repuesto", 
+      "categoria": "repuesto", "precio": "3977",
       "marca": "Camel",
+      "nombre": "Camara-Camel-Presta",
       "rodado": ""
     },
- {
-        "id": 32,
-        "nombre": "Puños-Van-Halen-Ergonomic-v2",
-      "precio": "7495",
-      "stock": 100,
+   "repuesto09": {
+      "id": 1,
       "imagen": "./img/productos/repuestos/rep009.webp",
-      "categoria": "repuesto", 
+      "categoria": "repuesto", "precio": "7495",
       "marca": "Van Halen",
+      "nombre": "Puños-Van-Halen-Ergonomic-v2",
       "rodado": ""
     },
- {
-        "id": 33,
-        "nombre": "Tubelizador-Finish-Line-Sealant",
-      "precio": "5759",
-      "stock": 100,
+   "repuesto10": {
+      "id": 1,
       "imagen": "./img/productos/repuestos/rep010.webp",
-      "categoria": "repuesto", 
+      "categoria": "repuesto", "precio": "5759",
       "marca": "Finish Line",
+      "nombre": "Tubelizador-Finish-Line-Sealant",
       "rodado": ""
     }
-]
+  
+  }

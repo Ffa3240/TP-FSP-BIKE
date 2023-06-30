@@ -1,0 +1,21 @@
+
+pip install flask flask-sqlalchemy flask-marshmallow marshmallow-sqlalchemy pymysql -U flask-cors
+
+
+ffa3240.pythonanywhere.com.
+path: /home/ffa3240/mysite/app.py
+
+
+pythonanywhere
+usuario: ffa3240
+contraseña: Amenabar3240
+base de datos:
+nombre: ffa3240$fspbike
+usuario: ffa3240
+contraseña: tpfspbike
+
+Connecting: Use these settings in your web applications.
+Database host address:ffa3240.mysql.pythonanywhere-services.com
+Username:ffa3240
+
+url: http://ffa3240.pythonanywhere.com/productos

@@ -76,44 +76,44 @@ function cargarNovedades(dataNovedades) {
  
     let objNovedad = dataNovedades[obj];
     let wTexto1 ="";
-    if ( objNovedad["texto01"]["texto"] != "") {
+    if ( objNovedad["texto01"] != "") {
       wTexto1 = `<div class="novedades-slide-content-texto1 novedades-slide-content-texto">
-                    ${objNovedad["texto01"]["texto"]}
+                    ${objNovedad["texto01"]}
                     </div>`;
       wClsSoloImg = "";
     }
     let wTexto2 ="";
-    if ( objNovedad["texto02"]["texto"] != "") {
+    if ( objNovedad["texto02"] != "") {
       wTexto2 = `<div class="novedades-slide-content-texto2 novedades-slide-content-texto">
-                    ${objNovedad["texto02"]["texto"]}
+                    ${objNovedad["texto02"]}
                     </div>`;
       wClsSoloImg = "";
     }
     let wTexto3 ="";
-    if ( objNovedad["texto03"]["texto"] != "") {
+    if ( objNovedad["texto03"] != "") {
       wTexto3 = `<div class="novedades-slide-content-texto3 novedades-slide-content-texto">
-                    ${objNovedad["texto03"]["texto"]}
+                    ${objNovedad["texto03"]}
                     </div>`;
       wClsSoloImg = "";
     }
     let wTexto4 ="";
-    if ( objNovedad["texto04"]["texto"] != "") {
+    if ( objNovedad["texto04"] != "") {
       wTexto4 = `<div class="novedades-slide-content-texto4 novedades-slide-content-texto">
-                    ${objNovedad["texto04"]["texto"]}
+                    ${objNovedad["texto04"]}
                     </div>`;
       wClsSoloImg = "";
     }
     let wTexto5 ="";
-    if ( objNovedad["texto05"]["texto"] != "") {
+    if ( objNovedad["texto05"] != "") {
       wTexto5 = `<div class="novedades-slide-content-texto5 novedades-slide-content-texto">
-                    ${objNovedad["texto05"]["texto"]}
+                    ${objNovedad["texto05"]}
                     </div>`;
       wClsSoloImg = "";
     }
 
-    let wFuncionVentanaModal = (objNovedad.producto=="") 
-                             ? `abrirVentanaDetalleModal('${objNovedad.imagen}')` 
-                             : `abrirVentanaDetalleModalConObjeto('${objNovedad.producto}')`;
+    let wFuncionVentanaModal = (objNovedad.codProducto==0) 
+                             ? `abrirVentanaDetalleModal('${objNovedad.imagenNovedad}')` 
+                             : `abrirVentanaDetalleModalConObjeto('${objNovedad.codProducto}')`;
     
     let wBoton =  `<div class="novedades-slide-content-buttom"
                         onclick="${wFuncionVentanaModal}">
@@ -122,7 +122,7 @@ function cargarNovedades(dataNovedades) {
  
     let wInner = `<div class="swiper-slide novedades-slide">
                         <div class="novedades-slide-img">
-                            <img src="${objNovedad.imagen}" alt="novedades">
+                            <img src="${objNovedad.imagenNovedad}" alt="novedades">
                             <div class="novedades-slide-content   ${wClsSoloImg}">
                                 ${wTexto1}
                                 ${wTexto2}
@@ -160,10 +160,25 @@ function inicializarNovedades() {
 /* CARGAR INFORMACION DESDE API FALSA */
 /* https://mocki.io/fake-json-api */
 
+/*
 (async () => {
     let response = await fetch('https://mocki.io/v1/9b3323a6-b4a7-4246-9b0a-f6404dcff803');   
     cargarNovedades(await response.json());
 })();
+*/
+
+/* CARGAR INFORMACION DESDE PYTHONANYWHERE */
+/* https://ffa3240.pythonanywhere.com/novedades */
+
+(async () => {
+  let response = await fetch('https://ffa3240.pythonanywhere.com/novedades');   
+  cargarNovedades(await response.json());
+})();
+
+
+
+
+
 
 
 /* PARA PRUEBA : Carga desde archivo json en carpeta Datos */
