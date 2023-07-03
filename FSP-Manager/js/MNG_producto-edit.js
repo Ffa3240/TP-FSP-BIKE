@@ -56,21 +56,26 @@ createApp({
         marca: this.marca,
         rodado: this.rodado,
      };
-      var options = {
-        body: JSON.stringify(producto),
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        redirect: "follow",
-      };
-      fetch(this.url, options)
-        .then(function () {
-          alert("Registro actualizado!");
-          window.location.href = "./MNG_productos.html";
-        })
-        .catch((err) => {
-          console.error(err);
-          alert("Error al actualizar.");
-        });
+
+     if (validar(producto)) {
+            var options = {
+              body: JSON.stringify(producto),
+              method: "PUT",
+              headers: { "Content-Type": "application/json" },
+              redirect: "follow",
+            };
+            fetch(this.url, options)
+              .then(function () {
+                modificacionConfirmada();
+              })
+              .catch((err) => {
+                console.error(err);
+                alert("Error al actualizar.");
+              });
+      }
+    },
+    salir() {
+      window.location.href = "./MNG_productos.html"; // Redirigir a la página de productos 
     },
   },
   created() {
@@ -81,3 +86,49 @@ createApp({
   /* Posteriormente, se utiliza el método mount("#app") para montar la instancia de Vue en el elemento HTML con el id "app". Esto permite que la instancia de Vue controle y renderice el contenido dentro de ese elemento HTML.
   */
 }).mount("#app");
+
+function modificacionConfirmada() {
+  MostrarVentanaModalGeneral("Se ha modificado correctamente el producto.", "80%", "30%", true, "./MNG_productos.html","rgb(30 30 44)")
+}
+
+
+function validar(objProducto) {
+  let resultado = true;
+
+  let strError = `<h6>Errores en la modificacion de datos:<h6><div></div>`;
+
+  if (objProducto.nombre.trim() == "") {
+    strError = strError + `<p> - Falta indicar nombre</p>`;
+    resultado=false;
+  }
+  if (objProducto.precio == 0) {
+    strError = strError + `<p> - Falta indicar precio</p>`;
+    resultado=false;
+  }
+  if (objProducto.imagen.trim() == "") {
+    strError = strError + `<p> - Falta indicar ruta de imagen</p>`;
+    resultado=false;
+  }
+  if (! ["bicicleta", "accesorio", "repuesto"].includes(objProducto.categoria)) {
+    strError = strError + `<p> - Categoria de producto, no válida</p>`;
+    resultado=false;
+  }
+  if (objProducto.marca.trim() == "") {
+    strError = strError + `<p> - Falta indicar marca</p>`;
+    resultado=false;
+  }
+  if (objProducto.categoria == "bicicleta" && objProducto.rodado.trim()=="") {
+    strError = strError + `<p> - Falta indicar rodado</p>`;
+    resultado=false;
+  }
+  if (objProducto.categoria != "bicicleta" && objProducto.rodado.trim()!="") {
+    strError = strError + `<p> - No debe indicar rodado, para categoria distinta de bicicleta.</p>`;
+    resultado=false;
+  }
+
+  if (!resultado) {
+    MostrarVentanaModalGeneral(strError, "80%", "30%", true, "#","rgb(177 22 22)")
+  }
+
+  return resultado;
+}

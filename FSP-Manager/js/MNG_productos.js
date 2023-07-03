@@ -27,6 +27,7 @@ createApp({
       /**El método fetchData realiza una solicitud HTTP utilizando la función fetch a la URL especificada. Luego, los datos de respuesta se convierten en formato JSON y se asignan al arreglo productos. Además, se actualiza la variable cargando para indicar que la carga de productos ha finalizado. En caso de producirse un error, se muestra en la consola y se establece la variable error en true.
        *
        */
+      
       fetch(url)
         .then((response) => response.json()) // Convierte la respuesta en formato JSON
         .then((data) => {
@@ -37,20 +38,6 @@ createApp({
         .catch((err) => {
           console.error(err);
           this.error = true;
-        });
-    },
-    eliminar(producto) {
-      /* El método eliminar toma un parámetro producto y construye la URL para eliminar ese producto en particular. Luego, realiza una solicitud fetch utilizando el método HTTP DELETE a la URL especificada. Después de eliminar el producto, la página se recarga para reflejar los cambios.
-       */
-      // Construye la URL para eliminar el producto especificado
-      const url = this.url + "/" + producto;
-      var options = {
-        method: "DELETE", // Establece el método HTTP como DELETE
-      };
-      fetch(url, options)
-        .then((res) => res.text()) // Convierte la respuesta en texto (or res.json())
-        .then((res) => {
-          location.reload(); // Recarga la página actual después de eliminar el producto
         });
     },
     grabar() {
@@ -67,31 +54,33 @@ createApp({
         rodado: this.rodado
       };
 
-      // Configurar las opciones para la solicitud fetch
-      var options = {
-        body: JSON.stringify(producto), // Convertir el objeto a una cadena JSON
-        method: "POST", // Establecer el método HTTP como POST
-        headers: { "Content-Type": "application/json" },
-        redirect: "follow",
-      };
+      if (validar(producto)) {
+       
+            // Configurar las opciones para la solicitud fetch
+            var options = {
+              body: JSON.stringify(producto), // Convertir el objeto a una cadena JSON
+              method: "POST", // Establecer el método HTTP como POST
+              headers: { "Content-Type": "application/json" },
+              redirect: "follow",
+            };
 
-      // Realizar una solicitud fetch para guardar el producto en el servidor
-      fetch(this.url, options)
-        .then(function () {
-          id: 0
-          nombre: ""
-          imagen: "/img/productos/bicicletas/bic000.webp"
-          stock: 0
-          precio: 0
-          categoria: ""
-          marca: ""
-          rodado: ""
-          altaConfirmada();
-         })  
-        .catch((err) => {
-          console.error(err);
-          alert("Error al Grabar.");
-        });
+            // Realizar una solicitud fetch para guardar el producto en el servidor
+            fetch(this.url, options)
+              .then(function () {
+                producto={}
+                altaConfirmada();
+              })  
+              .catch((err) => {
+                console.error(err);
+                alert("Error al Grabar.");
+              });
+      }
+     
+    },
+    buscar() {
+      const campoBuscar = document.getElementById("campoBuscar")
+      window.location.href = "./MNG_productos.html/"+ campoBuscar
+      alert(campoBuscar.value);
     },
     salir() {
       window.location.href = "./MNG_productos.html"; // Redirigir a la página de productos 
@@ -103,8 +92,52 @@ createApp({
 }).mount("#app");
 
 function altaConfirmada() {
- //          alert("Registro grabado!");
-           let irA = `window.location.href = "./MNG_productos.html/"`
-           MostrarVentanaModalGeneral("Se ha registrado correctamente el producto.", "50%", "30%", true)
-//           window.location.href = "./MNG_productos.html"; // Redirigir a la página de productos 
+          MostrarVentanaModalGeneral("Se ha registrado correctamente el producto.", "80%", "30%", true, "#","rgb(81 113 75)")
+          formulario = document.getElementById('frmNuevo');
+          formulario.reset();
+}
+
+function validar(objProducto) {
+  let resultado = true;
+
+  let strError = `<h6>Errores en la carga de datos:<h6><div></div>`;
+
+  if (objProducto.nombre.trim() == "") {
+    strError = strError + `<p> - Falta indicar nombre</p>`;
+    resultado=false;
+  }
+  if (objProducto.precio == 0) {
+    strError = strError + `<p> - Falta indicar precio</p>`;
+    resultado=false;
+  }
+  if (objProducto.imagen.trim() == "") {
+    strError = strError + `<p> - Falta indicar ruta de imagen</p>`;
+    resultado=false;
+  }
+  if (! ["bicicleta", "accesorio", "repuesto"].includes(objProducto.categoria)) {
+    strError = strError + `<p> - Categoria de producto, no válida</p>`;
+    resultado=false;
+  }
+  if (objProducto.marca.trim() == "") {
+    strError = strError + `<p> - Falta indicar marca</p>`;
+    resultado=false;
+  }
+  if (objProducto.categoria == "bicicleta" && objProducto.rodado.trim()=="") {
+    strError = strError + `<p> - Falta indicar rodado</p>`;
+    resultado=false;
+  }
+  if (objProducto.categoria != "bicicleta" && objProducto.rodado.trim()!="") {
+    strError = strError + `<p> - No debe indicar rodado, para categoria distinta de bicicleta.</p>`;
+    resultado=false;
+  }
+
+  if (!resultado) {
+    MostrarVentanaModalGeneral(strError, "80%", "30%", true, "#","rgb(177 22 22)")
+  }
+
+  return resultado;
+}
+
+function buscar() {
+  alert('BUSCAR')
 }

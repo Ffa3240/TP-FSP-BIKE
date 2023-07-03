@@ -53,8 +53,8 @@
                 <div>
                     <a class="btn btn-primary animate__animated animate__heartBeat btn-animate" href="MNG_producto-create.html">Nuevo</a>
                     <form class="d-flex my-2">
-                        <input class="campoBuscar" type="text" placeholder="Buscar">
-                        <button class="btn btn-success my-2 my-sm-0" type="submit">Buscar</button>
+                        <input id="campoBuscar" class="campoBuscar" type="text" placeholder="Buscar" name="strBuscar">
+                        <button class="btn btn-success my-2 my-sm-0" v-on:click="buscar()">Buscar</button>
                     </form>
                 </div>
             </div>  
@@ -103,9 +103,11 @@
                                         <a class="btn btn-primary btn-tabla"
                                             :href="'MNG_producto-update.html?id='+ producto.id"><abbr title="Modificar"><i class="fa fa-file-pen"></i></abbr></a>
                                         <!-- Botón para eliminar el producto -->
-                                        <button type="button" class="btn btn-danger btn-tabla"
-                                            v-on:click="eliminar(producto.id)"><abbr title="Eliminar"><i class="fa fa-trash"></i></abbr></button>
-                                    </td>
+                                        <!--button type="button" class="btn btn-danger btn-tabla"
+                                            v-on:click="eliminar(producto.id)"><abbr title="Eliminar"><i class="fa fa-trash"></i></abbr></button-->
+                                        <a class="btn btn-danger btn-tabla"
+                                            :href="'MNG_producto-delete.html?id='+ producto.id"><abbr title="Eliminar"><i class="fa fa-trash"></i></abbr></button>
+                                        </td>
                                 </tr>
                             </tbody>
                         </table>

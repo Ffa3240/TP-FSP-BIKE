@@ -212,14 +212,16 @@ function subMenuOcultar(o) {
 }
 /* -------------------------------------------------------------------------------------------------*/
 /* MANEJO DE VENTANA MODAL - PARA ENVIOS Y MEDIOS DE PAGO */
+var wIrAdesdeModal = "#"
 
 function cerrarVentanaModalGeneral() {
     let wVentanaGeneral = document.getElementById("idVentanaModalGeneral");
     wVentanaGeneral.classList.remove("ventanaModalGeneralMostrar");
+    window.location.href = wIrAdesdeModal;
 }
 
 /* Mostrar Ventana Modal General */
-function MostrarVentanaModalGeneral(textoHtml, w="80%", h="75vh", centrado=false) {
+function MostrarVentanaModalGeneral(textoHtml, w="80%", h="75vh", centrado=false, irA="#",bckColor="rgb(97 94 94)") {
     let wVentanaDetalleTexto = document.getElementById("idVentanaModalDetalleTexto");
     wVentanaDetalleTexto.innerHTML=textoHtml;
     if (centrado) {
@@ -235,6 +237,9 @@ function MostrarVentanaModalGeneral(textoHtml, w="80%", h="75vh", centrado=false
     let wVentanaDetalle = document.getElementById("idVentanaModalDetalle");
     wVentanaDetalle.style.width=w;
     wVentanaDetalle.style.height=h;
+    wVentanaDetalle.style.backgroundColor=bckColor;
+
+    wIrAdesdeModal = irA;
 };
 
 /* Para detectar ESC de ventanaModal */

@@ -40,27 +40,27 @@ body {
       text-align: center;
     }
 
-.frmNuevo {
+.frmModificar {
   display: flex;
   flex-direction: column;
   width: 100%;
   align-items: center;
 } 
 
-.frmNuevoTitulo {
+.frmModificarTitulo {
       width: 100%;
       background-color: rgb(17, 16, 16);
       text-align: center;
       padding-top: .5rem;
 } 
-    
-    .frmNuevoTitulo h5 {
-        background-color: rgb(25, 43, 29);
+        
+      .frmModificarTitulo h5 {
+        background-color: rgb(30, 30, 44);
         margin-bottom: 0px;
         padding: 10px;
-    }
+      }
 
-.frmNuevoDatosFoto {
+.frmModificarDatosFoto {
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -68,20 +68,20 @@ body {
 }
 
 
-.frmNuevoDatos {
+.frmModificarDatos {
   width: 50%;
 }
 
-.frmNuevoFoto {
+.frmModificarFoto {
   text-align: center;
 }
-    .frmNuevoFoto img {
+    .frmModificarFoto img {
         width: 50%;
     }
 
-.frmNuevoBotones {
+.frmModificarBotones {
       margin-bottom: 1rem;
 }
-.frmNuevoBotones button {
+.frmModificarBotones button {
       margin-right: 2rem;
 }

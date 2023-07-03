@@ -2,7 +2,7 @@
     <html lang="en">
 
     <head>
-        <title>Actualizar Producto</title>
+        <title>Eliminar Producto</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -22,7 +22,7 @@
         <link rel="stylesheet" href="../css/style-template.css">
 
         <!-- css para Header and Footer -->     
-        <link rel="stylesheet" href="./css/MNG_producto-update.css">
+        <link rel="stylesheet" href="./css/MNG_producto-delete.css">
 
     
     </head>
@@ -36,7 +36,7 @@
                 <form class="frmModificar" id="frmModificar">
                     <div class="frmModificarTitulo">
                         <H4>Mantenimiento de Productos</H4>
-                        <h5>Editar Producto</h5>
+                        <h5>Eliminar Producto</h5>
                     </div>
                     <div  class="frmModificarDatosFoto">
                         <div class="frmModificarDatos">
@@ -47,31 +47,31 @@
                             </div>
                             <div class="mb-3">
                                 <label for="nombre">Nombre</label>
-                                <input type="text" name="nombre" id="nombre" v-model="nombre">
+                                <input type="text" name="nombre" id="nombre" disabled v-model="nombre">
                             </div>
                             <div class="mb-3">
                                 <label for="precio">Precio</label>
-                                <input type="number" name="precio" id="precio" v-model="precio">
+                                <input type="number" name="precio" id="precio" disabled v-model="precio">
                             </div>
                             <div class="mb-3">
                                 <label for="stock">Stock</label>
-                                <input type="number" name="stock" id="stock" v-model="stock">
+                                <input type="number" name="stock" id="stock" disabled v-model="stock">
                             </div>
                             <div class="mb-3">
                                 <label for="imagen">Imagen</label>
-                                <input type="text" name="imagen" id="imagen" v-model="imagen">
+                                <input type="text" name="imagen" id="imagen" disabled v-model="imagen">
                              </div>
                             <div class="mb-3">
                                 <label for="categoria">Categoria</label>
-                                <input type="text" name="categoria" id="categoria" v-model="categoria">
+                                <input type="text" name="categoria" id="categoria" disabled v-model="categoria">
                             </div>
                             <div class="mb-3">
                                 <label for="marca">Marca</label>
-                                <input type="text" name="marca" id="marca" v-model="marca">
+                                <input type="text" name="marca" id="marca" disabled v-model="marca">
                             </div>
                             <div class="mb-3">
                                 <label for="rodado">Rodado</label>
-                                <input type="text" name="rodado" id="rodado" v-model="rodado">
+                                <input type="text" name="rodado" id="rodado" disabled v-model="rodado">
                             </div>
                         </div>
                         <div class="frmModificarFoto">
@@ -79,7 +79,7 @@
                         </div>
                     </div>
                         <div class="frmModificarBotones">
-                            <button type="button" class="btn btn-success" v-on:click="modificar()">Actualizar</button>
+                            <button type="button" class="btn btn-success" v-on:click="eliminar()">Eliminar</button>
                             <button type="button" class="btn btn-danger" v-on:click="salir()">Salir</button>
                         </div>
                      </div>
@@ -106,7 +106,7 @@
             crossorigin="anonymous"> </script>
       
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-        <script src="./js/MNG_producto-edit.js"></script>
+        <script src="./js/MNG_producto-delete.js"></script>
     </body>
 
     </html>

@@ -34,8 +34,11 @@
     <main>
         <div class="container" id="app">
   
-            <form class="frmNuevo">
-                <h4>Nuevo Producto</h4>
+            <form class="frmNuevo" id="frmNuevo">
+                <div class="frmNuevoTitulo">
+                    <H4>Mantenimiento de Productos</H4>
+                    <h5>Nuevo Producto</h5>
+            </div>
                 <div  class="frmNuevoDatosFoto">
                     <div class="frmNuevoDatos">
                         <div class="mb-3">
@@ -75,6 +78,7 @@
                     <button type="button" class="btn btn-success" v-on:click="grabar()">Grabar</button>
                     <button type="button" class="btn btn-danger" v-on:click="salir()">Salir</button>
                 </div>
+                
             </form>
   
         </div>
