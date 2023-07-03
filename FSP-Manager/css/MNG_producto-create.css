@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --padding-container: 0px;
+  --background-generico: linear-gradient(121deg, rgba(42,42,42,1) 9%, rgba(28,28,28,1) 62%, rgba(17,17,17,0.9836309523809523) 100%);
+  --backgroud-separador: linear-gradient(121deg, rgba(19,19,19,1) 9%, rgba(42,42,42,1) 62%, rgba(40, 40, 40, 1) 100%);
+}
+
+body {
+  font-family: 'Poppins', 'Roboto', sans-serif;
+  min-width: 300px;
+  background-color:#00000033;
+}
+
+.container {
+  background-color: #464646;
+  color: white;
+}
+
+.frmNuevo {
+  width: 50%;
+  margin-left: 1rem;
+  align-items: center;
+}
+
+.mb-3 {
+  display: flex;
+  justify-content: flex-end;
+  text-align: center;
+}
+
+.mb-3 label {
+  margin-right: 5px;
+}
+
+    .mb-3 input {
+      width: 70%;
+      text-align: center;
+    }
+
+.frmNuevo {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+} 
+
+.frmNuevoDatosFoto {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+
+.frmNuevoDatos {
+  width: 50%;
+}
+
+.frmNuevoFoto {
+  text-align: center;
+}
+    .frmNuevoFoto img {
+        width: 50%;
+    }
+
+.frmNuevoBotones button {
+      margin-right: 2rem;
+}

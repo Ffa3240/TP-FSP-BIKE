@@ -340,12 +340,18 @@ footer {
         width: 100%;
         height: 95%;
         margin: auto;
-        padding: 2rem;
+       /* padding: 2rem; */
         font-family: "roboto";
         font-weight: 300;
-        font-size: .9rem;
+       /* font-size: .9rem; */
         overflow:auto;
       }
+        .ventanaModalDetalleTexto.centrado {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
       .ventanaModalDetalleTexto p {
         margin: 0 1rem;
       }

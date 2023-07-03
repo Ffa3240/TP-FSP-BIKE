@@ -15,11 +15,11 @@ if (window.location.href.includes("index.html")) {
                     <li><a class="dropdown-item" href="${refIrProductos}" onclick="selCategoriaMenu('T')">Todos</a></li>
                     `
 } else {
-    refIrInicio = 'index.html' + refIrInicio;
-    refIrNovedades = 'index.html' + refIrNovedades;
-    refIrMarcas = 'index.html' + refIrMarcas;
-    refIrServicios = 'index.html' + refIrServicios;
-    refIrProductos = 'index.html' + refIrProductos;
+    refIrInicio = '/index.html' + refIrInicio;
+    refIrNovedades = '/index.html' + refIrNovedades;
+    refIrMarcas = '/index.html' + refIrMarcas;
+    refIrServicios = '/index.html' + refIrServicios;
+    refIrProductos = '/index.html' + refIrProductos;
    
     wProductoNavInner = `
                     <li><a class="dropdown-item" href="${refIrProductos}">Productos</a></li>
@@ -32,7 +32,7 @@ wHeader.innerHTML = `
 <nav class="miHeader_nav">
                  
 <div class="nav_logo">
-    <img src="./img/Logos/Logo05Transparente2.png" alt="Cerrar" class="nav_img_logo">
+    <img src="/img/Logos/Logo05Transparente2.png" alt="Cerrar" class="nav_img_logo">
     <h2 class="nav_titulo">FSP Bike's</h2>
 </div>
 
@@ -42,9 +42,9 @@ wHeader.innerHTML = `
 
 <div class="nav_usuario">
     <div id="id_nav_usuario_in">
-        <a href="./registracion.html" class="nav_usuario_crear">
+        <a href="/registracion.html" class="nav_usuario_crear">
         <i class="fa-regular fa-user"></i>  Registrate</a>
-        <a href="./login.html" class="nav_usuario_login">
+        <a href="/login.html" class="nav_usuario_login">
         <i class="fa fa-right-to-bracket"></i>  Iniciar</a>
     </div>
     <div id="id_nav_usuario_out">
@@ -59,7 +59,7 @@ wHeader.innerHTML = `
 
 <div class="nav_menu">
     <div class="nav_img" onclick="nav_menu_mostrar_ocultar()">
-        <img src="ico/menu-hamburguesa.svg" alt="Menu">
+        <img src="/ico/menu-hamburguesa.svg" alt="Menu">
     </div>
     <ul id="nav_id" class="nav nav_ocultar">
         <li class="nav_item"> 
@@ -69,7 +69,7 @@ wHeader.innerHTML = `
             <a href="#idAcercaDe" class="nav-link">Acerca de</a>
         </li>
         <li class="nav_item">
-            <a href="contactos.html" class="nav-link">Contacto</a>
+            <a href="/contactos.html" class="nav-link">Contacto</a>
         </li>
         <li class="nav_item">
             <a href="${refIrNovedades}" class="nav-link">Novedades</a>
@@ -89,9 +89,12 @@ wHeader.innerHTML = `
             <a href="${refIrServicios}" class="nav-link">Servicios</a>
         </li>
         <li class="nav_item">
-            <a href="sucursales.html" class="nav-link">Sucursales</a>
+            <a href="/sucursales.html" class="nav-link">Sucursales</a>
         </li>
-        <img src="./ico/cerrar.svg" alt="Cerrar" class="nav_close">
+        <li class="nav_item">
+            <a href="/FSP-Manager/MNG_index.html" class="nav-link">Manager</a>
+        </li>
+        <img src="/ico/cerrar.svg" alt="Cerrar" class="nav_close">
 
     </ul>
 </div>
@@ -163,7 +166,7 @@ wFooter.innerHTML = `
             <div class="direccionContacto">
                 <i class="fa-solid fa-location-pin" alt="ubicacion" style="color:rgb(215, 215, 215)"></i>
                 Direccion:
-                <a href="./sucursales.html" target="_blank">
+                <a href="/sucursales.html" target="_blank">
                 sucursales</a>
             </div>
             
@@ -216,11 +219,22 @@ function cerrarVentanaModalGeneral() {
 }
 
 /* Mostrar Ventana Modal General */
-function MostrarVentanaModalGeneral(textoHtml) {
-    let wVentanaDetalle = document.getElementById("idVentanaModalDetalleTexto");
-    wVentanaDetalle.innerHTML=textoHtml;
+function MostrarVentanaModalGeneral(textoHtml, w="80%", h="75vh", centrado=false) {
+    let wVentanaDetalleTexto = document.getElementById("idVentanaModalDetalleTexto");
+    wVentanaDetalleTexto.innerHTML=textoHtml;
+    if (centrado) {
+        wVentanaDetalleTexto.classList.add("centrado");
+    }
+    else {
+        wVentanaDetalleTexto.classList.remove("centrado");
+    }
+
     let wVentanaGeneral = document.getElementById("idVentanaModalGeneral");
     wVentanaGeneral.classList.add("ventanaModalGeneralMostrar");
+   
+    let wVentanaDetalle = document.getElementById("idVentanaModalDetalle");
+    wVentanaDetalle.style.width=w;
+    wVentanaDetalle.style.height=h;
 };
 
 /* Para detectar ESC de ventanaModal */
@@ -240,7 +254,7 @@ wFormasDeEnvios.addEventListener("click", function() {
 
     var texto = ` <p></p>
     
-    <b>ENVÍOS CON ANDREANI<img src="ico/andreani.svg" style="scale: 3.5; margin-left: 3rem" alt="andreani"></b>
+    <b>ENVÍOS CON ANDREANI<img src="/ico/andreani.svg" style="scale: 3.5; margin-left: 3rem" alt="andreani"></b>
 
     <p>Una vez acreditado el pago, se procederá a preparar la orden para su despacho dentro del plazo de 48 hs hábiles.</p>
     <p>El paquete será enviado al domicilio ingresado al momento de comprar.</p>
@@ -281,7 +295,7 @@ wMediosDePago.addEventListener("click", function() {
     <table>
     <tr>
         <td>
-            <h6> MercadoPago <img src="ico/mercadoPago.svg" style="scale: 2.5; margin-left: 2rem" alt="mercadoPago"></h6>
+            <h6> MercadoPago <img src="/ico/mercadoPago.svg" style="scale: 2.5; margin-left: 2rem" alt="mercadoPago"></h6>
             <p>Te enviamos a la página de MercadoPago para que completes el pago.</p>
             <p>Con recargo en hasta 18 cuotas con todas las tarjetas.</p>
             <p>CFT: 60%.</p>
@@ -333,9 +347,9 @@ wMediosDePago.addEventListener("click", function() {
     <p>Tarjetas soportadas para planes: Tarjetas bancarias: 
     <P><table>
         <tr>
-            <td><img src="ico/american-express-1.svg" alt="american-express"></td>
-            <td><img src="ico/mastercard-6.svg" alt="mastercard"></td>
-            <td><img src="ico/visa.svg" style="scale: 2.5" alt="visa"></td>
+            <td><img src="/ico/american-express-1.svg" alt="american-express"></td>
+            <td><img src="/ico/mastercard-6.svg" alt="mastercard"></td>
+            <td><img src="/ico/visa.svg" style="scale: 2.5" alt="visa"></td>
         </tr>
         <tr>
             <td style="text-align: center; width: 5rem">AMEX</td>
