@@ -70,13 +70,16 @@ body {
 
 .frmModificarDatos {
   width: 50%;
+  text-align: center;
 }
 
 .frmModificarFoto {
+  width: 50%;
   text-align: center;
 }
+
     .frmModificarFoto img {
-        width: 50%;
+        width: 75%;
     }
 
 .frmModificarBotones {
@@ -84,4 +87,25 @@ body {
 }
 .frmModificarBotones button {
       margin-right: 2rem;
+}
+
+
+@media all and (max-width: 600px) {
+
+  .frmModificarDatosFoto {
+    flex-direction: column;
+    align-items: left;
+
+  }
+
+  .frmModificarDatos {
+    width: 80%;
+  }
+
+  .frmModificarFoto {
+    width: 80%;
+    margin: 1rem;
+    margin-left: 3rem;
+    text-align: center
+  }
 }

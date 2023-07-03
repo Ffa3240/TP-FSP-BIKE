@@ -51,3 +51,26 @@ table tbody tr td {
     margin-right: 5px;
 }
 
+@media all and (max-width: 1200px) {
+
+  .clsOcultar1 {
+    display: none;
+  }
+
+}
+
+@media all and (max-width: 800px) {
+
+  .clsOcultar2 {
+    display: none;
+  }
+
+}
+
+@media all and (max-width: 650px) {
+
+  .clsOcultar3 {
+    display: none;
+  }
+
+}

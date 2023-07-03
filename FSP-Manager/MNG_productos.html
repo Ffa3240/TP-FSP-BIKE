@@ -75,12 +75,12 @@
                                     <th scope="col">Id</th>
                                     <th scope="col">Nombre</th>
                                     <th scope="col">Precio</th>
-                                    <th scope="col">Stock</th>
+                                    <th scope="col" class="clsOcultar2">Stock</th>
                                     <th scope="col">Imagen</th>
-                                    <th scope="col">ImagenUbicacion</th>
-                                    <th scope="col">Categoria</th> 
-                                    <th scope="col">Marca</th> 
-                                    <th scope="col">Rodado</th>
+                                    <th scope="col" class="clsOcultar1">ImagenUbicacion</th>
+                                    <th scope="col" class="clsOcultar3">Categoria</th> 
+                                    <th scope="col" class="clsOcultar3">Marca</th> 
+                                    <th scope="col" class="clsOcultar2">Rodado</th>
                                     <th scope="col">Acciones</th>
                                 </tr>
                             </thead>
@@ -90,14 +90,14 @@
                                     <td scope="row" text-align="center">{{producto.id}}</td>
                                     <td>{{producto.nombre}}</td>
                                     <td text-align="center">{{producto.precio}}</td>
-                                    <td text-align="center">{{producto.stock}}</td>
+                                    <td text-align="center" class="clsOcultar2">{{producto.stock}}</td>
                                     <td text-align="center">
                                         <img width="150" :src="producto.imagen" :alt="producto.nombre">
                                     </td>
-                                    <td>{{producto.imagen}}</td>    
-                                    <td>{{producto.categoria}}</td>
-                                    <td>{{producto.marca}}</td>
-                                    <td>{{producto.rodado}}</td>
+                                    <td class="clsOcultar1">{{producto.imagen}}</td>    
+                                    <td class="clsOcultar3">{{producto.categoria}}</td>
+                                    <td class="clsOcultar3">{{producto.marca}}</td>
+                                    <td class="clsOcultar2">{{producto.rodado}}</td>
                                     <td>
                                         <!-- Botón para editar el producto -->
                                         <a class="btn btn-primary btn-tabla"

@@ -100,7 +100,7 @@ function altaConfirmada() {
 function validar(objProducto) {
   let resultado = true;
 
-  let strError = `<h6>Errores en la carga de datos:<h6><div></div>`;
+  let strError = `<h6>Errores en la carga de datos:</h6><br>`;
 
   if (objProducto.nombre.trim() == "") {
     strError = strError + `<p> - Falta indicar nombre</p>`;
@@ -132,7 +132,7 @@ function validar(objProducto) {
   }
 
   if (!resultado) {
-    MostrarVentanaModalGeneral(strError, "80%", "30%", true, "#","rgb(177 22 22)")
+    MostrarVentanaModalGeneral(strError, "40%", "40%", false, "#","rgb(177 22 22)")
   }
 
   return resultado;

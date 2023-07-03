@@ -70,13 +70,15 @@ body {
 
 .frmNuevoDatos {
   width: 50%;
+  text-align: center;
 }
 
 .frmNuevoFoto {
+  width: 50%;
   text-align: center;
 }
     .frmNuevoFoto img {
-        width: 50%;
+        width: 65%;
     }
 
 .frmNuevoBotones {
@@ -84,4 +86,25 @@ body {
 }
 .frmNuevoBotones button {
       margin-right: 2rem;
+}
+
+
+@media all and (max-width: 600px) {
+
+  .frmNuevoDatosFoto {
+    flex-direction: column;
+    align-items: left;
+
+  }
+
+  .frmNuevoDatos {
+    width: 80%;
+  }
+
+  .frmNuevoFoto {
+    width: 80%;
+    margin: 1rem;
+    margin-left: 3rem;
+    text-align: center
+  }
 }
