@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Mantenimiento de Productos</title>
+    <title>Mantenimiento de Novedades</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="../css/style-template.css">
 
      <!-- css para Header and Footer -->     
-     <link rel="stylesheet" href="./css/MNG_producto.css">
+     <link rel="stylesheet" href="./css/MNG_novedades.css">
 
     <style>
         .btn-animate {
@@ -45,32 +45,20 @@
         <!-- Coloca la barra de navegación aquí -->
     </header>
     <main>
-       
-      
-            
+        
+        <div id="app" class="container">
+
             <div class="cabecera">
-                <h4>Mantenimiento de Productos</h4>
+                <h4>Mantenimiento de Novedades</h4>
                 <div>
-                    <a class="btn btn-primary animate__animated animate__heartBeat btn-animate" href="MNG_producto-create.html">Nuevo</a>
+                    <a class="btn btn-primary animate__animated animate__heartBeat btn-animate" href="MNG_novedad-create.html">Nuevo</a>
                     <form class="d-flex my-2">
-                        <div class="selCategoria selTipo">
-                            <select onchange="buscarCategoria(this.value)" class="form-select form-select-sm" aria-label=".form-select-sm example" name="parCategoria" id="idCategoria">
-                                <option value="">Todas las categorias</option>
-                                <option value="bicicleta">Bicicleta</option>
-                                <option value="accesorio">Accesorio</option>
-                                <option value="repuesto">Repuesto</option>
-                            </select>
-                        </div>
-                        <div class="clsBuscar">
-                            <input class="form-control" oninput="campoBuscarChange()" id="campoBuscar" class="campoBuscar" type="text" placeholder="Buscar"  name="parNombre">
-                            <button class="btnBuscar btn btn-success" onclick="buscar()">Buscar</button>
-                        </div>
+                        <input id="campoBuscar" class="campoBuscar" type="text" placeholder="Buscar" name="strBuscar">
+                        <button class="btn btn-success my-2 my-sm-0" v-on:click="buscar()">Buscar</button>
                     </form>
                 </div>
             </div>  
 
-            <div id="app" class="container">
-      
             <div v-if="error">
                 <p>Lo sentimos, ha ocurrido un error.</p>
             </div>
@@ -85,40 +73,41 @@
                             <thead>
                                 <tr>
                                     <th scope="col">Id</th>
-                                    <th scope="col">Nombre</th>
-                                    <th scope="col">Precio</th>
-                                    <th scope="col" class="clsOcultar2">Stock</th>
+                                    <th scope="col">ProductoId</th>
                                     <th scope="col">Imagen</th>
-                                    <th scope="col" class="clsOcultar1">ImagenUbicacion</th>
-                                    <th scope="col" class="clsOcultar3">Categoria</th> 
-                                    <th scope="col" class="clsOcultar3">Marca</th> 
-                                    <th scope="col" class="clsOcultar2">Rodado</th>
+                                    <th scope="col">ImagenUbicacion</th>
+                                    <th scope="col">Texto1</th>
+                                    <th scope="col">Texto2</th> 
+                                    <th scope="col">Texto3</th> 
+                                    <th scope="col">Texto4</th>
+                                    <th scope="col">Texto5</th>
                                     <th scope="col">Acciones</th>
+                                </tr>
                                 </tr>
                             </thead>
                             <tbody>
                                 <!-- Iterar sobre cada producto -->
-                                <tr class="" v-for="producto in productos">
-                                    <td scope="row" text-align="center">{{producto.id}}</td>
-                                    <td>{{producto.nombre}}</td>
-                                    <td text-align="center">{{producto.precio}}</td>
-                                    <td text-align="center" class="clsOcultar2">{{producto.stock}}</td>
+                                <tr class="" v-for="novedad in novedades">
+                                    <td scope="row" text-align="center">{{novedad.id}}</td>
+                                    <td>{{novedad.codProducto}}</td>
                                     <td text-align="center">
-                                        <img width="150" :src="producto.imagen" :alt="producto.nombre">
+                                        <img width="150" :src="novedad.imagenNovedad" :alt="novedad.id">
                                     </td>
-                                    <td class="clsOcultar1">{{producto.imagen}}</td>    
-                                    <td class="clsOcultar3">{{producto.categoria}}</td>
-                                    <td class="clsOcultar3">{{producto.marca}}</td>
-                                    <td class="clsOcultar2">{{producto.rodado}}</td>
+                                    <td>{{novedad.imagenNovedad}}</td>    
+                                    <td>{{novedad.texto01}}</td>
+                                    <td>{{novedad.texto02}}</td>
+                                    <td>{{novedad.texto03}}</td>
+                                    <td>{{novedad.texto04}}</td>
+                                    <td>{{novedad.texto05}}</td>
                                     <td>
                                         <!-- Botón para editar el producto -->
                                         <a class="btn btn-primary btn-tabla"
-                                            :href="'MNG_producto-update.html?id='+ producto.id"><abbr title="Modificar"><i class="fa fa-file-pen"></i></abbr></a>
+                                            :href="'MNG_novedad-update.html?id='+ novedad.id"><abbr title="Modificar"><i class="fa fa-file-pen"></i></abbr></a>
                                         <!-- Botón para eliminar el producto -->
                                         <!--button type="button" class="btn btn-danger btn-tabla"
                                             v-on:click="eliminar(producto.id)"><abbr title="Eliminar"><i class="fa fa-trash"></i></abbr></button-->
                                         <a class="btn btn-danger btn-tabla"
-                                            :href="'MNG_producto-delete.html?id='+ producto.id"><abbr title="Eliminar"><i class="fa fa-trash"></i></abbr></button>
+                                            :href="'MNG_novedad-delete.html?id='+ novedad.id"><abbr title="Eliminar"><i class="fa fa-trash"></i></abbr></button>
                                         </td>
                                 </tr>
                             </tbody>
@@ -148,7 +137,7 @@
         crossorigin="anonymous"></script>
     <!--script src="./js/MNG_main.js"></script-->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script><!--Enlace de VUE-->
-    <script src="./js/MNG_productos.js"></script>
+    <script src="./js/MNG_novedades.js"></script>
 </body>
 
 </html>

@@ -91,8 +91,14 @@ wHeader.innerHTML = `
         <li class="nav_item">
             <a href="/sucursales.html" class="nav-link">Sucursales</a>
         </li>
-        <li class="nav_item">
-            <a href="/FSP-Manager/MNG_index.html" class="nav-link">Manager</a>
+        <li class="dropdown nav_item">
+            <a class="dropdown-toggle nav-link nav-manager" data-bs-toggle="dropdown" href="#" role="button"
+                aria-expanded="false">Manager</a>
+                <ul onclick="subMenuOcultar(this)" class="dropdown-menu">
+                <li><a class="dropdown-item" href="/FSP-Manager/MNG_usuarios.html">Usuarios</a></li>
+                <li><a class="dropdown-item" href="/FSP-Manager/MNG_productos.html">Productos</a></li>
+                <li><a class="dropdown-item" href="/FSP-Manager/MNG_novedades.html">Novedades</a></li>
+            </ul>
         </li>
         <img src="/ico/cerrar.svg" alt="Cerrar" class="nav_close">
 

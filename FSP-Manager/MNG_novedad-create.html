@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Crear Producto</title>
+    <title>Crear Novedad</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="../css/style-template.css">
 
     <!-- css para Header and Footer -->     
-    <link rel="stylesheet" href="./css/MNG_producto-create.css">
+    <link rel="stylesheet" href="./css/MNG_novedad-create.css">
 
 </head>
 
@@ -36,42 +36,42 @@
   
             <form class="frmNuevo" id="frmNuevo">
                 <div class="frmNuevoTitulo">
-                    <H4>Mantenimiento de Productos</H4>
-                    <h5>Nuevo Producto</h5>
+                    <H4>Mantenimiento de Novedades</H4>
+                    <h5>Nueva Novedad</h5>
             </div>
                 <div  class="frmNuevoDatosFoto">
                     <div class="frmNuevoDatos">
                         <div class="mb-3">
-                            <label for="nombre">Nombre</label>
-                            <input type="text" name="nombre" id="nombre" v-model="nombre">
+                            <label for="codProducto">Id.Producto</label>
+                            <input type="number" name="codProducto" id="codProducto" v-model="codProducto">
                         </div>
                         <div class="mb-3">
-                            <label for="precio">Precio</label>
-                            <input type="number" name="precio" id="precio" v-model="precio">
+                            <label for="imagenNovedad">Imagen</label>
+                            <input type="text" name="imagenNovedad" id="imagenNovedad" v-model="imagenNovedad">
                         </div>
                         <div class="mb-3">
-                            <label for="stock">Stock</label>
-                            <input type="number" name="stock" id="stock" v-model="stock">
+                            <label for="texto01">Texto 1</label>
+                            <input type="text" name="texto01" id="texto01" v-model="texto01">
                         </div>
                         <div class="mb-3">
-                            <label for="imagen">Imagen</label>
-                            <input type="text" name="imagen" id="imagen" v-model="imagen">
+                            <label for="texto02">Texto 2</label>
+                            <input type="text" name="texto02" id="texto02" v-model="texto02">
                         </div>
                         <div class="mb-3">
-                            <label for="categoria">categoria</label>
-                            <input type="text" name="categoria" id="categoria" v-model="categoria">
+                            <label for="texto03">Texto 3</label>
+                            <input type="text" name="texto03" id="texto03" v-model="texto03">
                         </div>
                         <div class="mb-3">
-                            <label for="marca">Marca</label>
-                            <input type="text" name="marca" id="marca" v-model="marca">
+                            <label for="texto04">Texto 4</label>
+                            <input type="text" name="texto04" id="texto04" v-model="texto04">
                         </div>
                         <div class="mb-3">
-                            <label for="rodado">Rodado</label>
-                            <input type="text" name="rodado" id="rodado" v-model="rodado">
+                            <label for="texto05">Texto 5</label>
+                            <input type="text" name="texto05" id="texto05" v-model="texto05">
                         </div>
-                    </div>
+                     </div>
                     <div class="frmNuevoFoto">
-                        <img    :src="imagen" :alt="imagen">
+                        <img  :src="imagenNovedad" :alt="imagenNovedad">
                     </div>
                 </div>
                 <div class="frmNuevoBotones">
@@ -103,7 +103,7 @@
         integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
         </script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="./js/MNG_producto-create.js"></script>
+    <script src="./js/MNG_novedades.js"></script>
 
 </body>
 

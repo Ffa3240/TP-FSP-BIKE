@@ -212,6 +212,10 @@ body {
   display: none
 }
 
+.nav-manager {
+  color: red !important;
+}
+
 .whatsapp {
   background-color: transparent;
   width: 45px;
