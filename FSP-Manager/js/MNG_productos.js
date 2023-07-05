@@ -58,8 +58,9 @@ createApp({
           this.cargando = false;
         })
         .catch((err) => {
-          console.error(err);
+          this.cargando=false;
           this.error = true;
+          console.error(err);
         });
     },
   },
@@ -88,5 +89,9 @@ function buscarCategoria(selCategoria) {
   window.location.href = urlPagina
 }
 
+function recargar() {
+  window.location.reload()
+}
 
 cargar()
+

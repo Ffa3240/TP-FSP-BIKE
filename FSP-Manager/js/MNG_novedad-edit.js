@@ -108,3 +108,38 @@ function validar(objProducto) {
 
   return resultado;
 }
+
+
+const validarProducto = async (idProducto) => {
+  let resultado = true;
+  let strError = `<h6>Errores en la carga de datos:</h6><br>`;
+
+  try {
+        const url= "https://ffa3240.pythonanywhere.com/productos/" + idProducto
+        const response = await fetch(url)
+        const data = await response.json()
+        if (data.nombre === undefined) {
+          strError = strError + `<p> - Producto Inexistente </p>`;
+          resultado=false;
+        }
+        else {
+          let t1 = document.getElementById("texto01");
+          t1.value=data.nombre;
+          let t2 = document.getElementById("texto02");
+          t2.value="$"+data.precio;
+          let t4 = document.getElementById("texto04");
+          t4.value="Rodado: "+data.rodado;
+          let t5 = document.getElementById("texto05");
+          t5.value="Marca: "+data.marca;
+        }
+    }
+    catch (err) {
+      console.log(err)
+    }
+
+    if (!resultado) {
+      MostrarVentanaModalGeneral(strError, "40%", "40%", false, "#","rgb(177 22 22)")
+    }
+
+}
+

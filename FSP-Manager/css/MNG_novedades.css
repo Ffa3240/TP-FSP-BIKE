@@ -18,6 +18,10 @@ body {
   background-color:#00000033;
 }
 
+.container {
+  background-color: #cccccc;
+}
+
 .cabecera{
     background-color:rgba(40, 40, 40, 0.86);
     color: white;
@@ -46,10 +50,44 @@ table tbody tr td {
     padding-bottom: 10px;
 }
 
-.campoBuscar{
-    border-radius: 5px;
-    margin-right: 5px;
+.btnNuevo{
+    margin-bottom: 5px;
 }
+
+
+.clsCargandoError {
+  margin: auto;
+  font-size: 1.5rem;
+  width: 50%;
+  background-color: red;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+  animation: myAnimModal 1s ease 0s 1 normal forwards;
+
+}
+
+  @keyframes myAnimModal {
+    0% {transform: scale3d(0, 0, 1);
+    background-color: black;}
+    100% {transform: scale3d(1, 1, 1);}
+  }
+
+.clsCargando {
+margin-left: 50%;
+}
+
+.spinner-border {
+  font-size: 6rem;
+  color: royalblue;
+  width: 100px;
+  height: 100px;
+}
+
+
+
 
 @media all and (max-width: 1200px) {
 

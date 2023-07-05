@@ -51,19 +51,16 @@
             <div class="cabecera">
                 <h4>Mantenimiento de Novedades</h4>
                 <div>
-                    <a class="btn btn-primary animate__animated animate__heartBeat btn-animate" href="MNG_novedad-create.html">Nuevo</a>
-                    <form class="d-flex my-2">
-                        <input id="campoBuscar" class="campoBuscar" type="text" placeholder="Buscar" name="strBuscar">
-                        <button class="btn btn-success my-2 my-sm-0" v-on:click="buscar()">Buscar</button>
-                    </form>
-                </div>
+                    <a class="btnNuevo btn btn-primary animate__animated animate__heartBeat btn-animate" href="MNG_novedad-create.html">Nuevo</a>
+                 </div>
             </div>  
 
-            <div v-if="error">
+            <div class="clsCargandoError" v-if=error>
                 <p>Lo sentimos, ha ocurrido un error.</p>
+                <button class="btn btn-sm btn-dark" onclick="recargar()">Reintentar</button>
             </div>
             <div v-else>
-                <section v-if="cargando">
+                <section class="clsCargando" v-if="cargando">
                     <div class="spinner-border"></div>
                     <p>Cargando...</p>
                 </section>

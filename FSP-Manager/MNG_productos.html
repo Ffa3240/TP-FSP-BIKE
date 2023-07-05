@@ -71,13 +71,14 @@
 
             <div id="app" class="container">
       
-            <div v-if="error">
+            <div class="clsCargandoError" v-if=error>
                 <p>Lo sentimos, ha ocurrido un error.</p>
+                <button class="btn btn-sm btn-dark" onclick="recargar()">Reintentar</button>
             </div>
             <div v-else>
-                <section v-if="cargando">
+                <section class="clsCargando" v-if=cargando>
                     <div class="spinner-border"></div>
-                    <p>Cargando...</p>
+                    <p>Cargando</p>
                 </section>
                 <section v-else>
                     <div class="table-responsive">
