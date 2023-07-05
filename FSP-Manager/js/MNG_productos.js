@@ -1,11 +1,16 @@
 
 var urlPagina = location.href
 const urlParams = new URLSearchParams(location.search);
+
 var parNombre = urlParams.get('parNombre');
+parNombre = parNombre==null ? "" : parNombre;
+
 var wNombre = document.getElementById("campoBuscar")
 wNombre.value=parNombre
 
 var parCategoria = urlParams.get('parCategoria');
+parCategoria = parCategoria==null ? "" : parCategoria;
+
 var wCategoria = document.getElementById("idCategoria")
 wCategoria.value=parCategoria
 

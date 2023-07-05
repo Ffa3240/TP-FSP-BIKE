@@ -45,6 +45,7 @@ table tbody tr td {
     margin-right: 10px;
     padding-bottom: 10px;
     align-items: center;
+    flex-direction: row;
 }
 
 .clsBuscar {
@@ -94,5 +95,14 @@ table tbody tr td {
   .clsOcultar3 {
     display: none;
   }
+
+  .d-flex {
+    flex-direction: column;
+    justify-content: center;
+}
+
+.selCategoria {
+ margin-bottom: 5px;
+}
 
 }
