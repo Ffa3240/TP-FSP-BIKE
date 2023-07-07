@@ -15,6 +15,7 @@ createApp({
       texto04: "",
       texto05: "",
       url: "https://ffa3240.pythonanywhere.com/novedades/" + id,
+      productoValido: true,
     };
   },
   methods: {
@@ -43,37 +44,45 @@ createApp({
           this.error = true;
         });
     },
+    cambioProducto() {
+      validarProducto(this)
+    },
     modificar() {
+      modificarNovedad(this)
       /* Este código define la función modificar(). En esta función, se crea un objeto producto que contiene las propiedades nombre, precio, stock e imagen obtenidas de la instancia de Vue. Luego se define un objeto options que especifica las opciones para la solicitud HTTP.
       A continuación, se utiliza la función fetch para realizar una solicitud HTTP tipo PUT a la URL this.url utilizando las opciones definidas en options. Si la solicitud se realiza con éxito, se muestra una alerta indicando que el registro ha sido actualizado y se redirige al usuario a la página "./productos.html". Si ocurre algún error durante el proceso, se captura la excepción en el bloque catch, se registra el error en la consola y se muestra una alerta indicando que ha ocurrido un error al actualizar.
        */
-      let novedad = {
-        codProducto: this.codProducto,
-        imagenNovedad: this.imagenNovedad,
-        texto01: this.texto01,
-        texto02: this.texto02,
-        texto03: this.texto03,
-        texto04: this.texto04,
-        texto05: this.texto05,
-      };
+     /* if (validarProducto(this)) {
 
-     if (validar(novedad)) {
-            var options = {
-              body: JSON.stringify(novedad),
-              method: "PUT",
-              headers: { "Content-Type": "application/json" },
-              redirect: "follow",
-            };
-            fetch(this.url, options)
-              .then(function () {
-                modificacionConfirmada();
-              })
-              .catch((err) => {
-                console.error(err);
-                alert("Error al actualizar.");
-              });
-      }
-    },
+          let novedad = {
+            codProducto: this.codProducto,
+            imagenNovedad: this.imagenNovedad,
+            texto01: this.texto01,
+            texto02: this.texto02,
+            texto03: this.texto03,
+            texto04: this.texto04,
+            texto05: this.texto05,
+          };
+
+        if (validar(novedad)) {
+                var options = {
+                  body: JSON.stringify(novedad),
+                  method: "PUT",
+                  headers: { "Content-Type": "application/json" },
+                  redirect: "follow",
+                };
+                fetch(this.url, options)
+                  .then(function () {
+                    modificacionConfirmada();
+                  })
+                  .catch((err) => {
+                    console.error(err);
+                    alert("Error al actualizar.");
+                  });
+          }
+        }*/
+    }
+    ,
     salir() {
       window.location.href = "./MNG_novedades.html"; // Redirigir a la página de productos 
     },
@@ -110,28 +119,32 @@ function validar(objProducto) {
 }
 
 
-const validarProducto = async (idProducto) => {
+const validarProducto = async (obj) => {
   let resultado = true;
-  let strError = `<h6>Errores en la carga de datos:</h6><br>`;
-
+  let strError = `<h6>Errores en la carga de datos:</h6><br>`; 
+  obj.productoValido=true;
   try {
-        const url= "https://ffa3240.pythonanywhere.com/productos/" + idProducto
-        const response = await fetch(url)
-        const data = await response.json()
-        if (data.nombre === undefined) {
-          strError = strError + `<p> - Producto Inexistente </p>`;
-          resultado=false;
-        }
-        else {
-          let t1 = document.getElementById("texto01");
-          t1.value=data.nombre;
-          let t2 = document.getElementById("texto02");
-          t2.value="$"+data.precio;
-          let t4 = document.getElementById("texto04");
-          t4.value="Rodado: "+data.rodado;
-          let t5 = document.getElementById("texto05");
-          t5.value="Marca: "+data.marca;
-        }
+        if (! obj.codProducto == "") {
+            const url= "https://ffa3240.pythonanywhere.com/productos/" + obj.codProducto
+            const response = await fetch(url)
+            const data = await response.json()
+            if (data.nombre === undefined) {
+              strError = strError + `<p> - Producto Inexistente </p>`; 
+              resultado=false;
+              obj.productoValido=false;
+              obj.texto01="";
+              obj.texto02="";
+              obj.texto04="";
+              obj.texto05="";
+            }
+            else {
+              obj.imagenNovedad= data.imagen;
+              obj.texto01=data.nombre;
+              obj.texto02="$"+data.precio;
+              obj.texto04="Rodado: "+data.rodado;
+              obj.texto05="Marca: "+data.marca;
+            }
+      }
     }
     catch (err) {
       console.log(err)
@@ -139,7 +152,68 @@ const validarProducto = async (idProducto) => {
 
     if (!resultado) {
       MostrarVentanaModalGeneral(strError, "40%", "40%", false, "#","rgb(177 22 22)")
-    }
+    } 
 
+    return resultado
 }
 
+
+const validarProducto2 = async (obj) => {
+  let resultado = true;
+  obj.productoValido=true;
+  try {
+        if (! obj.codProducto == "") {
+            const url= "https://ffa3240.pythonanywhere.com/productos/" + obj.codProducto
+            const response = await fetch(url)
+            const data = await response.json()
+            if (data.nombre === undefined) {
+              resultado=false;
+              obj.productoValido=false;
+            }
+      }
+    }
+    catch (err) {
+      console.log(err)
+    }
+    return resultado
+}
+
+
+const modificarNovedad = async(obj) => {
+
+  if (await validarProducto2(obj)) {
+
+    let novedad = {
+      codProducto: obj.codProducto,
+      imagenNovedad: obj.imagenNovedad,
+      texto01: obj.texto01,
+      texto02: obj.texto02,
+      texto03: obj.texto03,
+      texto04: obj.texto04,
+      texto05: obj.texto05,
+    };
+
+    if (validar(novedad)) {
+          var options = {
+            body: JSON.stringify(novedad),
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            redirect: "follow",
+          };
+          fetch(obj.url, options)
+            .then(function () {
+              modificacionConfirmada();
+            })
+            .catch((err) => {
+              console.error(err);
+              alert("Error al actualizar.");
+            });
+    }
+  }
+  else {
+    let strError = `<h6>Errores en la carga de datos:</h6><br>`; 
+    strError = strError + `<p> - Producto Inexistente </p>`; 
+    MostrarVentanaModalGeneral(strError, "40%", "40%", false, "#","rgb(177 22 22)")  
+  }
+
+}

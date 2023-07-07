@@ -43,7 +43,7 @@
                     <div class="frmNuevoDatos">
                         <div class="mb-3">
                             <label for="codProducto">Id.Producto</label>
-                            <input onchange="validarProducto(this.value)" type="number" name="codProducto" id="codProducto" v-model="codProducto">
+                            <input v-on:change="cambioProducto()" type="number" name="codProducto" id="codProducto" v-model="codProducto">
                         </div>
                         <div class="mb-3">
                             <label for="imagenNovedad">Imagen</label>

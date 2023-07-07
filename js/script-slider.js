@@ -110,7 +110,7 @@ function cargarNovedades(dataNovedades) {
                     </div>`;
       wClsSoloImg = "";
     }
-
+  
     let wFuncionVentanaModal = (objNovedad.codProducto==0) 
                              ? `abrirVentanaDetalleModal('${objNovedad.imagenNovedad}')` 
                              : `abrirVentanaDetalleModalConObjeto('${objNovedad.codProducto}')`;

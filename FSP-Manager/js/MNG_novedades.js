@@ -42,6 +42,11 @@ createApp({
           this.error = true;
         });
     },
+    cambioProducto() {
+      if (this.codProducto != 0) {
+        validarProducto(this)
+      }
+    },
     grabar() {
       /* El método grabar se encarga de guardar los datos de un nuevo producto en el servidor. Primero, se crea un objeto producto con los datos ingresados en el formulario. Luego, se configuran las opciones para la solicitud fetch, incluyendo el cuerpo de la solicitud como una cadena JSON, el método HTTP como POST y el encabezado Content-Type como application/json. Después, se realiza la solicitud fetch a la URL especificada utilizando las opciones establecidas. Si la operación se realiza con éxito, se muestra un mensaje de éxito y se redirige al usuario a la página de productos. Si ocurre algún error, se muestra un mensaje de error.
        */
@@ -209,27 +214,38 @@ function recargar() {
 }
 
 
-const validarProducto = async (idProducto) => {
+const validarProducto = async (obj) => {
   let resultado = true;
   let strError = `<h6>Errores en la carga de datos:</h6><br>`;
 
   try {
-        const url= "https://ffa3240.pythonanywhere.com/productos/" + idProducto
+        const url= "https://ffa3240.pythonanywhere.com/productos/" + obj.codProducto
         const response = await fetch(url)
         const data = await response.json()
         if (data.nombre === undefined) {
           strError = strError + `<p> - Producto Inexistente </p>`;
           resultado=false;
+          obj.imagenNovedad= "/img/novedades/webp/nov000.webp";
+          obj.productoValido=false;
+          obj.texto01="";
+          obj.texto02="";
+          obj.texto04="";
+          obj.texto05="";
         }
         else {
-          let t1 = document.getElementById("texto01");
+          /*let t1 = document.getElementById("texto01");
           t1.value=data.nombre;
           let t2 = document.getElementById("texto02");
           t2.value="$"+data.precio;
           let t4 = document.getElementById("texto04");
           t4.value="Rodado: "+data.rodado;
           let t5 = document.getElementById("texto05");
-          t5.value="Marca: "+data.marca;
+          t5.value="Marca: "+data.marca;*/
+          obj.imagenNovedad= data.imagen;
+          obj.texto01=data.nombre;
+          obj.texto02="$"+data.precio;
+          obj.texto04="Rodado: "+data.rodado;
+          obj.texto05="Marca: "+data.marca;
         }
     }
     catch (err) {
