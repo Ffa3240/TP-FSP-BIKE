@@ -40,27 +40,27 @@ body {
       text-align: center;
     }
 
-.frmModificar {
+.frmNuevo {
   display: flex;
   flex-direction: column;
   width: 100%;
   align-items: center;
 } 
 
-.frmModificarTitulo {
+.frmNuevoTitulo {
       width: 100%;
       background-color: rgb(17, 16, 16);
       text-align: center;
       padding-top: .5rem;
 } 
-        
-      .frmModificarTitulo h5 {
-        background-color: rgb(30, 30, 44);
+    
+    .frmNuevoTitulo h5 {
+        background-color: rgb(25, 43, 29);
         margin-bottom: 0px;
         padding: 10px;
-      }
+    }
 
-.frmModificarDatosFoto {
+.frmNuevoDatosFoto {
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -68,80 +68,48 @@ body {
 }
 
 
-.frmModificarDatos {
+.frmNuevoDatos {
+  width: 50%;
+  text-align: center;
+  margin-left: -15%;
+  margin-top: 1rem;
+}
+
+.frmNuevoFoto {
   width: 50%;
   text-align: center;
 }
+    .frmNuevoFoto img {
+        width: 65%;
+    }
 
-.frmModificarFoto {
-  width: 50%;
-  text-align: center;
-}
-
-
-.frmModificarBotones {
+.frmNuevoBotones {
       margin-bottom: 1rem;
 }
-.frmModificarBotones button {
+.frmNuevoBotones button {
       margin-right: 2rem;
 }
 
-.soloImagen {
-  height: 40vh;
-  object-fit: cover;
-  margin-left: 5%;
-  margin-right: 5%;
-  align-items: center;
-}
-        
-    .frmModificarFoto img {
-      width: 70%;
-    }
+#password {
+  font-size: 3rem;
+  padding:0;
+  height: 25px;
 
-.tablaImagenes {
-  display: grid;
-  grid-template-columns: 33% 33% 33%;
-  overflow-y: auto;
-  background-color:rgb(30 30 44 / 74%);
-  height: 50vh;
-  margin-left: 5%;
-  margin-right: 5%;
-  border-radius: 5px;
 }
-
-.clsProducto {
-  margin-bottom: 5px;
-  margin-top: 5px;
-}
-
-.clsProductoImagen {
-  width: 80%;
-  height: auto;
-  object-fit: cover;
-  cursor: pointer;
-}
-
-      .clsProductoImagen:hover {
-        box-shadow: 6px 10px 70px 0px rgba(0, 0, 0, 0.75);
-        -webkit-box-shadow: 6px 10px 70px 0px rgba(0, 0, 0, 0.75);
-        -moz-box-shadow: 6px 10px 70px 0px rgba(0, 0, 0, 0.75);
-        transform: translateY(5px) scale(1.2);
-        cursor: pointer !important;
-      }
 
 @media all and (max-width: 600px) {
 
-  .frmModificarDatosFoto {
+  .frmNuevoDatosFoto {
     flex-direction: column;
     align-items: left;
 
   }
 
-  .frmModificarDatos {
+  .frmNuevoDatos {
     width: 80%;
   }
 
-  .frmModificarFoto {
+  .frmNuevoFoto {
     width: 80%;
     margin: 1rem;
     margin-left: 3rem;

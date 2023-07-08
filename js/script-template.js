@@ -50,7 +50,7 @@ wHeader.innerHTML = `
     <div id="id_nav_usuario_out">
         <div id="id_nav_usuario_logueado">
         </div>
-        <a href="" class="nav_usuario_logout">
+        <a href="/index.html" class="nav_usuario_logout">
         <i class="fa fa-sign-out"></i>  Cerrar</a>
     </div>
 </div>
@@ -91,7 +91,7 @@ wHeader.innerHTML = `
         <li class="nav_item">
             <a href="/sucursales.html" class="nav-link">Sucursales</a>
         </li>
-        <li class="dropdown nav_item">
+        <li id="idManager" class="dropdown nav_item">
             <a class="dropdown-toggle nav-link nav-manager" data-bs-toggle="dropdown" href="#" role="button"
                 aria-expanded="false">Manager</a>
                 <ul onclick="subMenuOcultar(this)" class="dropdown-menu">
@@ -391,12 +391,19 @@ function verUsuario() {
         document.getElementById("id_nav_usuario_out").style.display= "block";
         document.getElementById("id_nav_usuario_in").style.display="none";
     }
+
+    perfil=sessionStorage.getItem("fsp-bike-perfil")
+    if (perfil == null) {perfil=""};
+    if (perfil.trim() == "admin") {
+        document.getElementById("idManager").style.display="block";
+    }
 }
 
 var wLogOut = document.getElementById("id_nav_usuario_out");
 wLogOut.addEventListener("click", function() {
     localStorage.setItem("fsp-bike-usuario", "");
     sessionStorage.setItem("fsp-bike-usuario", "")
+    sessionStorage.setItem("fsp-bike-perfil", "")
     verUsuario();
 })
 

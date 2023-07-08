@@ -2,7 +2,7 @@
     <html lang="en">
 
     <head>
-        <title>Actualizar Novedad</title>
+        <title>Actualizar Usuario</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -22,7 +22,7 @@
         <link rel="stylesheet" href="../css/style-template.css">
 
         <!-- css para Header and Footer -->     
-        <link rel="stylesheet" href="./css/MNG_novedad-update.css">
+        <link rel="stylesheet" href="./css/MNG_usuario-update.css">
 
     
     </head>
@@ -35,68 +35,37 @@
             <div class="container" id="app">
                 <form class="frmModificar" id="frmModificar">
                     <div class="frmModificarTitulo">
-                        <H4>Mantenimiento de Novedades</H4>
-                        <h5>Editar Novedad</h5>
+                        <H4>Mantenimiento de Usuarios</H4>
+                        <h5>Editar Usuario</h5>
                     </div>
-                    <div  class="frmModificarDatosFoto">
+                    <!--div  class="frmModificarDatosFoto"-->
                         <div class="frmModificarDatos">
                   
                             <div class="mb-3">
-                                <label for="id">Id</label>
-                                <input type="number" name="id" id="id" disabled v-model="id">
+                                <label for="correoElectronico">Correo Electronico</label>
+                                <input type="text" name="correoElectronico" id="correoElectronico" disabled v-model="correoElectronico">
                             </div>
                             <div class="mb-3">
-                                <label for="codProducto">Id Producto</label>
-                                <input v-on:change="cambioProducto()" type="number" name="codProducto" id="codProducto" v-model="codProducto">
+                                <label for="nombre">Nombre</label>
+                                <input type="text" name="nombre" id="nombre" v-model="nombre">
                             </div>
                             <div class="mb-3">
-                                <label for="imagenNovedad">Imagen</label>
-                                <input type="text" name="imagenNovedad" id="imagenNovedad" v-model="imagenNovedad">
+                                <label for="apellido">Apellido</label>
+                                <input type="text" name="apellido" id="apellido" v-model="apellido">
                              </div>
                             <div class="mb-3">
-                                <label for="texto01">Texto 1</label>
-                                <input type="text" name="texto01" id="texto01" v-model="texto01">
+                                <label for="password">Password</label>
+                                <input type="text" name="password" id="password" v-model="password">
                             </div>
                             <div class="mb-3">
-                                <label for="texto02">Texto 2</label>
-                                <input type="text" name="texto02" id="texto02" v-model="texto02">
+                                <label for="perfil">Perfil</label>
+                                <input type="text" name="perfil" id="perfil" v-model="perfil">
                             </div>
-                            <div class="mb-3">
-                                <label for="texto03">Texto 3</label>
-                                <input type="text" name="texto03" id="texto03" v-model="texto03">
-                            </div>
-                            <div class="mb-3">
-                                <label for="texto04">Texto 4</label>
-                                <input type="text" name="texto04" id="texto04" v-model="texto04">
-                            </div>
-                            <div class="mb-3">
-                                <label for="texto05">Texto 5</label>
-                                <input type="text" name="texto05" id="texto05" v-model="texto05">
-                            </div>
-                        
-                        </div>
-                        <div class="frmModificarFoto">
-                            <div class="soloImagen" v-if=!productosCargados>
-                                <img :src="imagenNovedad" :alt="imagenNovedad" >
-                            </div>
-                            <div class="tablaImagenes" v-else>
-                                        <div class="clsProducto" v-for="producto in productos">
-                                            <img class="clsProductoImagen" width="50" height="50" 
-                                            :src=producto.imagen
-                                            value=producto.id 
-                                            :alt="producto.nombre"
-                                            v-on:click="seleccionarProducto(producto.id)">
-                                       </div>
-                            </div>
-                        </div>
-                    </div>
+                         </div>
+                     <!--/div-->
                         <div class="frmModificarBotones">
                             <button type="button" class="btn btn-success" v-on:click="modificar()">Actualizar</button>
                             <button type="button" class="btn btn-danger" v-on:click="salir()">Salir</button>
-                            <button type="button" class="btn btn-dark" v-on:click="cargarProductos()"
-                                    v-if=!productosCargados>Productos</button>
-                            <button type="button" class="btn btn-primary" v-on:click="mostrarImagen()"
-                                    v-else>Ver Imagen</button>
                         </div>
                      </div>
                  </form>
@@ -122,7 +91,7 @@
             crossorigin="anonymous"> </script>
       
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-        <script src="./js/MNG_novedad-edit.js"></script>
+        <script src="./js/MNG_usuario-edit.js"></script>
     </body>
 
     </html>

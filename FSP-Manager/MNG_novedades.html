@@ -71,6 +71,7 @@
                                 <tr>
                                     <th scope="col">Id</th>
                                     <th scope="col">ProductoId</th>
+                                    <th scope="col">ProductoNombre</th>
                                     <th scope="col">Imagen</th>
                                     <th scope="col">ImagenUbicacion</th>
                                     <th scope="col">Texto1</th>
@@ -87,6 +88,7 @@
                                 <tr class="" v-for="novedad in novedades">
                                     <td scope="row" text-align="center">{{novedad.id}}</td>
                                     <td>{{novedad.codProducto}}</td>
+                                    <td>{{novedad.nombre}}</td>
                                     <td text-align="center">
                                         <img width="150" :src="novedad.imagenNovedad" :alt="novedad.id">
                                     </td>

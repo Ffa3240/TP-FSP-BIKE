@@ -216,6 +216,10 @@ body {
   color: red !important;
 }
 
+#idManager {
+  display:none
+} 
+
 .whatsapp {
   background-color: transparent;
   width: 45px;

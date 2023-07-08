@@ -16,6 +16,10 @@ createApp({
       texto05: "",
       url: "https://ffa3240.pythonanywhere.com/novedades/" + id,
       productoValido: true,
+
+      productosCargados:false,
+      listaMostrada:false,
+      productos: [],
     };
   },
   methods: {
@@ -46,6 +50,27 @@ createApp({
     },
     cambioProducto() {
       validarProducto(this)
+    },
+    cargarProductos() {
+      if (! this.productosCargados) {
+          fetch("https://ffa3240.pythonanywhere.com/productos")
+          .then((response) => response.json()) 
+          .then((data) => {
+            this.productos = data;
+            this.productosCargados=true;
+          })
+          .catch((err) => {
+          });
+      }
+    },
+    seleccionarProducto(idProducto) {
+      //alert("Selecciono el producto: " + idProducto)
+      this.codProducto=idProducto;
+      this.productosCargados=false;
+      validarProducto(this)
+    },
+    mostrarImagen() {
+      this.productosCargados=false;
     },
     modificar() {
       modificarNovedad(this)
@@ -215,5 +240,11 @@ const modificarNovedad = async(obj) => {
     strError = strError + `<p> - Producto Inexistente </p>`; 
     MostrarVentanaModalGeneral(strError, "40%", "40%", false, "#","rgb(177 22 22)")  
   }
+
+}
+
+function cargarProductos() {
+
+   
 
 }

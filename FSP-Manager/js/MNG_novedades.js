@@ -16,6 +16,7 @@ createApp({
       // Atributos para el almacenar los valores del formulario
       id: 0,
       codProducto: 0,
+      nombre: "",
       imagenNovedad: "/img/novedades/webp/nov000.webp",
       texto01: "",
       texto02: "",

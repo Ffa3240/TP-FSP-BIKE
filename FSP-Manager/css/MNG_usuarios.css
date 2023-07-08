@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --padding-container: 0px;
+  --background-generico: linear-gradient(121deg, rgba(42,42,42,1) 9%, rgba(28,28,28,1) 62%, rgba(17,17,17,0.9836309523809523) 100%);
+  --backgroud-separador: linear-gradient(121deg, rgba(19,19,19,1) 9%, rgba(42,42,42,1) 62%, rgba(40, 40, 40, 1) 100%);
+}
+
+body {
+  font-family: 'Poppins', 'Roboto', sans-serif;
+  min-width: 300px;
+  background-color:#00000033;
+}
+
+.container {
+  background-color: #cccccc;
+}
+
+.cabecera{
+    background-color:rgba(40, 40, 40, 0.86);
+    color: white;
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+table thead {
+    background-color: black;
+    color: white;
+    font-family: sans-serif !important;
+    text-align: center;
+}
+
+table tbody tr td {
+    text-align: center;
+}
+
+.btn-tabla {
+    width: 50%;
+    margin: 2px;
+}
+
+.d-flex {
+    justify-content: space-between;
+    margin-right: 10px;
+    padding-bottom: 10px;
+    align-items: center;
+    flex-direction: row;
+}
+
+.clsBuscar {
+  display: flex;
+}
+#campoBuscar {
+  margin-right: 5px;
+}
+
+
+.form-select-sm option {
+  font-size: .9rem;
+  background-color: rgb(39, 37, 37);
+  color: white;
+}
+
+.clsCargandoError {
+    margin: auto;
+    font-size: 1.5rem;
+    width: 50%;
+    background-color: red;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+    animation: myAnimModal 1s ease 0s 1 normal forwards;
+
+}
+
+    @keyframes myAnimModal {
+      0% {transform: scale3d(0, 0, 1);
+      background-color: black;}
+      100% {transform: scale3d(1, 1, 1);}
+    }
+
+.clsCargando {
+  margin-left: 50%;
+}
+
+.spinner-border {
+    font-size: 6rem;
+    color: royalblue;
+    width: 100px;
+    height: 100px;
+}
+
+@media all and (max-width: 1200px) {
+
+  .clsOcultar1 {
+    display: none;
+  }
+
+}
+
+@media all and (max-width: 800px) {
+
+  .clsOcultar2 {
+    display: none;
+  }
+
+}
+
+@media all and (max-width: 650px) {
+
+  .clsOcultar3 {
+    display: none;
+  }
+
+  .d-flex {
+    flex-direction: column;
+    justify-content: center;
+}
+
+}

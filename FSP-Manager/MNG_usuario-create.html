@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Crear Usuario</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
+    integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+    <!-- css para Header and Footer -->     
+    <link rel="stylesheet" href="../css/style-template.css">
+
+    <!-- css para Header and Footer -->     
+    <link rel="stylesheet" href="./css/MNG_usuario-create.css">
+
+</head>
+
+<body>
+    <header id="idHeader" class="miHeader container">
+        <!-- place navbar here -->
+    </header>
+    <main>
+        <div class="container" id="app">
+  
+            <form class="frmNuevo" id="frmNuevo">
+                <div class="frmNuevoTitulo">
+                    <H4>Mantenimiento de Usuarios</H4>
+                    <h5>Nuevo Usuario</h5>
+            </div>
+                <!--div  class="frmNuevoDatosFoto"-->
+                    <div class="frmNuevoDatos">
+                        <div class="mb-3">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" name="nombre" id="nombre" v-model="nombre">
+                        </div>
+                        <div class="mb-3">
+                            <label for="apellido">Apellido</label>
+                            <input type="text" name="apellido" id="apellido" v-model="apellido">
+                        </div>
+                        <div class="mb-3">
+                            <label for="correoElectronico">Mail</label>
+                            <input type="text" name="correoElectronico" id="correoElectronico" v-model="correoElectronico">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password">Password</label>
+                            <input type="password" name="password" id="password" v-model="password">
+                        </div>
+                        <div class="mb-3">
+                            <label for="perfil">Perfil</label>
+                            <input type="text" name="perfil" id="perfil" v-model="perfil">
+                        </div>
+                    </div>
+                 <!--/div-->
+                <div class="frmNuevoBotones">
+                    <button type="button" class="btn btn-success" v-on:click="grabar()">Grabar</button>
+                    <button type="button" class="btn btn-danger" v-on:click="salir()">Salir</button>
+                </div>
+                
+            </form>
+  
+        </div>
+
+    </main>
+
+    <footer id="idFooter" class="miFooter">
+        <!-- place footer here -->
+    </footer>
+   
+    <!--Carga jquery--> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  
+    <!--Carga el template de Header y Footer -->
+    <script src="../js/script-template.js"></script>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+        </script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./js/MNG_usuario-create.js"></script>
+
+</body>
+
+</html>

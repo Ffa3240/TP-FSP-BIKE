@@ -61,7 +61,7 @@
 
             <!--input class="botons" type="submit" value="Iniciar"-->
             <input class="botons" type="button" value="Iniciar"
-                onclick="signOn(correo.value, password.value, recordar.value)">
+                onclick="signOnApi(correo.value, password.value, recordar.value)">
          
 
 
@@ -85,7 +85,7 @@
              $(this).siblings()[0].innerHTML="";
          } );
     
-         function signOn(correo, password, recordar) {
+        function signOn(correo, password, recordar) {
 
                     var hayError = false;
                     var signoError = `<i class="fa fa-circle-exclamation"></i>`
@@ -124,9 +124,76 @@
                         window.location.href = "./index.html";
                     }
 
-                }
+        }
 
+        function signOnApi(correo, password, recordar) {
+
+                var hayError = false;
+                var signoError = `<i class="fa fa-circle-exclamation"></i>`
+                var wNombre = ""
+                var wPerfil = ""
+
+                if (correo.trim() == "") {
+                    let wErrorMail = document.getElementById("idErrorMail");
+                    wErrorMail.innerHTML = signoError + "  Debe informar Mail";
+                    hayError = true;
+                }
+                if (password.trim() == "") {
+                    let wErrorPassword = document.getElementById("idErrorPassword");
+                    wErrorPassword.innerHTML = signoError + "  Debe informar Password";
+                    hayError = true;
+                }
+         
+                if (!hayError) {
+                    
+                    let usuario = {
+                        correoElectronico: correo,
+                        password: password
+                    };
+                    var options = {
+                        body: JSON.stringify(usuario), // Convertir el objeto a una cadena JSON
+                        method: "POST", // Establecer el método HTTP como POST
+                        headers: { "Content-Type": "application/json" },
+                        redirect: "follow",
+                    };
+                    let urlValidarUsuario="https://ffa3240.pythonanywhere.com/usuarios/validarPassword"
+                    fetch(urlValidarUsuario, options)
+                    .then((response) => response.json())
+                    .then((data) => {
+                        wNombre = data.nombre
+                        wPerfil=data.perfil
+                        //alert(data.usuario + " " + data.password + " " + data.perfil+ " " + data.nombre);
+                      
+
+                        if (data.usuario=="False") {
+                            let wErrorMail = document.getElementById("idErrorMail");
+                            wErrorMail.innerHTML = signoError + "  Mail no registrado.";
+                            hayError = true;
+                        }
+                        else {
+                            if (data.password=="False") {
+                                let wErrorPassword = document.getElementById("idErrorPassword");
+                                wErrorPassword.innerHTML = signoError + "  Password incorrecto";
+                                hayError = true;
+                            }
+                            else {
+                                //alert("valido ok");
+                                //let wNombre = localStorage.getItem("fsp-bike-usuario_" + correo + "_nombre");
+                                sessionStorage.setItem("fsp-bike-usuario", wNombre)
+                                sessionStorage.setItem("fsp-bike-perfil", wPerfil)
+                                window.location.href = "./index.html";
+                            }
+                        }    
+                        //alert("fin del Then");
+                    })
+                    .catch((err) => {
+                    console.error(err);
+                    alert("Error al Validar.");
+                    });
+
+                }
             
+        }
 
     
     </script>
