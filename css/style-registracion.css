@@ -85,10 +85,100 @@
     margin-left: 0.5rem !important;
 }
 
+/* ----------------------------------------*/
 
 
+.confirmacion-container {
+  width: 100%;
+  height: 100vh;
+  background-color: transparent;
+  display: block;
+  position: fixed;
+  top: 0;
+  z-index: 99999;
+}
 
+        .confirmacion-ventana {
+            width: 40%;
+            margin: auto;
+            height: 40vh;
+            position: fixed;
+            top: 50vh;
+            left: 30%;
+            background-color: #283d52;
+            border: .5rem solid #0000005e;
+            border-radius: 10px;
+            color: white;
+            animation: myAnimModal 1s ease 0s 1 normal forwards;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
+                @keyframes myAnimModal {
+                    0% {transform: scale3d(0, 0, 1);
+                    background-color: black;}
+                    100% {transform: scale3d(1, 1, 1);}
+                }
+                
+                .confirmacion-mensaje {
+                    text-align: center;
+                    width: 100%;
+                    height: 30%;
+                    vertical-align: middle;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                }
+                  .confirmacion-valor {
+                    width: 100%;
+                    height: 30%;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                }
+                        .form-controls {
+                            width: 3rem;
+                            height: 3rem;
+                            font-size: 40px;
+                            padding: 2px;
+                            text-align: center;
+                            border-radius: 8px;
+                            color: darkblue;
+                            font-weight: bold;
+                            margin-left: 5px;
+                        }
+                    
+                .confirmacion-botones {
+                    display: flex;
+                    flex-direction: row;
+                    width: 100%;
+                    height: 30%;
+                    align-items: center;
+                    justify-content: center;
+                }
+        
+                        .confirmacion-botones .botons {
+                            width: 100px;
+                            background: #1d5388;
+                            border: none;
+                            padding: 10px;
+                            color: white;
+                            margin: 10px;
+                            text-align: center;
+                            font-size: 16px;
+                            border-radius: 4px;
+                        }
+                                .confirmacion-botones .botons:hover{
+                                    background-color: #668cb8;
+                                }
+
+    .confirmacion-ocultar {
+        display: none;
+    }
+                                
 @media all and (max-width: 400px) {
     .form-register {
         width: 90%;
@@ -104,4 +194,8 @@
       .form-register p a {
        margin: 0px; 
       }
+}
+
+#idFormMail {
+    display: none;
 }

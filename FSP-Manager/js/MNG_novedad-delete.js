@@ -69,7 +69,7 @@ createApp({
 }).mount("#app");
 
 function eliminacionConfirmada() {
-  MostrarVentanaModalGeneral("Se ha eliminado correctamente la novedad.", "80%", "30%", true, "./MNG_novedades.html","rgb(94 13 13)")
+  MostrarVentanaModalGeneral("Se ha eliminado correctamente la novedad.", "80%", "30%", true, "./MNG_novedades.html","rgb(81 113 75)")
 }
 
 

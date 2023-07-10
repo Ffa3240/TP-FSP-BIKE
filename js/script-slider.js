@@ -169,17 +169,28 @@ function inicializarNovedades() {
 
 /* CARGAR INFORMACION DESDE PYTHONANYWHERE */
 /* https://ffa3240.pythonanywhere.com/novedades */
+function obtenerDatosNovedades() {
 
+         try {
+          (async () => {
+            let response = await fetch('https://ffa3240.pythonanywhere.com/novedades');   
+            cargarNovedades(await response.json());
+            reintentar=false;
+          })();  
+        }
+        catch {
+          alert("Error al cargar novedades, reintentar (presione F5)")
+        }
+  
+  }
+
+obtenerDatosNovedades();
+/*
 (async () => {
   let response = await fetch('https://ffa3240.pythonanywhere.com/novedades');   
   cargarNovedades(await response.json());
-})();
-
-
-
-
-
-
+  reintentar=false;
+})();  */
 
 /* PARA PRUEBA : Carga desde archivo json en carpeta Datos */
 

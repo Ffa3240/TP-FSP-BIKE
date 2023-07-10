@@ -243,8 +243,3 @@ const modificarNovedad = async(obj) => {
 
 }
 
-function cargarProductos() {
-
-   
-
-}

@@ -17,12 +17,17 @@ createApp({
       id: 0,
       codProducto: 0,
       nombre: "",
-      imagenNovedad: "/img/novedades/webp/nov000.webp",
+      imagenNovedad: "/img/novedades/nov000.webp",
       texto01: "",
       texto02: "",
       texto03: "",
       texto04: "",
-      texto05: ""
+      texto05: "",
+
+      productosCargados:false,
+      listaMostrada:false,
+      productos: [],
+
     };
   },
   methods: {
@@ -48,6 +53,27 @@ createApp({
         validarProducto(this)
       }
     },
+    cargarProductos() {
+      if (! this.productosCargados) {
+          fetch("https://ffa3240.pythonanywhere.com/productos")
+          .then((response) => response.json()) 
+          .then((data) => {
+            this.productos = data;
+            this.productosCargados=true;
+          })
+          .catch((err) => {
+          });
+      }
+    },
+    seleccionarProducto(idProducto) {
+      //alert("Selecciono el producto: " + idProducto)
+      this.codProducto=idProducto;
+      this.productosCargados=false;
+      validarProducto(this)
+    },
+    mostrarImagen() {
+      this.productosCargados=false;
+    },
     grabar() {
       /* El método grabar se encarga de guardar los datos de un nuevo producto en el servidor. Primero, se crea un objeto producto con los datos ingresados en el formulario. Luego, se configuran las opciones para la solicitud fetch, incluyendo el cuerpo de la solicitud como una cadena JSON, el método HTTP como POST y el encabezado Content-Type como application/json. Después, se realiza la solicitud fetch a la URL especificada utilizando las opciones establecidas. Si la operación se realiza con éxito, se muestra un mensaje de éxito y se redirige al usuario a la página de productos. Si ocurre algún error, se muestra un mensaje de error.
        */
@@ -62,7 +88,7 @@ createApp({
         texto05: this.texto05
       };
       
-      validarGrabar(novedad)
+      validarGrabar(novedad,this)
     
       
 /*     novedadGeneral=novedad; 
@@ -152,7 +178,7 @@ function validar(objNovedad) {
 }
 
 
-const validarGrabar = async (objNovedad) => {
+const validarGrabar = async (objNovedad, oModel) => {
   let resultado = true;
   let strError = `<h6>Errores en la carga de datos:</h6><br>`;
 
@@ -200,6 +226,7 @@ const validarGrabar = async (objNovedad) => {
         const urlNov = "https://ffa3240.pythonanywhere.com/novedades"
         fetch(urlNov, options)
           .then(function () {
+            oModel.imagenNovedad="/img/novedades/nov000.webp"
            altaConfirmada();
           })  
           .catch((err) => {
@@ -226,7 +253,7 @@ const validarProducto = async (obj) => {
         if (data.nombre === undefined) {
           strError = strError + `<p> - Producto Inexistente </p>`;
           resultado=false;
-          obj.imagenNovedad= "/img/novedades/webp/nov000.webp";
+          obj.imagenNovedad= "/img/novedades/nov000.webp";
           obj.productoValido=false;
           obj.texto01="";
           obj.texto02="";

@@ -53,9 +53,10 @@ createApp({
             };
 
             // Realizar una solicitud fetch para guardar el producto en el servidor
-            fetch(this.urlInicial, options)
+            fetch(urlInicial, options)
               .then(function () {
                 producto={}
+                imagen= "/img/productos/bicicletas/bic000.webp";
                 altaConfirmada();
               })  
               .catch((err) => {

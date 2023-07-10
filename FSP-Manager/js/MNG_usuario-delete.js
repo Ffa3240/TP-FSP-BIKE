@@ -68,7 +68,7 @@ createApp({
 }).mount("#app");
 
 function eliminacionConfirmada() {
-  MostrarVentanaModalGeneral("Se ha eliminado correctamente el usuario.", "80%", "30%", true, "./MNG_usuarios.html","rgb(94 13 13)")
+  MostrarVentanaModalGeneral("Se ha eliminado correctamente el usuario.", "80%", "30%", true, "./MNG_usuarios.html","rgb(81 113 75)")
 }
 
 

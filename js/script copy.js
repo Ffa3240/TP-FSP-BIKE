@@ -102,6 +102,34 @@ function abrirVentanaDetalleModalConObjeto(idProducto) {
     alert("Error al cargar Producto: " + idProducto);
   }
 
+/* let objProducto = dataProductos[idProducto]; */
+ 
+/*
+  let ventanaContainer = document.getElementById("idVentanaModalContainer");
+  let ventanaModal = document.getElementById("ventanaDetalleModal");
+  let imagen = document.getElementById("imagenDetalleModal")
+  imagen.src = objProducto.imagen;
+
+  let texto = document.getElementById("informacionDetalleModal");
+  texto.innerHTML =
+    `<div class="detModalTexto detModalTexto1">${objProducto.nombre}</div>
+   <div class="detModalTexto detModalTexto2">$ ${objProducto.precio}</div>
+   <img id="detModalImgOferta1" src="./img/Ofertas/ahora12.png">
+   <img id="detModalImgOferta1" src="./img/Ofertas/3-6-12.png">`
+  if (objProducto.categoria == "bicicleta") {
+    texto.innerHTML +=
+      `<div class="detModalTexto detModalTexto3">Rodado: ${objProducto.rodado}</div>`
+  }
+  texto.innerHTML +=
+    `<div class="detModalTexto detModalTexto4">Marca: ${objProducto.marca}</div>
+    <div class="detModalTexto detModalTexto5">Categoria: ${objProducto.categoria}</div>`
+  ventanaModal.classList.remove("noTexto");
+  ventanaContainer.classList.toggle("ventanaModalMostrar")
+*/
+
+  /* ventanaModal.focus(); */
+
+
 }
 
 
@@ -242,20 +270,22 @@ function cargarComboMarcasPorReduce(objProductos) {
 
 
 function cargarComboMarcasPorGroupBy(objTotales) {
-  wListaMarcas = document.getElementById("idListaMarcas");
-  
+  //wListaMarcas = document.getElementById("idListaMarcas");
+  alert("groupby")
   var objMarcas = Object.entries(objTotales);
   let wInner = "";
   console.log(objMarcas);
   
-  objMarcas.forEach(element => {
+  /* agregar las marcas al html de seleccion */
+  /*let wMarcasArray = Object.entries(wMarcas);
+  wMarcasArray.forEach(element => {
     wInner = wInner +
-      `<option value="${element[1][0]}">
-              <div class="selItemMarca">${element[1][0]}</div>
-              <div class="selItemMarcaCant">(${element[1][1]})</div>
+      `<option value="${element[1].marca}">
+              <div class="selItemMarca">${element[1].marca}</div>
+              <div class="selItemMarcaCant">(${element[1].cant})</div>
           </option>`
-  });
-  wListaMarcas.innerHTML += wInner;
+  });*/
+  //wListaMarcas.innerHTML += wInner;
 }
 
 
@@ -268,8 +298,12 @@ function inicializarFiltros() {
 
     /* --------------------------------------------------------------------------------------------------*/
     /* --- CARGA DE COMBOBOX de Marcas ----*/
-      
-      /*cargarComboMarcasPorReduce(objProductos);*/
+      cargarComboMarcasPorReduce(objProductos);
+
+      /*(async () => {
+        let response = await fetch('https://ffa3240.pythonanywhere.com/productosTotalXmarca');   
+        cargarComboMarcasPorGroupBy(await response.json());
+      })();*/
 
     
       /* --------------------------------------------------------------------------------------------------*/
@@ -351,13 +385,8 @@ function cargarProductos(data) {
 
         /* Seleccion de marca */
         /*------------------- */
-        let wMarcaSeleccionada = "*all";
-        try {wMarcaSeleccionada = wListaMarcas.value}
-        catch { }  
-
-        //if (wListaMarcas.value == "*all" || objProducto.marca == wListaMarcas.value) {    
-        if (wMarcaSeleccionada == "*all" || objProducto.marca == wMarcaSeleccionada) {    
-            hayProductosSeleccionados=true;
+        if (wListaMarcas.value == "*all" || objProducto.marca == wListaMarcas.value) {    
+          hayProductosSeleccionados=true;
  
           let wClaveProducto = String(objProducto.id);
 
@@ -414,51 +443,42 @@ function cargaInicialProductos(data) {
     cargarProductos(data)
 }
 
-/* 1) CARGAR INFORMACION DESDE ARCHIVO JSON EN RUTA DE LA APLICACION */
-/*    -------------------------------------------------------------- */
+/* PARA PRUEBA: CARGAR INFORMACION DESDE ARCHIVO JSON EN RUTA DE LA APLICACION */
 /*
-      try {
-        fetch('../datos/datosProductos.json')
-          .then(res => res.json())
-          .then(data => cargaInicialProductos(data));
-      }
-      catch {
-        alert("Error al cargar json de Productos ")
-      }
+try {
+  fetch('../datos/datosProductos.json')
+    .then(res => res.json())
+    .then(data => cargaInicialProductos(data));
+}
+catch {
+  alert("Error al cargar json de Productos ")
+}
 */
 
-/* 2) CARGAR INFORMACION DESDE API FALSA */
-/*    ---------------------------------- */
-      /* https://mocki.io/fake-json-api */
-      /*
-      try {
-        fetch('https://mocki.io/v1/4eb9e49e-c9c6-489a-9198-1b445eeba798')
-          .then(res => res.json())
-          .then(data => cargaInicialProductos(data));
-      }
-      catch {
-        alert("Error al cargar json de Productos ")
-      }
+/* CARGAR INFORMACION DESDE API FALSA */
+/* https://mocki.io/fake-json-api */
+/*
+try {
+  fetch('https://mocki.io/v1/4eb9e49e-c9c6-489a-9198-1b445eeba798')
+    .then(res => res.json())
+    .then(data => cargaInicialProductos(data));
+}
+catch {
+  alert("Error al cargar json de Productos ")
+}
 */
 
-/* 3) CARGAR INFORMACION ASINCRONICA DESDE API FALSA */
-/*    ---------------------------------------------- */
-      /*(async () => {
-        let response = await fetch('https://mocki.io/v1/4eb9e49e-c9c6-489a-9198-1b445eeba798');   
-        cargaInicialProductos(await response.json());
-      })();
-      */
+/* CARGAR INFORMACION ASINCRONICA DESDE API FALSA */
+/*(async () => {
+  let response = await fetch('https://mocki.io/v1/4eb9e49e-c9c6-489a-9198-1b445eeba798');   
+  cargaInicialProductos(await response.json());
+})();
+*/
 
-/* 4) CARGAR INFORMACION ASINCRONICA DESDE API PYTHOANYWHERE */
-/*    ------------------------------------------------------ */
-      (async () => {
-        let response = await fetch('https://ffa3240.pythonanywhere.com/productos');   
-        cargaInicialProductos(await response.json());
-      })();
+/* CARGAR INFORMACION ASINCRONICA DESDE API PYTHOANYWHERE */
+(async () => {
+  let response = await fetch('https://ffa3240.pythonanywhere.com/productos');   
+  cargaInicialProductos(await response.json());
+})();
 
 
-/* 5) AGREGADO DE GROUP BY - TOTALES POR MARCA PARA COMBOBOX DE SELECCION */
-      (async () => {
-        let response = await fetch('https://ffa3240.pythonanywhere.com/productosTotalXmarca');   
-        cargarComboMarcasPorGroupBy(await response.json());
-      })();

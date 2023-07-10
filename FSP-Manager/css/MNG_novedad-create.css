@@ -77,9 +77,7 @@ body {
   width: 50%;
   text-align: center;
 }
-    .frmNuevoFoto img {
-        width: 65%;
-    }
+
 
 .frmNuevoBotones {
       margin-bottom: 1rem;
@@ -88,6 +86,54 @@ body {
       margin-right: 2rem;
 }
 
+.soloImagen {
+  width: 60%;
+  object-fit: cover;
+  margin-left: 5%;
+  margin-right: 5%;
+  align-items: center;
+}
+.soloImagenProducto {
+  height: 40vh;
+  object-fit: cover;
+  margin-left: 5%;
+  margin-right: 5%;
+  align-items: center;
+}     
+      .frmNuevoFoto img {
+        width: 65%;
+      }
+
+.tablaImagenes {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  overflow-y: auto;
+  background-color:rgb(30 30 44 / 74%);
+  height: 45vh;
+  margin-left: 5%;
+  margin-right: 5%;
+  border-radius: 5px;
+}
+
+.clsProducto {
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.clsProductoImagen {
+  width: 80%;
+  height: auto;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+      .clsProductoImagen:hover {
+        box-shadow: 6px 10px 70px 0px rgba(0, 0, 0, 0.75);
+        -webkit-box-shadow: 6px 10px 70px 0px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 6px 10px 70px 0px rgba(0, 0, 0, 0.75);
+        transform: translateY(5px) scale(1.2);
+        cursor: pointer !important;
+      }
 
 @media all and (max-width: 600px) {
 

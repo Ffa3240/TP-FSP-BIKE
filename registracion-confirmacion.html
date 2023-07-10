@@ -78,39 +78,6 @@
 
     </main>
 
-    <div id="idConfirmacionContainer" class="confirmacion-container confirmacion-ocultar">
-
-        <div class="confirmacion-ventana">
-
-                <div class="confirmacion-mensaje">
-                    Ingrese el codigo de validación enviado al mail registrado.
-                </div>
-
-                <div class="confirmacion-valor">
-                    <input class="form-controls" type="text" maxlength="1" name="codigo1" id="idCodigo1"> 
-                    <input class="form-controls" type="text" maxlength="1" name="codigo2" id="idCodigo2"> 
-                    <input class="form-controls" type="text" maxlength="1" name="codigo3" id="idCodigo3"> 
-                    <input class="form-controls" type="text" maxlength="1" name="codigo4" id="idCodigo4"> 
-                    <input class="form-controls" type="text" maxlength="1" name="codigo5" id="idCodigo5"> 
-                    <input class="form-controls" type="text" maxlength="1" name="codigo6" id="idCodigo6"> 
-                </div>
-
-                <div class="confirmacion-botones">
-                    <input class="botons" type="button" onclick="validarConfirmacion()" 
-                    value="Confirmar">
-                    <input class="botons" type="button" onclick="cancelarRegistracion()" 
-                    value="Cancelar">
-                    <input class="botons" type="button" onclick="reenviarMail()" 
-                    value="Reenviar">
-                </div>
-
-                <div style="display:none">
-                    <iframe name="print_popup">                        
-                    </iframe>
-                </div>
-        </div>
-    </div>
-
     <footer id="idFooter" class="miFooter">
     </footer>
 
@@ -186,17 +153,7 @@
         }
 
 
-        var wNombre="";
-        var wApellido="";
-        var wCorreo="";
-        var wPassword="";
-
         function registrarApi(nombre, apellido, correo, password, terminos) {
-
-                wNombre=nombre;
-                wApellido=apellido;
-                wCorreo=correo;
-                wPassword=password;
 
                 var hayError = false;
                 var signoError = `<i class="fa fa-circle-exclamation"></i>`
@@ -254,11 +211,33 @@
                             hayError=true;
                         }
                         else {
-                        
-                            confirmacionUsuario()
+                            let usuarioAlta = {
+                                apellido: apellido,
+                                nombre: nombre,
+                                correoElectronico: correo,
+                                password: password,
+                                perfil: "user"
+                            }
+                            var options = {
+                            body: JSON.stringify(usuarioAlta), // Convertir el objeto a una cadena JSON
+                            method: "POST", // Establecer el método HTTP como POST
+                            headers: { "Content-Type": "application/json" },
+                            redirect: "follow",
+                            };
 
-                          //  grabarUsuario(nombre, apellido, correo, password, terminos)
-                            
+                            // Realizar una solicitud fetch para guardar el usuario en el servidor
+                            let urlAltaUsuario="https://ffa3240.pythonanywhere.com/usuarios"
+                            fetch(urlAltaUsuario, options)
+                            .then(function () {
+                                sessionStorage.setItem("fsp-bike-usuario", nombre)
+                                alert("Bienvenido: " + nombre)
+                                window.location.href = "./index.html";
+                              //  altaUsuarioConfirmada();
+                            })  
+                            .catch((err) => {
+                                console.error(err);
+                                alert("Error al Grabar el usuario.");
+                            });
                         }
                     })
                     .catch((err) => {
@@ -270,171 +249,10 @@
 
         }
 
-        var cod1 = "";
-        var cod2 = "";
-        var cod3 = "";
-        var cod4 = "";
-        var cod5 = "";
-        var cod6 = "";
-
-       
-        function confirmacionUsuario() {
-
-            // determinar numero random de 6 digitos
-            cod1 = Math.floor(Math.random() * 10);
-            cod2 = Math.floor(Math.random() * 10);
-            cod3 = Math.floor(Math.random() * 10);
-            cod4 = Math.floor(Math.random() * 10);
-            cod5 = Math.floor(Math.random() * 10);
-            cod6 = Math.floor(Math.random() * 10);
-
-            let mensaje = "CODIGO DE VALIDACION : " + cod1 + " " + cod2 + " " + cod3 + " " + cod4 + " " + cod5 + " " + cod6;
-
-            // enviar Mail
-            document.getElementById("InputNombre").value=wNombre;
-            document.getElementById("InputApellido").value=wApellido;
-            document.getElementById("InputMail").value=wCorreo;
-            document.getElementById("InputMensaje").value=mensaje;
-            document.getElementById("InputCC").value=wCorreo;
-            document.getElementById("InputAuto").value=mensaje;
-         
-            document.forms["formularioMail"].submit();
-            
-
-           /* por jquery */
-           /*$.ajax({
-                method: 'POST',
-                //url: 'https://formsubmit.co/ajax/your@email.com',
-                url: "https://formsubmit.co/621938a6f9ff80ecb98a0f8a0c4a57a3",
-                dataType: 'json',
-                accepts: 'application/json',
-                data: {
-                    name: "FormSubmit",
-                    message: "I'm from Devro LABS"
-                },
-                success: (data) => console.log(data),
-                error: (err) => console.log(err)
-            });*/
-
-            /* por javascript */
-            /*fetch("https://formsubmit.co/621938a6f9ff80ecb98a0f8a0c4a57a3", {
-                method: "POST",
-                headers: { 
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify({
-                    name: "FormSubmit",
-                    message: "I'm from Devro LABS"
-                })
-            })
-            .then(response => response.json())
-            .then(data => console.log(data))
-            .catch(error => console.log(error));*/
-
-            /* muestra ventana de confirmacion */
-            $("#idConfirmacionContainer").removeClass("confirmacion-ocultar")
-
-        }
-
- 
-        function cancelarRegistracion() {
-            $("#idConfirmacionContainer").addClass("confirmacion-ocultar")
-        }
-
-        function reenviarMail() {
-            confirmacionUsuario();
-            MostrarVentanaModalGeneral("Se ha reenviado mail con codigo de validacion.", "80%", "30%", true, "#","rgb(83, 124, 170)")
-        }
-
-
-        function validarConfirmacion() {
-           
-            val1 = document.getElementById("idCodigo1").value
-            val2 = document.getElementById("idCodigo2").value
-            val3 = document.getElementById("idCodigo3").value
-            val4 = document.getElementById("idCodigo4").value
-            val5 = document.getElementById("idCodigo5").value   
-            val6 = document.getElementById("idCodigo6").value
-
-            if (val1 != cod1 || val2 != cod2 || val3 != cod3 || val4 != cod4 || val5 != cod5 || val6 != cod6) {
-                MostrarVentanaModalGeneral("Codigo de validacion, no válido.", "80%", "30%", true, "#","rgb(158, 22, 29)")
-            }
-            else {
-                grabarUsuario()       
-            }
-
-        }
-
-
-        function grabarUsuario() {
-            
-            let usuarioAlta = {
-                    apellido: wApellido,
-                    nombre: wNombre,
-                    correoElectronico: wCorreo,
-                    password: wPassword,
-                    perfil: "user"
-                };
-
-            var options = {
-                body: JSON.stringify(usuarioAlta), // Convertir el objeto a una cadena JSON
-                method: "POST", // Establecer el método HTTP como POST
-                headers: { "Content-Type": "application/json" },
-                redirect: "follow",
-            };
-
-            // Realizar una solicitud fetch para guardar el usuario en el servidor
-            let urlAltaUsuario="https://ffa3240.pythonanywhere.com/usuarios"
-          
-            fetch(urlAltaUsuario, options)
-            .then(function () {
-                sessionStorage.setItem("fsp-bike-usuario", wNombre)
-                //alert("Bienvenido: " + nombre)
-                window.location.href = "./index.html";
-                //altaUsuarioConfirmada();
-            })  
-            .catch((err) => {
-                console.error(err);
-                alert("Error al Grabar el usuario.");
-            });
-        }
-
-
 
     </script>
 
-   <form  target="print_popup"
-          onsubmit="window.open('about:blank','print_popup','width=300,height=300');" 
-          id="idFormMail" 
-          name="formularioMail" 
-          action="https://formsubmit.co/621938a6f9ff80ecb98a0f8a0c4a57a3" 
-          method="POST">
-                <input id="InputNombre"  type="text" name="nombre" placeholder="Nombre" required value="">
-                <input id="InputApellido" type="text" name="apellido" placeholder="Apellido" required value="">
-                <input id="InputMail"  type="email" name="email" placeholder="Email" required value="">
-                <textarea id="InputMensaje" name="mensaje" cols="15" rows="5" required value=""></textarea>
 
-                <input id="InputCC" type="hidden" name="_cc" value="">
-                <input type="hidden" name="_subject" value="Validacion de Usuario TP-FSP-BIKE">
-                <input type="hidden" name="_replyto" value="true">
-                <input type="hidden" name="_template" value="box">
-                <input type="hidden" name="_captcha" value="false">
-                <input id="InputAuto" type="hidden" name="_autoresponse" value="">
-   </form>
-   
-   <!--form id="idFormMail" name="FormSubmit">
-    <input id="InputNombre"  type="text" name="nombre" placeholder="Nombre" required value="">
-    <input id="InputApellido" type="text" name="apellido" placeholder="Apellido" required value="">
-    <input id="InputMail"  type="email" name="email" placeholder="Email" required value="">
-    <textarea id="InputMensaje" name="mensaje" cols="15" rows="5" required value=""></textarea>
-
-    <input type="hidden" name="_subject" value="Validacion de Usuario TP-FSP-BIKE">
-    <input type="hidden" name="_replyto" value="false">
-    <input type="hidden" name="_template" value="box">
-</form-->
-
-        
 
 </body>
 

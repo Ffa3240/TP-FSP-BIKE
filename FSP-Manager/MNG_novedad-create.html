@@ -71,12 +71,30 @@
                         </div>
                      </div>
                     <div class="frmNuevoFoto">
-                        <img  :src="imagenNovedad" :alt="imagenNovedad">
+                        <div class="soloImagen" v-if="!productosCargados && codProducto==0">
+                            <img :src="imagenNovedad" :alt="imagenNovedad" >
+                        </div>
+                        <div class="soloImagenProducto" v-if="!productosCargados && codProducto>0">
+                            <img :src="imagenNovedad" :alt="imagenNovedad" >
+                        </div>
+                        <div class="tablaImagenes" v-if="productosCargados">
+                                    <div class="clsProducto" v-for="producto in productos">
+                                        <img class="clsProductoImagen" width="50" height="50" 
+                                        :src=producto.imagen
+                                        value=producto.id 
+                                        :alt="producto.nombre"
+                                        v-on:click="seleccionarProducto(producto.id)">
+                                   </div>
+                        </div>
                     </div>
                 </div>
                 <div class="frmNuevoBotones">
                     <button type="button" class="btn btn-success" v-on:click="grabar()">Grabar</button>
                     <button type="button" class="btn btn-danger" v-on:click="salir()">Salir</button>
+                    <button type="button" class="btn btn-dark" v-on:click="cargarProductos()"
+                            v-if=!productosCargados>Productos</button>
+                    <button type="button" class="btn btn-primary" v-on:click="mostrarImagen()"
+                            v-else>Ver Imagen</button>
                 </div>
                 
             </form>

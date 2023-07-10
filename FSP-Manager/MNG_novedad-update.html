@@ -76,10 +76,16 @@
                         
                         </div>
                         <div class="frmModificarFoto">
-                            <div class="soloImagen" v-if=!productosCargados>
+                            <!--div class="soloImagen" v-if="!productosCargados">
+                                <img :src="imagenNovedad" :alt="imagenNovedad" >
+                            </div-->
+                            <div class="soloImagen" v-if="!productosCargados && codProducto==0">
                                 <img :src="imagenNovedad" :alt="imagenNovedad" >
                             </div>
-                            <div class="tablaImagenes" v-else>
+                            <div class="soloImagenProducto" v-if="!productosCargados && codProducto>0">
+                                <img :src="imagenNovedad" :alt="imagenNovedad" >
+                            </div>
+                            <div class="tablaImagenes" v-if="productosCargados">
                                         <div class="clsProducto" v-for="producto in productos">
                                             <img class="clsProductoImagen" width="50" height="50" 
                                             :src=producto.imagen

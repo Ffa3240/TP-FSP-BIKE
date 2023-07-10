@@ -87,13 +87,21 @@ body {
 }
 
 .soloImagen {
+  /*height: 40vh;*/
+  width: 60%;
+  object-fit: cover;
+  margin-left: 5%;
+  margin-right: 5%;
+  align-items: center;
+}
+
+.soloImagenProducto {
   height: 40vh;
   object-fit: cover;
   margin-left: 5%;
   margin-right: 5%;
   align-items: center;
 }
-        
     .frmModificarFoto img {
       width: 70%;
     }
