@@ -449,7 +449,7 @@ function cargaInicialProductos(data) {
       })();
       */
 
-/* 4) CARGAR INFORMACION ASINCRONICA DESDE API PYTHOANYWHERE */
+/* 4) CARGAR INFORMACION ASINCRONICA DESDE API PYTHONANYWHERE */
 /*    ------------------------------------------------------ */
       (async () => {
         let response = await fetch('https://ffa3240.pythonanywhere.com/productos');   

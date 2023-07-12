@@ -14,6 +14,13 @@ parCategoria = parCategoria==null ? "" : parCategoria;
 var wCategoria = document.getElementById("idCategoria")
 wCategoria.value=parCategoria
 
+/*var parMarca = urlParams.get('parMarca');
+parMarca = parMarca==null ? "" : parMarca;
+
+var wMarca = document.getElementById("idMarca")
+wMarca.value=parMarca
+*/
+
 urlInicial = "https://ffa3240.pythonanywhere.com/productos"
 url = urlInicial + location.search
 
@@ -72,8 +79,11 @@ createApp({
 
 function buscar() {
   const wCategoria= document.getElementById("idCategoria")
+  //const wMarca= document.getElementById("idMarca")
+ 
   const wNombre = document.getElementById("campoBuscar")
   urlPagina = location.pathname + "?parNombre=" + wNombre.value +"&parCategoria="+wCategoria
+  //+"&parMarca="+wMarca
   window.location.href = urlPagina
 }
 
@@ -85,9 +95,23 @@ function campoBuscarChange() {
 function buscarCategoria(selCategoria) {
   //alert("selecciono categoria: " + selCategoria)
   const wNombre = document.getElementById("campoBuscar")
+  //const wMarca= document.getElementById("idMarca")
+ 
   urlPagina = location.pathname + "?parNombre=" + wNombre.value +"&parCategoria="+selCategoria
+  //+"&parMarca="+wMarca
   window.location.href = urlPagina
 }
+
+/*
+function buscarMarca(selMarca) {
+  //alert("selecciono categoria: " + selCategoria)
+  const wCategoria= document.getElementById("idCategoria")
+ 
+  const wNombre = document.getElementById("campoBuscar")
+  urlPagina = location.pathname + "?parNombre=" + wNombre.value +"&parMarca="+selMarca+"&parCategoria="+wCategoria.value
+  window.location.href = urlPagina
+}
+*/
 
 function recargar() {
   window.location.reload()
@@ -95,3 +119,27 @@ function recargar() {
 
 cargar()
 
+/*
+function cargarComboMarcasPorGroupBy(objTotales) {
+  wListaMarcas = document.getElementById("idListaMarcas");
+  
+  var objMarcas = Object.entries(objTotales);
+  let wInner = "";
+  console.log(objMarcas);
+  
+  objMarcas.forEach(element => {
+    wInner = wInner +
+      `<option value="${element[1][0]}">
+              <div class="selItemMarca">${element[1][0]}</div>
+              <div class="selItemMarcaCant">(${element[1][1]})</div>
+          </option>`
+  });
+  wListaMarcas.innerHTML += wInner;
+}
+
+
+(async () => {
+  let response = await fetch('https://ffa3240.pythonanywhere.com/productosTotalXmarca');   
+  cargarComboMarcasPorGroupBy(await response.json());
+})();
+*/

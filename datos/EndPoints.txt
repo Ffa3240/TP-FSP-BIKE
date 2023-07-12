@@ -1,0 +1,44 @@
+	PRODUCTO
+	--------
+	* 1) OBTENER_MUCHOS	(GET)		Con parametros de seleccion en URL ?= de NOMBRE, CATEGORIA, MARCA
+	  2) OBTENER_UNO	(GET)  		/ID	
+	  3) ELIMINAR_UNO	(DELETE)	/ID
+	  4) CREAR_UNO		(POST)		
+	  5) MODIFICAR_UNO	(PUT)
+ 	* 6) TOTAL_CATEGORIA	(GET)
+	* 7) TOTAL_MARCA	(GET)
+
+	NOVEDAD
+	-------
+	  1) OBTENER_MUCHOS	(GET)		
+	  2) OBTENER_UNO	(GET)  		/ID	
+	  3) ELIMINAR_UNO	(DELETE)	/ID
+	  4) CREAR_UNO		(POST)		
+	  5) MODIFICAR_UNO	(PUT)
+	* 6) NOVEDADES_PRODUCTO	(GET)		/IDPRODUCTO
+
+	USUARIOS
+	--------
+	  1) OBTENER_MUCHOS	(GET)		
+	  2) OBTENER_UNO	(GET)  		/CORREOELECTRONICO  (es la clave principal)	
+	  3) ELIMINAR_UNO	(DELETE)	/CORREOELECTRONICO
+	  4) CREAR_UNO		(POST)		
+	  5) MODIFICAR_UNO	(PUT)
+	* 6) VALIDA_PASSWORD	(POST)		(valida el usuario, la password, y obtiene perfil )
+
+	TURNOS
+	------
+	  1) OBTENER_MUCHOS	(GET)		
+	* 2) OBT.MUCHOSxCORREO  (GET)		/CORREOELECTRONICO		
+	  3) OBTENER_UNO	(GET)  		/ID		
+	  4) ELIMINAR_UNO	(DELETE)	/ID	
+	  5) CREAR_UNO		(POST)		
+	  6) MODIFICAR_UNO	(PUT)
+	* 7) CAMBIAR_ESTADO	(GET)		
+
+
+
+
+
+
+
