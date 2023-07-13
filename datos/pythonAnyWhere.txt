@@ -8,7 +8,6 @@ path: /home/ffa3240/mysite/app.py
 
 pythonanywhere
 usuario: ffa3240
-contraseña: Amenabar3240
 base de datos:
 nombre: ffa3240$fspbike
 usuario: ffa3240
