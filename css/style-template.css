@@ -215,11 +215,11 @@ body {
 .nav-manager {
   color: red !important;
 }
-
+/* se inhibe para que la prueba del sitio pueda verse el link de acceso a manager
 #idManager {
   display:none
 } 
-
+*/
 .whatsapp {
   background-color: transparent;
   width: 45px;
